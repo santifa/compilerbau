@@ -70,8 +70,19 @@ ifStmt      : IF OPARAN expr CPARAN stmtBlock ( ELSE stmtBlock )?;
 forStmt     : FOR OPARAN assStmt SEMIKOL expr SEMIKOL assStmt CPARAN stmtBlock;
 assStmt     : var ASSIGN expr;
 var         : LDF ( OBRACKET expr CBRACKET ( DOT LDF)?  | DOT LDF )?;
-expr        : ( NUMBER | var ( TOUCHES var )? | ( MINUS | NOT ) expr | OPARAN expr CPARAN ) ( op expr )*;
-op          : OR | AND | EQUALS | LESS | LEQ | PLUS | MINUS | MULT | DIV;
+// expressions 
+// expr standard expressions := num | var | ( expr) | not |...
+expr        : ( ground |unary ground ) op?;
+// ground expressions
+ground      : NUMBER | var ( TOUCHES var )? | OPARAN expr CPARAN ;
+// operator precedence
+op          : multExpr;
+multExpr    : addExpr ((MULT | DIV) ground)* ;
+addExpr	    : relatExpr ((MINUS | PLUS) ground)*;
+relatExpr   : andExpr ((EQUALS | LESS | LEQ) ground)*;
+andExpr     : orExpr (AND ground)*;
+orExpr 	    : OR ground;
+unary       : (MINUS | NOT) ;
 
 // lexer rules
 LDF                 :   ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*;
@@ -82,4 +93,5 @@ fragment LOWCASE    :   'a' .. 'z';
 fragment UPCASE     :   'A' ..  'Z';
 fragment DIGIT      :   '0' .. '9';
 WS		    : ( ' ' | '\r' | '\t' | '\u000C' | '\n' ) {skip();};
+// comments
 SINGLE_COMMENT	    : '//' ~( '\r' | '\n' )* 	{ skip();};
