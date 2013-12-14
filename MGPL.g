@@ -2,13 +2,16 @@ grammar MGPL;
 
 options {
 	backtrack=false;
+	ASTLabelType=CommonTree;
+	output=AST;
 }
 
-// token rules -- complete like mgpl enbf a2
+// token rules
 tokens {
         GAME        = 'game';
         INT         = 'int';
         DOT         = '.';
+        COMMA	=',';
         SEMIKOL     = ';';
         OPARAN      = '(';
         CPARAN      = ')';
@@ -53,45 +56,45 @@ package antlr.projekt2;
 }
 
 // parser rules
-prog        : GAME LDF OPARAN attrAssList? CPARAN decl* stmtBlock block*;
-decl        : varDecl SEMIKOL | objDecl SEMIKOL;
-varDecl     : ( INT LDF init? ) | ( INT LDF OBRACKET NUMBER CBRACKET );
-init        : ASSIGN expr;
-objDecl     : objType LDF OPARAN attrAssList? CPARAN | objType LDF OBRACKET NUMBER CBRACKET;
+prog        : GAME^ LDF^ OPARAN! attrAssList? CPARAN! decl* stmtBlock block*;
+decl        : varDecl SEMIKOL! | objDecl SEMIKOL!;
+varDecl     : INT^ LDF init? |  INT^ LDF OBRACKET! NUMBER CBRACKET!;
+init        : ASSIGN^ expr;
+objDecl     : objType LDF^ OPARAN! attrAssList? CPARAN! | objType LDF^ OBRACKET! NUMBER CBRACKET!;
 objType     : RECTANGLE | TRIANGLE | CIRCLE;
-attrAssList : ( LDF ASSIGN expr ) ( SEMIKOL LDF ASSIGN expr )*;
+attrAssList	: LDF ASSIGN^ expr (COMMA! attrAssList)*;
+//attrAss	: LDF ASSIGN expr; 
 block       : animBlock | eventBlock;
-animBlock   : ANIMATION LDF OPARAN objType LDF CPARAN stmtBlock;
-eventBlock  : ON keyStroke stmtBlock;
+animBlock   : ANIMATION^ LDF OPARAN! objType LDF CPARAN! stmtBlock;
+eventBlock  : ON^ keyStroke stmtBlock;
 keyStroke   : SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW;
-stmtBlock   : OCURBRA stmt* CCURBRA;
+stmtBlock   : OCURBRA! stmt* CCURBRA!;
 stmt        : ifStmt | forStmt | assStmt;
-ifStmt      : IF OPARAN expr CPARAN stmtBlock ( ELSE stmtBlock )?;
-forStmt     : FOR OPARAN assStmt SEMIKOL expr SEMIKOL assStmt CPARAN stmtBlock;
-assStmt     : var ASSIGN expr;
-var         : LDF ( OBRACKET expr CBRACKET ( DOT LDF)?  | DOT LDF )?;
-// expressions 
-// expr standard expressions := num | var | ( expr) | not |...
-expr        : ( ground |unary ground ) op?;
-// ground expressions
-ground      : NUMBER | var ( TOUCHES var )? | OPARAN expr CPARAN ;
-// operator precedence
-op          : multExpr;
-multExpr    : addExpr ((MULT | DIV) ground)* ;
-addExpr	    : relatExpr ((MINUS | PLUS) ground)*;
-relatExpr   : andExpr ((EQUALS | LESS | LEQ) ground)*;
-andExpr     : orExpr (AND ground)*;
-orExpr 	    : OR ground;
-unary       : (MINUS | NOT) ;
+ifStmt      : IF^ OPARAN! expr CPARAN! stmtBlock ( ELSE^ stmtBlock )?;
+forStmt     : FOR^ OPARAN! assStmt2 SEMIKOL! expr SEMIKOL! assStmt2 CPARAN! stmtBlock;
+assStmt2 : var ASSIGN^ expr ;
+assStmt     : var ASSIGN^ expr SEMIKOL!;
+var         : LDF^ ( OBRACKET! expr CBRACKET! ( DOT LDF)? |  DOT LDF)?;
 
-// lexer rules
-LDF                 :   ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*;
-//CHAR                :   ( LOWCASE | UPCASE );
-NUMBER              :   ( DIGIT )+;
-//NEGNUMBER         :   ( DIGIT )+;
+// expressions with paran and precedence
+expr 	: OPARAN! expr CPARAN! | (op expr)* ;
+//paran	: atom | OPARAN op atom CPARAN;
+op	:  disjunkt;
+disjunkt 	: konjunkt (OR^ konjunkt)*;
+konjunkt	: relat (AND^ relat)*;
+relat	: add ((EQUALS | LESS | LEQ)^ add)*;
+add	: mult ((PLUS | MINUS)^ mult)*;
+mult	: unary (( MULT | DIV)^ unary)*;
+unary	: (NOT^)? atom | MINUS (NUMBER | var  (TOUCHES^ var)?) ;
+atom 	: NUMBER | var  (TOUCHES^ var)?;
+
+// lexer rules 
+LDF                 :   (LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*;
+NUMBER              :   (DIGIT)+;
 fragment LOWCASE    :   'a' .. 'z';
 fragment UPCASE     :   'A' ..  'Z';
 fragment DIGIT      :   '0' .. '9';
 WS		    : ( ' ' | '\r' | '\t' | '\u000C' | '\n' ) {skip();};
+
 // comments
 SINGLE_COMMENT	    : '//' ~( '\r' | '\n' )* 	{ skip();};
