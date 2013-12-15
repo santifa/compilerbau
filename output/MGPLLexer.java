@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g 2013-12-14 21:32:14
+// $ANTLR 3.5.1 /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g 2013-12-15 15:09:05
 
 package antlr.projekt2;
 
@@ -14,46 +14,47 @@ public class MGPLLexer extends Lexer {
 	public static final int AND=4;
 	public static final int ANIMATION=5;
 	public static final int ASSIGN=6;
-	public static final int CBRACKET=7;
-	public static final int CCURBRA=8;
-	public static final int CIRCLE=9;
-	public static final int COMMA=10;
-	public static final int CPARAN=11;
-	public static final int DIGIT=12;
-	public static final int DIV=13;
-	public static final int DOT=14;
-	public static final int DOWNARROW=15;
-	public static final int ELSE=16;
-	public static final int EQUALS=17;
-	public static final int FOR=18;
-	public static final int GAME=19;
-	public static final int IF=20;
-	public static final int INT=21;
-	public static final int LDF=22;
-	public static final int LEFTARROW=23;
-	public static final int LEQ=24;
-	public static final int LESS=25;
-	public static final int LOWCASE=26;
-	public static final int MINUS=27;
-	public static final int MULT=28;
-	public static final int NOT=29;
-	public static final int NUMBER=30;
-	public static final int OBRACKET=31;
-	public static final int OCURBRA=32;
-	public static final int ON=33;
-	public static final int OPARAN=34;
-	public static final int OR=35;
-	public static final int PLUS=36;
-	public static final int RECTANGLE=37;
-	public static final int RIGHTARROW=38;
-	public static final int SEMIKOL=39;
-	public static final int SINGLE_COMMENT=40;
-	public static final int SPACE=41;
-	public static final int TOUCHES=42;
-	public static final int TRIANGLE=43;
-	public static final int UPARROW=44;
-	public static final int UPCASE=45;
-	public static final int WS=46;
+	public static final int ATTR=7;
+	public static final int CBRACKET=8;
+	public static final int CCURBRA=9;
+	public static final int CIRCLE=10;
+	public static final int COMMA=11;
+	public static final int CPARAN=12;
+	public static final int DIGIT=13;
+	public static final int DIV=14;
+	public static final int DOT=15;
+	public static final int DOWNARROW=16;
+	public static final int ELSE=17;
+	public static final int EQUALS=18;
+	public static final int FOR=19;
+	public static final int GAME=20;
+	public static final int IF=21;
+	public static final int INT=22;
+	public static final int LDF=23;
+	public static final int LEFTARROW=24;
+	public static final int LEQ=25;
+	public static final int LESS=26;
+	public static final int LOWCASE=27;
+	public static final int MINUS=28;
+	public static final int MULT=29;
+	public static final int NOT=30;
+	public static final int NUMBER=31;
+	public static final int OBRACKET=32;
+	public static final int OCURBRA=33;
+	public static final int ON=34;
+	public static final int OPARAN=35;
+	public static final int OR=36;
+	public static final int PLUS=37;
+	public static final int RECTANGLE=38;
+	public static final int RIGHTARROW=39;
+	public static final int SEMIKOL=40;
+	public static final int SINGLE_COMMENT=41;
+	public static final int SPACE=42;
+	public static final int TOUCHES=43;
+	public static final int TRIANGLE=44;
+	public static final int UPARROW=45;
+	public static final int UPCASE=46;
+	public static final int WS=47;
 
 	// delegates
 	// delegators
@@ -815,8 +816,8 @@ public class MGPLLexer extends Lexer {
 		try {
 			int _type = LDF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:21: ( ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )* )
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:25: ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:23: ( ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:27: ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -826,7 +827,7 @@ public class MGPLLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:45: ( '_' | DIGIT | LOWCASE | UPCASE )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:47: ( '_' | DIGIT | LOWCASE | UPCASE )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -871,10 +872,10 @@ public class MGPLLexer extends Lexer {
 		try {
 			int _type = NUMBER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:21: ( ( DIGIT )+ )
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:25: ( DIGIT )+
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:22: ( ( DIGIT )+ )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:26: ( DIGIT )+
 			{
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:25: ( DIGIT )+
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:26: ( DIGIT )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -921,7 +922,7 @@ public class MGPLLexer extends Lexer {
 	// $ANTLR start "LOWCASE"
 	public final void mLOWCASE() throws RecognitionException {
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:94:21: ( 'a' .. 'z' )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:114:22: ( 'a' .. 'z' )
 			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:
 			{
 			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -944,7 +945,7 @@ public class MGPLLexer extends Lexer {
 	// $ANTLR start "UPCASE"
 	public final void mUPCASE() throws RecognitionException {
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:21: ( 'A' .. 'Z' )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:115:22: ( 'A' .. 'Z' )
 			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z') ) {
@@ -967,7 +968,7 @@ public class MGPLLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:21: ( '0' .. '9' )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:116:22: ( '0' .. '9' )
 			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
@@ -992,8 +993,8 @@ public class MGPLLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:97:9: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:97:11: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:117:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:117:7: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||(input.LA(1) >= '\f' && input.LA(1) <= '\r')||input.LA(1)==' ' ) {
 				input.consume();
@@ -1020,12 +1021,12 @@ public class MGPLLexer extends Lexer {
 		try {
 			int _type = SINGLE_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:20: ( '//' (~ ( '\\r' | '\\n' ) )* )
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:22: '//' (~ ( '\\r' | '\\n' ) )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:120:16: ( '//' (~ ( '\\r' | '\\n' ) )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:120:18: '//' (~ ( '\\r' | '\\n' ) )*
 			{
 			match("//"); 
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:27: (~ ( '\\r' | '\\n' ) )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:120:23: (~ ( '\\r' | '\\n' ) )*
 			loop3:
 			while (true) {
 				int alt3=2;
