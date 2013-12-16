@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g 2013-12-15 15:09:05
+// $ANTLR 3.5.1 /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g 2013-12-16 17:08:35
 
 package antlr.projekt1;
 
@@ -16,59 +16,68 @@ import org.antlr.runtime.tree.*;
 @SuppressWarnings("all")
 public class MGPLParser extends DebugParser {
 	public static final String[] tokenNames = new String[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "ANIMATION", "ASSIGN", 
-		"ATTR", "CBRACKET", "CCURBRA", "CIRCLE", "COMMA", "CPARAN", "DIGIT", "DIV", 
-		"DOT", "DOWNARROW", "ELSE", "EQUALS", "FOR", "GAME", "IF", "INT", "LDF", 
-		"LEFTARROW", "LEQ", "LESS", "LOWCASE", "MINUS", "MULT", "NOT", "NUMBER", 
-		"OBRACKET", "OCURBRA", "ON", "OPARAN", "OR", "PLUS", "RECTANGLE", "RIGHTARROW", 
-		"SEMIKOL", "SINGLE_COMMENT", "SPACE", "TOUCHES", "TRIANGLE", "UPARROW", 
-		"UPCASE", "WS"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "ANIM", "ANIMATION", "ASSIGN", 
+		"ASSIGNMENT", "ATTR", "ATTR2", "CBRACKET", "CCURBRA", "CIRCLE", "COMMA", 
+		"CPARAN", "DIGIT", "DIV", "DOT", "DOWNARROW", "ELSE", "EQUALS", "EVENT", 
+		"FOR", "GAME", "IF", "INT", "LDF", "LEFTARROW", "LEQ", "LESS", "LOWCASE", 
+		"MINUS", "MULT", "NOT", "NUMBER", "OBJDECL", "OBRACKET", "OCURBRA", "ON", 
+		"OPARAN", "OR", "PLUS", "PROG", "RECTANGLE", "RIGHTARROW", "SEMIKOL", 
+		"SINGLE_COMMENT", "SPACE", "STMT", "TOUCHES", "TRIANGLE", "UPARROW", "UPCASE", 
+		"VARDECL", "WS"
 	};
 	public static final int EOF=-1;
 	public static final int AND=4;
-	public static final int ANIMATION=5;
-	public static final int ASSIGN=6;
-	public static final int ATTR=7;
-	public static final int CBRACKET=8;
-	public static final int CCURBRA=9;
-	public static final int CIRCLE=10;
-	public static final int COMMA=11;
-	public static final int CPARAN=12;
-	public static final int DIGIT=13;
-	public static final int DIV=14;
-	public static final int DOT=15;
-	public static final int DOWNARROW=16;
-	public static final int ELSE=17;
-	public static final int EQUALS=18;
-	public static final int FOR=19;
-	public static final int GAME=20;
-	public static final int IF=21;
-	public static final int INT=22;
-	public static final int LDF=23;
-	public static final int LEFTARROW=24;
-	public static final int LEQ=25;
-	public static final int LESS=26;
-	public static final int LOWCASE=27;
-	public static final int MINUS=28;
-	public static final int MULT=29;
-	public static final int NOT=30;
-	public static final int NUMBER=31;
-	public static final int OBRACKET=32;
-	public static final int OCURBRA=33;
-	public static final int ON=34;
-	public static final int OPARAN=35;
-	public static final int OR=36;
-	public static final int PLUS=37;
-	public static final int RECTANGLE=38;
-	public static final int RIGHTARROW=39;
-	public static final int SEMIKOL=40;
-	public static final int SINGLE_COMMENT=41;
-	public static final int SPACE=42;
-	public static final int TOUCHES=43;
-	public static final int TRIANGLE=44;
-	public static final int UPARROW=45;
-	public static final int UPCASE=46;
-	public static final int WS=47;
+	public static final int ANIM=5;
+	public static final int ANIMATION=6;
+	public static final int ASSIGN=7;
+	public static final int ASSIGNMENT=8;
+	public static final int ATTR=9;
+	public static final int ATTR2=10;
+	public static final int CBRACKET=11;
+	public static final int CCURBRA=12;
+	public static final int CIRCLE=13;
+	public static final int COMMA=14;
+	public static final int CPARAN=15;
+	public static final int DIGIT=16;
+	public static final int DIV=17;
+	public static final int DOT=18;
+	public static final int DOWNARROW=19;
+	public static final int ELSE=20;
+	public static final int EQUALS=21;
+	public static final int EVENT=22;
+	public static final int FOR=23;
+	public static final int GAME=24;
+	public static final int IF=25;
+	public static final int INT=26;
+	public static final int LDF=27;
+	public static final int LEFTARROW=28;
+	public static final int LEQ=29;
+	public static final int LESS=30;
+	public static final int LOWCASE=31;
+	public static final int MINUS=32;
+	public static final int MULT=33;
+	public static final int NOT=34;
+	public static final int NUMBER=35;
+	public static final int OBJDECL=36;
+	public static final int OBRACKET=37;
+	public static final int OCURBRA=38;
+	public static final int ON=39;
+	public static final int OPARAN=40;
+	public static final int OR=41;
+	public static final int PLUS=42;
+	public static final int PROG=43;
+	public static final int RECTANGLE=44;
+	public static final int RIGHTARROW=45;
+	public static final int SEMIKOL=46;
+	public static final int SINGLE_COMMENT=47;
+	public static final int SPACE=48;
+	public static final int STMT=49;
+	public static final int TOUCHES=50;
+	public static final int TRIANGLE=51;
+	public static final int UPARROW=52;
+	public static final int UPCASE=53;
+	public static final int VARDECL=54;
+	public static final int WS=55;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -79,10 +88,10 @@ public class MGPLParser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "mult", "forStmt", "expr", "varDecl", "prog", "add", "objType", 
-		"unary", "attrAssList", "var", "eventBlock", "assStmt2", "op", "animBlock", 
-		"init", "konjunkt", "attrAss", "objDecl", "atom", "block", "stmt", "relat", 
-		"assStmt", "keyStroke", "ifStmt", "decl", "stmtBlock"
+		"invalidRule", "assStmt", "expr", "animBlock", "objType", "decl", "op", 
+		"prog", "assStmt2", "block", "ifStmt", "objDecl", "relat", "konjunkt", 
+		"atom", "varDecl", "stmt", "attrAss", "stmtBlock", "var", "keyStroke", 
+		"attrAssList", "eventBlock", "init", "mult", "forStmt", "unary", "add"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -149,7 +158,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "prog"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:1: prog : GAME ^ LDF OPARAN ! ( attrAssList )? CPARAN ! ( decl )* stmtBlock ( block )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:1: prog : GAME LDF OPARAN ( attrAssList )? CPARAN ( decl )* stmtBlock ( block )* -> ^( PROG[\"Game\"] LDF ) ^( ATTR2[\"Attribute\"] ( attrAssList )? ) ^( PROG[\"Declaration\"] ( decl )* ) ^( STMT[\"Statements\"] stmtBlock ) ( block )* ;
 	public final MGPLParser.prog_return prog() throws RecognitionException {
 		MGPLParser.prog_return retval = new MGPLParser.prog_return();
 		retval.start = input.LT(1);
@@ -169,32 +178,37 @@ public class MGPLParser extends DebugParser {
 		CommonTree LDF2_tree=null;
 		CommonTree OPARAN3_tree=null;
 		CommonTree CPARAN5_tree=null;
+		RewriteRuleTokenStream stream_OPARAN=new RewriteRuleTokenStream(adaptor,"token OPARAN");
+		RewriteRuleTokenStream stream_CPARAN=new RewriteRuleTokenStream(adaptor,"token CPARAN");
+		RewriteRuleTokenStream stream_GAME=new RewriteRuleTokenStream(adaptor,"token GAME");
+		RewriteRuleTokenStream stream_LDF=new RewriteRuleTokenStream(adaptor,"token LDF");
+		RewriteRuleSubtreeStream stream_attrAssList=new RewriteRuleSubtreeStream(adaptor,"rule attrAssList");
+		RewriteRuleSubtreeStream stream_stmtBlock=new RewriteRuleSubtreeStream(adaptor,"rule stmtBlock");
+		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
+		RewriteRuleSubtreeStream stream_decl=new RewriteRuleSubtreeStream(adaptor,"rule decl");
 
 		try { dbg.enterRule(getGrammarFileName(), "prog");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(60, 0);
+		dbg.location(72, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:14: ( GAME ^ LDF OPARAN ! ( attrAssList )? CPARAN ! ( decl )* stmtBlock ( block )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:14: ( GAME LDF OPARAN ( attrAssList )? CPARAN ( decl )* stmtBlock ( block )* -> ^( PROG[\"Game\"] LDF ) ^( ATTR2[\"Attribute\"] ( attrAssList )? ) ^( PROG[\"Declaration\"] ( decl )* ) ^( STMT[\"Statements\"] stmtBlock ) ( block )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:16: GAME ^ LDF OPARAN ! ( attrAssList )? CPARAN ! ( decl )* stmtBlock ( block )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:16: GAME LDF OPARAN ( attrAssList )? CPARAN ( decl )* stmtBlock ( block )*
 			{
-			root_0 = (CommonTree)adaptor.nil();
-
-
-			dbg.location(60,20);
-			GAME1=(Token)match(input,GAME,FOLLOW_GAME_in_prog855); 
-			GAME1_tree = (CommonTree)adaptor.create(GAME1);
-			root_0 = (CommonTree)adaptor.becomeRoot(GAME1_tree, root_0);
-			dbg.location(60,22);
-			LDF2=(Token)match(input,LDF,FOLLOW_LDF_in_prog858); 
-			LDF2_tree = (CommonTree)adaptor.create(LDF2);
-			adaptor.addChild(root_0, LDF2_tree);
-			dbg.location(60,32);
-			OPARAN3=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_prog860); dbg.location(60,34);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:34: ( attrAssList )?
+			dbg.location(72,16);
+			GAME1=(Token)match(input,GAME,FOLLOW_GAME_in_prog952);  
+			stream_GAME.add(GAME1);
+			dbg.location(72,21);
+			LDF2=(Token)match(input,LDF,FOLLOW_LDF_in_prog954);  
+			stream_LDF.add(LDF2);
+			dbg.location(72,25);
+			OPARAN3=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_prog956);  
+			stream_OPARAN.add(OPARAN3);
+			dbg.location(72,32);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:32: ( attrAssList )?
 			int alt1=2;
 			try { dbg.enterSubRule(1);
 			try { dbg.enterDecision(1, decisionCanBacktrack[1]);
@@ -209,23 +223,24 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:34: attrAssList
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:32: attrAssList
 					{
-					dbg.location(60,34);
-					pushFollow(FOLLOW_attrAssList_in_prog863);
+					dbg.location(72,32);
+					pushFollow(FOLLOW_attrAssList_in_prog958);
 					attrAssList4=attrAssList();
 					state._fsp--;
 
-					adaptor.addChild(root_0, attrAssList4.getTree());
-
+					stream_attrAssList.add(attrAssList4.getTree());
 					}
 					break;
 
 			}
 			} finally {dbg.exitSubRule(1);}
-			dbg.location(60,53);
-			CPARAN5=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_prog866); dbg.location(60,55);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:55: ( decl )*
+			dbg.location(72,45);
+			CPARAN5=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_prog961);  
+			stream_CPARAN.add(CPARAN5);
+			dbg.location(72,52);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:52: ( decl )*
 			try { dbg.enterSubRule(2);
 
 			loop2:
@@ -244,15 +259,14 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:55: decl
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:52: decl
 					{
-					dbg.location(60,55);
-					pushFollow(FOLLOW_decl_in_prog869);
+					dbg.location(72,52);
+					pushFollow(FOLLOW_decl_in_prog963);
 					decl6=decl();
 					state._fsp--;
 
-					adaptor.addChild(root_0, decl6.getTree());
-
+					stream_decl.add(decl6.getTree());
 					}
 					break;
 
@@ -261,14 +275,13 @@ public class MGPLParser extends DebugParser {
 				}
 			}
 			} finally {dbg.exitSubRule(2);}
-			dbg.location(60,61);
-			pushFollow(FOLLOW_stmtBlock_in_prog872);
+			dbg.location(72,58);
+			pushFollow(FOLLOW_stmtBlock_in_prog966);
 			stmtBlock7=stmtBlock();
 			state._fsp--;
 
-			adaptor.addChild(root_0, stmtBlock7.getTree());
-			dbg.location(60,71);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:71: ( block )*
+			stream_stmtBlock.add(stmtBlock7.getTree());dbg.location(72,68);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:68: ( block )*
 			try { dbg.enterSubRule(3);
 
 			loop3:
@@ -287,15 +300,14 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:60:71: block
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:68: block
 					{
-					dbg.location(60,71);
-					pushFollow(FOLLOW_block_in_prog874);
+					dbg.location(72,68);
+					pushFollow(FOLLOW_block_in_prog968);
 					block8=block();
 					state._fsp--;
 
-					adaptor.addChild(root_0, block8.getTree());
-
+					stream_block.add(block8.getTree());
 					}
 					break;
 
@@ -304,6 +316,84 @@ public class MGPLParser extends DebugParser {
 				}
 			}
 			} finally {dbg.exitSubRule(3);}
+
+			// AST REWRITE
+			// elements: LDF, stmtBlock, block, decl, attrAssList
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (CommonTree)adaptor.nil();
+			// 72:76: -> ^( PROG[\"Game\"] LDF ) ^( ATTR2[\"Attribute\"] ( attrAssList )? ) ^( PROG[\"Declaration\"] ( decl )* ) ^( STMT[\"Statements\"] stmtBlock ) ( block )*
+			{
+				dbg.location(72,79);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:79: ^( PROG[\"Game\"] LDF )
+				{
+				CommonTree root_1 = (CommonTree)adaptor.nil();
+				dbg.location(72,81);
+				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(PROG, "Game"), root_1);
+				dbg.location(72,94);
+				adaptor.addChild(root_1, stream_LDF.nextNode());
+				adaptor.addChild(root_0, root_1);
+				}
+				dbg.location(72,99);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:99: ^( ATTR2[\"Attribute\"] ( attrAssList )? )
+				{
+				CommonTree root_1 = (CommonTree)adaptor.nil();
+				dbg.location(72,101);
+				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ATTR2, "Attribute"), root_1);
+				dbg.location(72,120);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:120: ( attrAssList )?
+				if ( stream_attrAssList.hasNext() ) {
+					dbg.location(72,120);
+					adaptor.addChild(root_1, stream_attrAssList.nextTree());
+				}
+				stream_attrAssList.reset();
+
+				adaptor.addChild(root_0, root_1);
+				}
+				dbg.location(72,134);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:134: ^( PROG[\"Declaration\"] ( decl )* )
+				{
+				CommonTree root_1 = (CommonTree)adaptor.nil();
+				dbg.location(72,136);
+				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(PROG, "Declaration"), root_1);
+				dbg.location(72,156);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:156: ( decl )*
+				while ( stream_decl.hasNext() ) {
+					dbg.location(72,156);
+					adaptor.addChild(root_1, stream_decl.nextTree());
+				}
+				stream_decl.reset();
+
+				adaptor.addChild(root_0, root_1);
+				}
+				dbg.location(72,163);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:163: ^( STMT[\"Statements\"] stmtBlock )
+				{
+				CommonTree root_1 = (CommonTree)adaptor.nil();
+				dbg.location(72,165);
+				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(STMT, "Statements"), root_1);
+				dbg.location(72,184);
+				adaptor.addChild(root_1, stream_stmtBlock.nextTree());
+				adaptor.addChild(root_0, root_1);
+				}
+				dbg.location(72,195);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:195: ( block )*
+				while ( stream_block.hasNext() ) {
+					dbg.location(72,195);
+					adaptor.addChild(root_0, stream_block.nextTree());
+				}
+				stream_block.reset();
+
+			}
+
+
+			retval.tree = root_0;
 
 			}
 
@@ -321,7 +411,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(60, 76);
+		dbg.location(72, 200);
 
 		}
 		finally {
@@ -343,7 +433,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "decl"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:61:1: decl : ( varDecl SEMIKOL !| objDecl SEMIKOL !);
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:1: decl : ( varDecl SEMIKOL -> ^( VARDECL[\"Variable\"] varDecl ) | objDecl SEMIKOL -> ^( OBJDECL[\"Object\"] objDecl ) );
 	public final MGPLParser.decl_return decl() throws RecognitionException {
 		MGPLParser.decl_return retval = new MGPLParser.decl_return();
 		retval.start = input.LT(1);
@@ -357,14 +447,17 @@ public class MGPLParser extends DebugParser {
 
 		CommonTree SEMIKOL10_tree=null;
 		CommonTree SEMIKOL12_tree=null;
+		RewriteRuleTokenStream stream_SEMIKOL=new RewriteRuleTokenStream(adaptor,"token SEMIKOL");
+		RewriteRuleSubtreeStream stream_objDecl=new RewriteRuleSubtreeStream(adaptor,"rule objDecl");
+		RewriteRuleSubtreeStream stream_varDecl=new RewriteRuleSubtreeStream(adaptor,"rule varDecl");
 
 		try { dbg.enterRule(getGrammarFileName(), "decl");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(61, 0);
+		dbg.location(73, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:61:14: ( varDecl SEMIKOL !| objDecl SEMIKOL !)
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:14: ( varDecl SEMIKOL -> ^( VARDECL[\"Variable\"] varDecl ) | objDecl SEMIKOL -> ^( OBJDECL[\"Object\"] objDecl ) )
 			int alt4=2;
 			try { dbg.enterDecision(4, decisionCanBacktrack[4]);
 
@@ -389,37 +482,91 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:61:16: varDecl SEMIKOL !
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:16: varDecl SEMIKOL
 					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					dbg.location(61,16);
-					pushFollow(FOLLOW_varDecl_in_decl890);
+					dbg.location(73,16);
+					pushFollow(FOLLOW_varDecl_in_decl1020);
 					varDecl9=varDecl();
 					state._fsp--;
 
-					adaptor.addChild(root_0, varDecl9.getTree());
-					dbg.location(61,31);
-					SEMIKOL10=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_decl892); 
+					stream_varDecl.add(varDecl9.getTree());dbg.location(73,24);
+					SEMIKOL10=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_decl1022);  
+					stream_SEMIKOL.add(SEMIKOL10);
+
+					// AST REWRITE
+					// elements: varDecl
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (CommonTree)adaptor.nil();
+					// 73:33: -> ^( VARDECL[\"Variable\"] varDecl )
+					{
+						dbg.location(73,36);
+						// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:36: ^( VARDECL[\"Variable\"] varDecl )
+						{
+						CommonTree root_1 = (CommonTree)adaptor.nil();
+						dbg.location(73,38);
+						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(VARDECL, "Variable"), root_1);
+						dbg.location(73,58);
+						adaptor.addChild(root_1, stream_varDecl.nextTree());
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
 					}
 					break;
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:62:4: objDecl SEMIKOL !
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:74:4: objDecl SEMIKOL
 					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					dbg.location(62,4);
-					pushFollow(FOLLOW_objDecl_in_decl899);
+					dbg.location(74,4);
+					pushFollow(FOLLOW_objDecl_in_decl1038);
 					objDecl11=objDecl();
 					state._fsp--;
 
-					adaptor.addChild(root_0, objDecl11.getTree());
-					dbg.location(62,19);
-					SEMIKOL12=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_decl901); 
+					stream_objDecl.add(objDecl11.getTree());dbg.location(74,12);
+					SEMIKOL12=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_decl1040);  
+					stream_SEMIKOL.add(SEMIKOL12);
+
+					// AST REWRITE
+					// elements: objDecl
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (CommonTree)adaptor.nil();
+					// 74:20: -> ^( OBJDECL[\"Object\"] objDecl )
+					{
+						dbg.location(74,23);
+						// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:74:23: ^( OBJDECL[\"Object\"] objDecl )
+						{
+						CommonTree root_1 = (CommonTree)adaptor.nil();
+						dbg.location(74,25);
+						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(OBJDECL, "Object"), root_1);
+						dbg.location(74,43);
+						adaptor.addChild(root_1, stream_objDecl.nextTree());
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
 					}
 					break;
 
@@ -438,7 +585,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(63, 1);
+		dbg.location(74, 52);
 
 		}
 		finally {
@@ -460,7 +607,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "varDecl"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:64:1: varDecl : ( INT ^ LDF ( init )? | INT ^ LDF OBRACKET ! NUMBER CBRACKET !);
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:75:1: varDecl : ( INT ^ LDF ( init )? | INT ^ LDF OBRACKET ! NUMBER CBRACKET !);
 	public final MGPLParser.varDecl_return varDecl() throws RecognitionException {
 		MGPLParser.varDecl_return retval = new MGPLParser.varDecl_return();
 		retval.start = input.LT(1);
@@ -487,10 +634,10 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "varDecl");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(64, 0);
+		dbg.location(75, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:64:14: ( INT ^ LDF ( init )? | INT ^ LDF OBRACKET ! NUMBER CBRACKET !)
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:75:14: ( INT ^ LDF ( init )? | INT ^ LDF OBRACKET ! NUMBER CBRACKET !)
 			int alt6=2;
 			try { dbg.enterDecision(6, decisionCanBacktrack[6]);
 
@@ -551,21 +698,21 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:64:16: INT ^ LDF ( init )?
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:75:16: INT ^ LDF ( init )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(64,19);
-					INT13=(Token)match(input,INT,FOLLOW_INT_in_varDecl916); 
+					dbg.location(75,19);
+					INT13=(Token)match(input,INT,FOLLOW_INT_in_varDecl1063); 
 					INT13_tree = (CommonTree)adaptor.create(INT13);
 					root_0 = (CommonTree)adaptor.becomeRoot(INT13_tree, root_0);
-					dbg.location(64,21);
-					LDF14=(Token)match(input,LDF,FOLLOW_LDF_in_varDecl919); 
+					dbg.location(75,21);
+					LDF14=(Token)match(input,LDF,FOLLOW_LDF_in_varDecl1066); 
 					LDF14_tree = (CommonTree)adaptor.create(LDF14);
 					adaptor.addChild(root_0, LDF14_tree);
-					dbg.location(64,25);
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:64:25: ( init )?
+					dbg.location(75,25);
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:75:25: ( init )?
 					int alt5=2;
 					try { dbg.enterSubRule(5);
 					try { dbg.enterDecision(5, decisionCanBacktrack[5]);
@@ -580,10 +727,10 @@ public class MGPLParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:64:25: init
+							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:75:25: init
 							{
-							dbg.location(64,25);
-							pushFollow(FOLLOW_init_in_varDecl921);
+							dbg.location(75,25);
+							pushFollow(FOLLOW_init_in_varDecl1068);
 							init15=init();
 							state._fsp--;
 
@@ -600,26 +747,26 @@ public class MGPLParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:65:5: INT ^ LDF OBRACKET ! NUMBER CBRACKET !
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:76:5: INT ^ LDF OBRACKET ! NUMBER CBRACKET !
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(65,8);
-					INT16=(Token)match(input,INT,FOLLOW_INT_in_varDecl929); 
+					dbg.location(76,8);
+					INT16=(Token)match(input,INT,FOLLOW_INT_in_varDecl1076); 
 					INT16_tree = (CommonTree)adaptor.create(INT16);
 					root_0 = (CommonTree)adaptor.becomeRoot(INT16_tree, root_0);
-					dbg.location(65,10);
-					LDF17=(Token)match(input,LDF,FOLLOW_LDF_in_varDecl932); 
+					dbg.location(76,10);
+					LDF17=(Token)match(input,LDF,FOLLOW_LDF_in_varDecl1079); 
 					LDF17_tree = (CommonTree)adaptor.create(LDF17);
 					adaptor.addChild(root_0, LDF17_tree);
-					dbg.location(65,22);
-					OBRACKET18=(Token)match(input,OBRACKET,FOLLOW_OBRACKET_in_varDecl934); dbg.location(65,24);
-					NUMBER19=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_varDecl937); 
+					dbg.location(76,22);
+					OBRACKET18=(Token)match(input,OBRACKET,FOLLOW_OBRACKET_in_varDecl1081); dbg.location(76,24);
+					NUMBER19=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_varDecl1084); 
 					NUMBER19_tree = (CommonTree)adaptor.create(NUMBER19);
 					adaptor.addChild(root_0, NUMBER19_tree);
-					dbg.location(65,39);
-					CBRACKET20=(Token)match(input,CBRACKET,FOLLOW_CBRACKET_in_varDecl939); 
+					dbg.location(76,39);
+					CBRACKET20=(Token)match(input,CBRACKET,FOLLOW_CBRACKET_in_varDecl1086); 
 					}
 					break;
 
@@ -638,7 +785,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(66, 1);
+		dbg.location(76, 40);
 
 		}
 		finally {
@@ -660,7 +807,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "init"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:67:1: init : ASSIGN expr ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:77:1: init : ASSIGN expr ;
 	public final MGPLParser.init_return init() throws RecognitionException {
 		MGPLParser.init_return retval = new MGPLParser.init_return();
 		retval.start = input.LT(1);
@@ -675,23 +822,23 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "init");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(67, 0);
+		dbg.location(77, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:67:14: ( ASSIGN expr )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:77:14: ( ASSIGN expr )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:67:16: ASSIGN expr
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:77:16: ASSIGN expr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(67,16);
-			ASSIGN21=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_init957); 
+			dbg.location(77,16);
+			ASSIGN21=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_init1103); 
 			ASSIGN21_tree = (CommonTree)adaptor.create(ASSIGN21);
 			adaptor.addChild(root_0, ASSIGN21_tree);
-			dbg.location(67,23);
-			pushFollow(FOLLOW_expr_in_init959);
+			dbg.location(77,23);
+			pushFollow(FOLLOW_expr_in_init1105);
 			expr22=expr();
 			state._fsp--;
 
@@ -713,7 +860,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(67, 26);
+		dbg.location(77, 27);
 
 		}
 		finally {
@@ -735,7 +882,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "objDecl"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:68:1: objDecl : ( objType LDF ^ OPARAN ! ( attrAssList )? CPARAN !| objType LDF ^ OBRACKET ! NUMBER CBRACKET !);
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:1: objDecl : ( objType LDF ^ OPARAN ! ( attrAssList )? CPARAN !| objType LDF ^ OBRACKET ! NUMBER CBRACKET !);
 	public final MGPLParser.objDecl_return objDecl() throws RecognitionException {
 		MGPLParser.objDecl_return retval = new MGPLParser.objDecl_return();
 		retval.start = input.LT(1);
@@ -764,10 +911,10 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "objDecl");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(68, 0);
+		dbg.location(78, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:68:14: ( objType LDF ^ OPARAN ! ( attrAssList )? CPARAN !| objType LDF ^ OBRACKET ! NUMBER CBRACKET !)
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:14: ( objType LDF ^ OPARAN ! ( attrAssList )? CPARAN !| objType LDF ^ OBRACKET ! NUMBER CBRACKET !)
 			int alt8=2;
 			try { dbg.enterDecision(8, decisionCanBacktrack[8]);
 
@@ -828,24 +975,24 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:68:16: objType LDF ^ OPARAN ! ( attrAssList )? CPARAN !
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:16: objType LDF ^ OPARAN ! ( attrAssList )? CPARAN !
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(68,16);
-					pushFollow(FOLLOW_objType_in_objDecl971);
+					dbg.location(78,16);
+					pushFollow(FOLLOW_objType_in_objDecl1118);
 					objType23=objType();
 					state._fsp--;
 
 					adaptor.addChild(root_0, objType23.getTree());
-					dbg.location(68,27);
-					LDF24=(Token)match(input,LDF,FOLLOW_LDF_in_objDecl973); 
+					dbg.location(78,27);
+					LDF24=(Token)match(input,LDF,FOLLOW_LDF_in_objDecl1120); 
 					LDF24_tree = (CommonTree)adaptor.create(LDF24);
 					root_0 = (CommonTree)adaptor.becomeRoot(LDF24_tree, root_0);
-					dbg.location(68,35);
-					OPARAN25=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_objDecl976); dbg.location(68,37);
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:68:37: ( attrAssList )?
+					dbg.location(78,35);
+					OPARAN25=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_objDecl1123); dbg.location(78,37);
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:37: ( attrAssList )?
 					int alt7=2;
 					try { dbg.enterSubRule(7);
 					try { dbg.enterDecision(7, decisionCanBacktrack[7]);
@@ -860,10 +1007,10 @@ public class MGPLParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:68:37: attrAssList
+							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:37: attrAssList
 							{
-							dbg.location(68,37);
-							pushFollow(FOLLOW_attrAssList_in_objDecl979);
+							dbg.location(78,37);
+							pushFollow(FOLLOW_attrAssList_in_objDecl1126);
 							attrAssList26=attrAssList();
 							state._fsp--;
 
@@ -874,35 +1021,35 @@ public class MGPLParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(7);}
-					dbg.location(68,56);
-					CPARAN27=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_objDecl982); 
+					dbg.location(78,56);
+					CPARAN27=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_objDecl1129); 
 					}
 					break;
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:69:4: objType LDF ^ OBRACKET ! NUMBER CBRACKET !
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:79:4: objType LDF ^ OBRACKET ! NUMBER CBRACKET !
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(69,4);
-					pushFollow(FOLLOW_objType_in_objDecl989);
+					dbg.location(79,4);
+					pushFollow(FOLLOW_objType_in_objDecl1136);
 					objType28=objType();
 					state._fsp--;
 
 					adaptor.addChild(root_0, objType28.getTree());
-					dbg.location(69,15);
-					LDF29=(Token)match(input,LDF,FOLLOW_LDF_in_objDecl991); 
+					dbg.location(79,15);
+					LDF29=(Token)match(input,LDF,FOLLOW_LDF_in_objDecl1138); 
 					LDF29_tree = (CommonTree)adaptor.create(LDF29);
 					root_0 = (CommonTree)adaptor.becomeRoot(LDF29_tree, root_0);
-					dbg.location(69,25);
-					OBRACKET30=(Token)match(input,OBRACKET,FOLLOW_OBRACKET_in_objDecl994); dbg.location(69,27);
-					NUMBER31=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_objDecl997); 
+					dbg.location(79,25);
+					OBRACKET30=(Token)match(input,OBRACKET,FOLLOW_OBRACKET_in_objDecl1141); dbg.location(79,27);
+					NUMBER31=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_objDecl1144); 
 					NUMBER31_tree = (CommonTree)adaptor.create(NUMBER31);
 					adaptor.addChild(root_0, NUMBER31_tree);
-					dbg.location(69,42);
-					CBRACKET32=(Token)match(input,CBRACKET,FOLLOW_CBRACKET_in_objDecl999); 
+					dbg.location(79,42);
+					CBRACKET32=(Token)match(input,CBRACKET,FOLLOW_CBRACKET_in_objDecl1146); 
 					}
 					break;
 
@@ -921,7 +1068,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(70, 1);
+		dbg.location(79, 43);
 
 		}
 		finally {
@@ -943,7 +1090,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "objType"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:71:1: objType : ( RECTANGLE | TRIANGLE | CIRCLE );
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:80:1: objType : ( RECTANGLE | TRIANGLE | CIRCLE );
 	public final MGPLParser.objType_return objType() throws RecognitionException {
 		MGPLParser.objType_return retval = new MGPLParser.objType_return();
 		retval.start = input.LT(1);
@@ -957,10 +1104,10 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "objType");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(71, 0);
+		dbg.location(80, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:71:14: ( RECTANGLE | TRIANGLE | CIRCLE )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:80:14: ( RECTANGLE | TRIANGLE | CIRCLE )
 			dbg.enterAlt(1);
 
 			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:
@@ -968,7 +1115,7 @@ public class MGPLParser extends DebugParser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(71,14);
+			dbg.location(80,14);
 			set33=input.LT(1);
 			if ( input.LA(1)==CIRCLE||input.LA(1)==RECTANGLE||input.LA(1)==TRIANGLE ) {
 				input.consume();
@@ -996,7 +1143,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(71, 44);
+		dbg.location(80, 44);
 
 		}
 		finally {
@@ -1018,7 +1165,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "attrAssList"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:1: attrAssList : attrAss ( COMMA ! attrAss )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:81:1: attrAssList : attrAss ( COMMA attrAss )* ;
 	public final MGPLParser.attrAssList_return attrAssList() throws RecognitionException {
 		MGPLParser.attrAssList_return retval = new MGPLParser.attrAssList_return();
 		retval.start = input.LT(1);
@@ -1034,25 +1181,25 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "attrAssList");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(72, 0);
+		dbg.location(81, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:13: ( attrAss ( COMMA ! attrAss )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:81:13: ( attrAss ( COMMA attrAss )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:15: attrAss ( COMMA ! attrAss )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:81:15: attrAss ( COMMA attrAss )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(72,15);
-			pushFollow(FOLLOW_attrAss_in_attrAssList1029);
+			dbg.location(81,15);
+			pushFollow(FOLLOW_attrAss_in_attrAssList1175);
 			attrAss34=attrAss();
 			state._fsp--;
 
 			adaptor.addChild(root_0, attrAss34.getTree());
-			dbg.location(72,23);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:23: ( COMMA ! attrAss )*
+			dbg.location(81,23);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:81:23: ( COMMA attrAss )*
 			try { dbg.enterSubRule(9);
 
 			loop9:
@@ -1071,11 +1218,14 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:72:24: COMMA ! attrAss
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:81:24: COMMA attrAss
 					{
-					dbg.location(72,29);
-					COMMA35=(Token)match(input,COMMA,FOLLOW_COMMA_in_attrAssList1032); dbg.location(72,31);
-					pushFollow(FOLLOW_attrAss_in_attrAssList1035);
+					dbg.location(81,24);
+					COMMA35=(Token)match(input,COMMA,FOLLOW_COMMA_in_attrAssList1178); 
+					COMMA35_tree = (CommonTree)adaptor.create(COMMA35);
+					adaptor.addChild(root_0, COMMA35_tree);
+					dbg.location(81,30);
+					pushFollow(FOLLOW_attrAss_in_attrAssList1180);
 					attrAss36=attrAss();
 					state._fsp--;
 
@@ -1106,7 +1256,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(72, 40);
+		dbg.location(81, 39);
 
 		}
 		finally {
@@ -1128,7 +1278,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "attrAss"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:1: attrAss : LDF ASSIGN expr -> ^( ATTR[\"ATTR\"] LDF ASSIGN expr ) ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:82:1: attrAss : LDF ASSIGN expr -> ^( ATTR[\"Attribut\"] LDF ASSIGN expr ) ;
 	public final MGPLParser.attrAss_return attrAss() throws RecognitionException {
 		MGPLParser.attrAss_return retval = new MGPLParser.attrAss_return();
 		retval.start = input.LT(1);
@@ -1148,28 +1298,28 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "attrAss");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(73, 0);
+		dbg.location(82, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:9: ( LDF ASSIGN expr -> ^( ATTR[\"ATTR\"] LDF ASSIGN expr ) )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:82:9: ( LDF ASSIGN expr -> ^( ATTR[\"Attribut\"] LDF ASSIGN expr ) )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:11: LDF ASSIGN expr
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:82:11: LDF ASSIGN expr
 			{
-			dbg.location(73,11);
-			LDF37=(Token)match(input,LDF,FOLLOW_LDF_in_attrAss1045);  
+			dbg.location(82,11);
+			LDF37=(Token)match(input,LDF,FOLLOW_LDF_in_attrAss1190);  
 			stream_LDF.add(LDF37);
-			dbg.location(73,15);
-			ASSIGN38=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_attrAss1047);  
+			dbg.location(82,15);
+			ASSIGN38=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_attrAss1192);  
 			stream_ASSIGN.add(ASSIGN38);
-			dbg.location(73,22);
-			pushFollow(FOLLOW_expr_in_attrAss1049);
+			dbg.location(82,22);
+			pushFollow(FOLLOW_expr_in_attrAss1194);
 			expr39=expr();
 			state._fsp--;
 
 			stream_expr.add(expr39.getTree());
 			// AST REWRITE
-			// elements: LDF, ASSIGN, expr
+			// elements: ASSIGN, expr, LDF
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1179,17 +1329,17 @@ public class MGPLParser extends DebugParser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (CommonTree)adaptor.nil();
-			// 73:27: -> ^( ATTR[\"ATTR\"] LDF ASSIGN expr )
+			// 82:27: -> ^( ATTR[\"Attribut\"] LDF ASSIGN expr )
 			{
-				dbg.location(73,30);
-				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:73:30: ^( ATTR[\"ATTR\"] LDF ASSIGN expr )
+				dbg.location(82,30);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:82:30: ^( ATTR[\"Attribut\"] LDF ASSIGN expr )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
-				dbg.location(73,32);
-				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ATTR, "ATTR"), root_1);
-				dbg.location(73,46);
-				adaptor.addChild(root_1, stream_LDF.nextNode());dbg.location(73,50);
-				adaptor.addChild(root_1, stream_ASSIGN.nextNode());dbg.location(73,57);
+				dbg.location(82,32);
+				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ATTR, "Attribut"), root_1);
+				dbg.location(82,50);
+				adaptor.addChild(root_1, stream_LDF.nextNode());dbg.location(82,54);
+				adaptor.addChild(root_1, stream_ASSIGN.nextNode());dbg.location(82,61);
 				adaptor.addChild(root_1, stream_expr.nextTree());
 				adaptor.addChild(root_0, root_1);
 				}
@@ -1215,7 +1365,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(73, 61);
+		dbg.location(82, 66);
 
 		}
 		finally {
@@ -1237,7 +1387,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "block"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:74:1: block : ( animBlock | eventBlock );
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:83:1: block : ( animBlock -> ^( ANIM[\"Animation\"] animBlock ) | eventBlock -> ^( EVENT[\"Event\"] eventBlock ) );
 	public final MGPLParser.block_return block() throws RecognitionException {
 		MGPLParser.block_return retval = new MGPLParser.block_return();
 		retval.start = input.LT(1);
@@ -1247,14 +1397,16 @@ public class MGPLParser extends DebugParser {
 		ParserRuleReturnScope animBlock40 =null;
 		ParserRuleReturnScope eventBlock41 =null;
 
+		RewriteRuleSubtreeStream stream_eventBlock=new RewriteRuleSubtreeStream(adaptor,"rule eventBlock");
+		RewriteRuleSubtreeStream stream_animBlock=new RewriteRuleSubtreeStream(adaptor,"rule animBlock");
 
 		try { dbg.enterRule(getGrammarFileName(), "block");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(74, 0);
+		dbg.location(83, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:74:14: ( animBlock | eventBlock )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:83:14: ( animBlock -> ^( ANIM[\"Animation\"] animBlock ) | eventBlock -> ^( EVENT[\"Event\"] eventBlock ) )
 			int alt10=2;
 			try { dbg.enterDecision(10, decisionCanBacktrack[10]);
 
@@ -1279,34 +1431,84 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:74:16: animBlock
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:83:16: animBlock
 					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					dbg.location(74,16);
-					pushFollow(FOLLOW_animBlock_in_block1077);
+					dbg.location(83,16);
+					pushFollow(FOLLOW_animBlock_in_block1223);
 					animBlock40=animBlock();
 					state._fsp--;
 
-					adaptor.addChild(root_0, animBlock40.getTree());
+					stream_animBlock.add(animBlock40.getTree());
+					// AST REWRITE
+					// elements: animBlock
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (CommonTree)adaptor.nil();
+					// 83:26: -> ^( ANIM[\"Animation\"] animBlock )
+					{
+						dbg.location(83,29);
+						// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:83:29: ^( ANIM[\"Animation\"] animBlock )
+						{
+						CommonTree root_1 = (CommonTree)adaptor.nil();
+						dbg.location(83,31);
+						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ANIM, "Animation"), root_1);
+						dbg.location(83,49);
+						adaptor.addChild(root_1, stream_animBlock.nextTree());
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
 
 					}
 					break;
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:75:4: eventBlock
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:84:4: eventBlock
 					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					dbg.location(75,4);
-					pushFollow(FOLLOW_eventBlock_in_block1083);
+					dbg.location(84,4);
+					pushFollow(FOLLOW_eventBlock_in_block1238);
 					eventBlock41=eventBlock();
 					state._fsp--;
 
-					adaptor.addChild(root_0, eventBlock41.getTree());
+					stream_eventBlock.add(eventBlock41.getTree());
+					// AST REWRITE
+					// elements: eventBlock
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (CommonTree)adaptor.nil();
+					// 84:15: -> ^( EVENT[\"Event\"] eventBlock )
+					{
+						dbg.location(84,18);
+						// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:84:18: ^( EVENT[\"Event\"] eventBlock )
+						{
+						CommonTree root_1 = (CommonTree)adaptor.nil();
+						dbg.location(84,20);
+						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(EVENT, "Event"), root_1);
+						dbg.location(84,35);
+						adaptor.addChild(root_1, stream_eventBlock.nextTree());
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
 
 					}
 					break;
@@ -1326,7 +1528,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(76, 1);
+		dbg.location(84, 45);
 
 		}
 		finally {
@@ -1348,7 +1550,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "animBlock"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:77:1: animBlock : ANIMATION ^ LDF OPARAN ! objType LDF CPARAN ! stmtBlock ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:1: animBlock : ANIMATION LDF OPARAN ! objType LDF CPARAN ! stmtBlock ;
 	public final MGPLParser.animBlock_return animBlock() throws RecognitionException {
 		MGPLParser.animBlock_return retval = new MGPLParser.animBlock_return();
 		retval.start = input.LT(1);
@@ -1372,39 +1574,39 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "animBlock");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(77, 0);
+		dbg.location(85, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:77:14: ( ANIMATION ^ LDF OPARAN ! objType LDF CPARAN ! stmtBlock )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:14: ( ANIMATION LDF OPARAN ! objType LDF CPARAN ! stmtBlock )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:77:16: ANIMATION ^ LDF OPARAN ! objType LDF CPARAN ! stmtBlock
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:16: ANIMATION LDF OPARAN ! objType LDF CPARAN ! stmtBlock
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(77,25);
-			ANIMATION42=(Token)match(input,ANIMATION,FOLLOW_ANIMATION_in_animBlock1095); 
+			dbg.location(85,16);
+			ANIMATION42=(Token)match(input,ANIMATION,FOLLOW_ANIMATION_in_animBlock1257); 
 			ANIMATION42_tree = (CommonTree)adaptor.create(ANIMATION42);
-			root_0 = (CommonTree)adaptor.becomeRoot(ANIMATION42_tree, root_0);
-			dbg.location(77,27);
-			LDF43=(Token)match(input,LDF,FOLLOW_LDF_in_animBlock1098); 
+			adaptor.addChild(root_0, ANIMATION42_tree);
+			dbg.location(85,26);
+			LDF43=(Token)match(input,LDF,FOLLOW_LDF_in_animBlock1259); 
 			LDF43_tree = (CommonTree)adaptor.create(LDF43);
 			adaptor.addChild(root_0, LDF43_tree);
-			dbg.location(77,37);
-			OPARAN44=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_animBlock1100); dbg.location(77,39);
-			pushFollow(FOLLOW_objType_in_animBlock1103);
+			dbg.location(85,36);
+			OPARAN44=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_animBlock1261); dbg.location(85,38);
+			pushFollow(FOLLOW_objType_in_animBlock1264);
 			objType45=objType();
 			state._fsp--;
 
 			adaptor.addChild(root_0, objType45.getTree());
-			dbg.location(77,47);
-			LDF46=(Token)match(input,LDF,FOLLOW_LDF_in_animBlock1105); 
+			dbg.location(85,46);
+			LDF46=(Token)match(input,LDF,FOLLOW_LDF_in_animBlock1266); 
 			LDF46_tree = (CommonTree)adaptor.create(LDF46);
 			adaptor.addChild(root_0, LDF46_tree);
-			dbg.location(77,57);
-			CPARAN47=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_animBlock1107); dbg.location(77,59);
-			pushFollow(FOLLOW_stmtBlock_in_animBlock1110);
+			dbg.location(85,56);
+			CPARAN47=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_animBlock1268); dbg.location(85,58);
+			pushFollow(FOLLOW_stmtBlock_in_animBlock1271);
 			stmtBlock48=stmtBlock();
 			state._fsp--;
 
@@ -1426,7 +1628,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(77, 67);
+		dbg.location(85, 67);
 
 		}
 		finally {
@@ -1448,7 +1650,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "eventBlock"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:1: eventBlock : ON ^ keyStroke stmtBlock ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:86:1: eventBlock : ON ^ keyStroke stmtBlock ;
 	public final MGPLParser.eventBlock_return eventBlock() throws RecognitionException {
 		MGPLParser.eventBlock_return retval = new MGPLParser.eventBlock_return();
 		retval.start = input.LT(1);
@@ -1464,29 +1666,29 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "eventBlock");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(78, 0);
+		dbg.location(86, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:14: ( ON ^ keyStroke stmtBlock )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:86:14: ( ON ^ keyStroke stmtBlock )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:78:16: ON ^ keyStroke stmtBlock
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:86:16: ON ^ keyStroke stmtBlock
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(78,18);
-			ON49=(Token)match(input,ON,FOLLOW_ON_in_eventBlock1119); 
+			dbg.location(86,18);
+			ON49=(Token)match(input,ON,FOLLOW_ON_in_eventBlock1281); 
 			ON49_tree = (CommonTree)adaptor.create(ON49);
 			root_0 = (CommonTree)adaptor.becomeRoot(ON49_tree, root_0);
-			dbg.location(78,20);
-			pushFollow(FOLLOW_keyStroke_in_eventBlock1122);
+			dbg.location(86,20);
+			pushFollow(FOLLOW_keyStroke_in_eventBlock1284);
 			keyStroke50=keyStroke();
 			state._fsp--;
 
 			adaptor.addChild(root_0, keyStroke50.getTree());
-			dbg.location(78,30);
-			pushFollow(FOLLOW_stmtBlock_in_eventBlock1124);
+			dbg.location(86,30);
+			pushFollow(FOLLOW_stmtBlock_in_eventBlock1286);
 			stmtBlock51=stmtBlock();
 			state._fsp--;
 
@@ -1508,7 +1710,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(78, 38);
+		dbg.location(86, 39);
 
 		}
 		finally {
@@ -1530,7 +1732,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "keyStroke"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:79:1: keyStroke : ( SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW );
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:87:1: keyStroke : ( SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW );
 	public final MGPLParser.keyStroke_return keyStroke() throws RecognitionException {
 		MGPLParser.keyStroke_return retval = new MGPLParser.keyStroke_return();
 		retval.start = input.LT(1);
@@ -1544,10 +1746,10 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "keyStroke");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(79, 0);
+		dbg.location(87, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:79:14: ( SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:87:14: ( SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW )
 			dbg.enterAlt(1);
 
 			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:
@@ -1555,7 +1757,7 @@ public class MGPLParser extends DebugParser {
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(79,14);
+			dbg.location(87,14);
 			set52=input.LT(1);
 			if ( input.LA(1)==DOWNARROW||input.LA(1)==LEFTARROW||input.LA(1)==RIGHTARROW||input.LA(1)==SPACE||input.LA(1)==UPARROW ) {
 				input.consume();
@@ -1583,7 +1785,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(84, 1);
+		dbg.location(91, 13);
 
 		}
 		finally {
@@ -1605,7 +1807,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "stmtBlock"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:1: stmtBlock : OCURBRA ! ( stmt )* CCURBRA !;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:1: stmtBlock : OCURBRA ! ( stmt )* CCURBRA !;
 	public final MGPLParser.stmtBlock_return stmtBlock() throws RecognitionException {
 		MGPLParser.stmtBlock_return retval = new MGPLParser.stmtBlock_return();
 		retval.start = input.LT(1);
@@ -1622,20 +1824,20 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "stmtBlock");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(85, 0);
+		dbg.location(92, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:14: ( OCURBRA ! ( stmt )* CCURBRA !)
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:14: ( OCURBRA ! ( stmt )* CCURBRA !)
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:16: OCURBRA ! ( stmt )* CCURBRA !
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:16: OCURBRA ! ( stmt )* CCURBRA !
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(85,23);
-			OCURBRA53=(Token)match(input,OCURBRA,FOLLOW_OCURBRA_in_stmtBlock1170); dbg.location(85,25);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:25: ( stmt )*
+			dbg.location(92,23);
+			OCURBRA53=(Token)match(input,OCURBRA,FOLLOW_OCURBRA_in_stmtBlock1332); dbg.location(92,25);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:25: ( stmt )*
 			try { dbg.enterSubRule(11);
 
 			loop11:
@@ -1654,10 +1856,10 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:85:25: stmt
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:25: stmt
 					{
-					dbg.location(85,25);
-					pushFollow(FOLLOW_stmt_in_stmtBlock1173);
+					dbg.location(92,25);
+					pushFollow(FOLLOW_stmt_in_stmtBlock1335);
 					stmt54=stmt();
 					state._fsp--;
 
@@ -1671,8 +1873,8 @@ public class MGPLParser extends DebugParser {
 				}
 			}
 			} finally {dbg.exitSubRule(11);}
-			dbg.location(85,38);
-			CCURBRA55=(Token)match(input,CCURBRA,FOLLOW_CCURBRA_in_stmtBlock1176); 
+			dbg.location(92,38);
+			CCURBRA55=(Token)match(input,CCURBRA,FOLLOW_CCURBRA_in_stmtBlock1338); 
 			}
 
 			retval.stop = input.LT(-1);
@@ -1689,7 +1891,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(85, 38);
+		dbg.location(92, 39);
 
 		}
 		finally {
@@ -1711,7 +1913,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "stmt"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:86:1: stmt : ( ifStmt | forStmt | assStmt );
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:1: stmt : ( ifStmt | forStmt | assStmt );
 	public final MGPLParser.stmt_return stmt() throws RecognitionException {
 		MGPLParser.stmt_return retval = new MGPLParser.stmt_return();
 		retval.start = input.LT(1);
@@ -1726,10 +1928,10 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "stmt");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(86, 0);
+		dbg.location(93, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:86:14: ( ifStmt | forStmt | assStmt )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:14: ( ifStmt | forStmt | assStmt )
 			int alt12=3;
 			try { dbg.enterDecision(12, decisionCanBacktrack[12]);
 
@@ -1761,13 +1963,13 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:86:16: ifStmt
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:16: ifStmt
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(86,16);
-					pushFollow(FOLLOW_ifStmt_in_stmt1192);
+					dbg.location(93,16);
+					pushFollow(FOLLOW_ifStmt_in_stmt1355);
 					ifStmt56=ifStmt();
 					state._fsp--;
 
@@ -1778,13 +1980,13 @@ public class MGPLParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:87:4: forStmt
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:94:4: forStmt
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(87,4);
-					pushFollow(FOLLOW_forStmt_in_stmt1198);
+					dbg.location(94,4);
+					pushFollow(FOLLOW_forStmt_in_stmt1361);
 					forStmt57=forStmt();
 					state._fsp--;
 
@@ -1795,13 +1997,13 @@ public class MGPLParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:88:4: assStmt
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:4: assStmt
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(88,4);
-					pushFollow(FOLLOW_assStmt_in_stmt1204);
+					dbg.location(95,4);
+					pushFollow(FOLLOW_assStmt_in_stmt1367);
 					assStmt58=assStmt();
 					state._fsp--;
 
@@ -1825,7 +2027,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(89, 1);
+		dbg.location(95, 10);
 
 		}
 		finally {
@@ -1847,7 +2049,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "ifStmt"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:90:1: ifStmt : IF ^ OPARAN ! expr CPARAN ! stmtBlock ( ELSE ^ stmtBlock )? ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:1: ifStmt : IF ^ OPARAN ! expr CPARAN ! stmtBlock ( ELSE ^ stmtBlock )? ;
 	public final MGPLParser.ifStmt_return ifStmt() throws RecognitionException {
 		MGPLParser.ifStmt_return retval = new MGPLParser.ifStmt_return();
 		retval.start = input.LT(1);
@@ -1870,37 +2072,37 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "ifStmt");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(90, 0);
+		dbg.location(96, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:90:14: ( IF ^ OPARAN ! expr CPARAN ! stmtBlock ( ELSE ^ stmtBlock )? )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:14: ( IF ^ OPARAN ! expr CPARAN ! stmtBlock ( ELSE ^ stmtBlock )? )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:90:16: IF ^ OPARAN ! expr CPARAN ! stmtBlock ( ELSE ^ stmtBlock )?
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:16: IF ^ OPARAN ! expr CPARAN ! stmtBlock ( ELSE ^ stmtBlock )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(90,18);
-			IF59=(Token)match(input,IF,FOLLOW_IF_in_ifStmt1219); 
+			dbg.location(96,18);
+			IF59=(Token)match(input,IF,FOLLOW_IF_in_ifStmt1380); 
 			IF59_tree = (CommonTree)adaptor.create(IF59);
 			root_0 = (CommonTree)adaptor.becomeRoot(IF59_tree, root_0);
-			dbg.location(90,26);
-			OPARAN60=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_ifStmt1222); dbg.location(90,28);
-			pushFollow(FOLLOW_expr_in_ifStmt1225);
+			dbg.location(96,26);
+			OPARAN60=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_ifStmt1383); dbg.location(96,28);
+			pushFollow(FOLLOW_expr_in_ifStmt1386);
 			expr61=expr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, expr61.getTree());
-			dbg.location(90,39);
-			CPARAN62=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_ifStmt1227); dbg.location(90,41);
-			pushFollow(FOLLOW_stmtBlock_in_ifStmt1230);
+			dbg.location(96,39);
+			CPARAN62=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_ifStmt1388); dbg.location(96,41);
+			pushFollow(FOLLOW_stmtBlock_in_ifStmt1391);
 			stmtBlock63=stmtBlock();
 			state._fsp--;
 
 			adaptor.addChild(root_0, stmtBlock63.getTree());
-			dbg.location(90,51);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:90:51: ( ELSE ^ stmtBlock )?
+			dbg.location(96,51);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:51: ( ELSE ^ stmtBlock )?
 			int alt13=2;
 			try { dbg.enterSubRule(13);
 			try { dbg.enterDecision(13, decisionCanBacktrack[13]);
@@ -1915,14 +2117,14 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:90:53: ELSE ^ stmtBlock
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:53: ELSE ^ stmtBlock
 					{
-					dbg.location(90,57);
-					ELSE64=(Token)match(input,ELSE,FOLLOW_ELSE_in_ifStmt1234); 
+					dbg.location(96,57);
+					ELSE64=(Token)match(input,ELSE,FOLLOW_ELSE_in_ifStmt1395); 
 					ELSE64_tree = (CommonTree)adaptor.create(ELSE64);
 					root_0 = (CommonTree)adaptor.becomeRoot(ELSE64_tree, root_0);
-					dbg.location(90,59);
-					pushFollow(FOLLOW_stmtBlock_in_ifStmt1237);
+					dbg.location(96,59);
+					pushFollow(FOLLOW_stmtBlock_in_ifStmt1398);
 					stmtBlock65=stmtBlock();
 					state._fsp--;
 
@@ -1950,7 +2152,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(90, 70);
+		dbg.location(96, 70);
 
 		}
 		finally {
@@ -1972,7 +2174,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "forStmt"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:91:1: forStmt : FOR ^ OPARAN ! assStmt2 SEMIKOL ! expr SEMIKOL ! assStmt2 CPARAN ! stmtBlock ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:97:1: forStmt : FOR ^ OPARAN ! assStmt2 SEMIKOL ! expr SEMIKOL ! assStmt2 CPARAN ! stmtBlock ;
 	public final MGPLParser.forStmt_return forStmt() throws RecognitionException {
 		MGPLParser.forStmt_return retval = new MGPLParser.forStmt_return();
 		retval.start = input.LT(1);
@@ -1998,45 +2200,45 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "forStmt");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(91, 0);
+		dbg.location(97, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:91:14: ( FOR ^ OPARAN ! assStmt2 SEMIKOL ! expr SEMIKOL ! assStmt2 CPARAN ! stmtBlock )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:97:14: ( FOR ^ OPARAN ! assStmt2 SEMIKOL ! expr SEMIKOL ! assStmt2 CPARAN ! stmtBlock )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:91:16: FOR ^ OPARAN ! assStmt2 SEMIKOL ! expr SEMIKOL ! assStmt2 CPARAN ! stmtBlock
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:97:16: FOR ^ OPARAN ! assStmt2 SEMIKOL ! expr SEMIKOL ! assStmt2 CPARAN ! stmtBlock
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(91,19);
-			FOR66=(Token)match(input,FOR,FOLLOW_FOR_in_forStmt1252); 
+			dbg.location(97,19);
+			FOR66=(Token)match(input,FOR,FOLLOW_FOR_in_forStmt1413); 
 			FOR66_tree = (CommonTree)adaptor.create(FOR66);
 			root_0 = (CommonTree)adaptor.becomeRoot(FOR66_tree, root_0);
-			dbg.location(91,27);
-			OPARAN67=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_forStmt1255); dbg.location(91,29);
-			pushFollow(FOLLOW_assStmt2_in_forStmt1258);
+			dbg.location(97,27);
+			OPARAN67=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_forStmt1416); dbg.location(97,29);
+			pushFollow(FOLLOW_assStmt2_in_forStmt1419);
 			assStmt268=assStmt2();
 			state._fsp--;
 
 			adaptor.addChild(root_0, assStmt268.getTree());
-			dbg.location(91,45);
-			SEMIKOL69=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_forStmt1260); dbg.location(91,47);
-			pushFollow(FOLLOW_expr_in_forStmt1263);
+			dbg.location(97,45);
+			SEMIKOL69=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_forStmt1421); dbg.location(97,47);
+			pushFollow(FOLLOW_expr_in_forStmt1424);
 			expr70=expr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, expr70.getTree());
-			dbg.location(91,59);
-			SEMIKOL71=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_forStmt1265); dbg.location(91,61);
-			pushFollow(FOLLOW_assStmt2_in_forStmt1268);
+			dbg.location(97,59);
+			SEMIKOL71=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_forStmt1426); dbg.location(97,61);
+			pushFollow(FOLLOW_assStmt2_in_forStmt1429);
 			assStmt272=assStmt2();
 			state._fsp--;
 
 			adaptor.addChild(root_0, assStmt272.getTree());
-			dbg.location(91,76);
-			CPARAN73=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_forStmt1270); dbg.location(91,78);
-			pushFollow(FOLLOW_stmtBlock_in_forStmt1273);
+			dbg.location(97,76);
+			CPARAN73=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_forStmt1431); dbg.location(97,78);
+			pushFollow(FOLLOW_stmtBlock_in_forStmt1434);
 			stmtBlock74=stmtBlock();
 			state._fsp--;
 
@@ -2058,7 +2260,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(91, 86);
+		dbg.location(97, 86);
 
 		}
 		finally {
@@ -2080,7 +2282,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "assStmt2"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:1: assStmt2 : var ASSIGN ^ expr ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:98:1: assStmt2 : var ASSIGN ^ expr ;
 	public final MGPLParser.assStmt2_return assStmt2() throws RecognitionException {
 		MGPLParser.assStmt2_return retval = new MGPLParser.assStmt2_return();
 		retval.start = input.LT(1);
@@ -2096,29 +2298,29 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "assStmt2");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(92, 0);
+		dbg.location(98, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:11: ( var ASSIGN ^ expr )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:98:11: ( var ASSIGN ^ expr )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:92:13: var ASSIGN ^ expr
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:98:13: var ASSIGN ^ expr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(92,13);
-			pushFollow(FOLLOW_var_in_assStmt21281);
+			dbg.location(98,13);
+			pushFollow(FOLLOW_var_in_assStmt21442);
 			var75=var();
 			state._fsp--;
 
 			adaptor.addChild(root_0, var75.getTree());
-			dbg.location(92,23);
-			ASSIGN76=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_assStmt21283); 
+			dbg.location(98,23);
+			ASSIGN76=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_assStmt21444); 
 			ASSIGN76_tree = (CommonTree)adaptor.create(ASSIGN76);
 			root_0 = (CommonTree)adaptor.becomeRoot(ASSIGN76_tree, root_0);
-			dbg.location(92,25);
-			pushFollow(FOLLOW_expr_in_assStmt21286);
+			dbg.location(98,25);
+			pushFollow(FOLLOW_expr_in_assStmt21447);
 			expr77=expr();
 			state._fsp--;
 
@@ -2140,7 +2342,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(92, 29);
+		dbg.location(98, 29);
 
 		}
 		finally {
@@ -2162,7 +2364,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "assStmt"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:1: assStmt : var ASSIGN ^ expr SEMIKOL !;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:99:1: assStmt : var ASSIGN expr SEMIKOL -> ^( ASSIGNMENT[\"Assignment\"] var ASSIGN expr ) ;
 	public final MGPLParser.assStmt_return assStmt() throws RecognitionException {
 		MGPLParser.assStmt_return retval = new MGPLParser.assStmt_return();
 		retval.start = input.LT(1);
@@ -2176,39 +2378,70 @@ public class MGPLParser extends DebugParser {
 
 		CommonTree ASSIGN79_tree=null;
 		CommonTree SEMIKOL81_tree=null;
+		RewriteRuleTokenStream stream_SEMIKOL=new RewriteRuleTokenStream(adaptor,"token SEMIKOL");
+		RewriteRuleTokenStream stream_ASSIGN=new RewriteRuleTokenStream(adaptor,"token ASSIGN");
+		RewriteRuleSubtreeStream stream_var=new RewriteRuleSubtreeStream(adaptor,"rule var");
+		RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
 
 		try { dbg.enterRule(getGrammarFileName(), "assStmt");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(93, 0);
+		dbg.location(99, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:14: ( var ASSIGN ^ expr SEMIKOL !)
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:99:14: ( var ASSIGN expr SEMIKOL -> ^( ASSIGNMENT[\"Assignment\"] var ASSIGN expr ) )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:93:16: var ASSIGN ^ expr SEMIKOL !
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:99:16: var ASSIGN expr SEMIKOL
 			{
-			root_0 = (CommonTree)adaptor.nil();
-
-
-			dbg.location(93,16);
-			pushFollow(FOLLOW_var_in_assStmt1299);
+			dbg.location(99,16);
+			pushFollow(FOLLOW_var_in_assStmt1460);
 			var78=var();
 			state._fsp--;
 
-			adaptor.addChild(root_0, var78.getTree());
-			dbg.location(93,26);
-			ASSIGN79=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_assStmt1301); 
-			ASSIGN79_tree = (CommonTree)adaptor.create(ASSIGN79);
-			root_0 = (CommonTree)adaptor.becomeRoot(ASSIGN79_tree, root_0);
-			dbg.location(93,28);
-			pushFollow(FOLLOW_expr_in_assStmt1304);
+			stream_var.add(var78.getTree());dbg.location(99,20);
+			ASSIGN79=(Token)match(input,ASSIGN,FOLLOW_ASSIGN_in_assStmt1462);  
+			stream_ASSIGN.add(ASSIGN79);
+			dbg.location(99,27);
+			pushFollow(FOLLOW_expr_in_assStmt1464);
 			expr80=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, expr80.getTree());
-			dbg.location(93,40);
-			SEMIKOL81=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_assStmt1306); 
+			stream_expr.add(expr80.getTree());dbg.location(99,32);
+			SEMIKOL81=(Token)match(input,SEMIKOL,FOLLOW_SEMIKOL_in_assStmt1466);  
+			stream_SEMIKOL.add(SEMIKOL81);
+
+			// AST REWRITE
+			// elements: expr, ASSIGN, var
+			// token labels: 
+			// rule labels: retval
+			// token list labels: 
+			// rule list labels: 
+			// wildcard labels: 
+			retval.tree = root_0;
+			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+			root_0 = (CommonTree)adaptor.nil();
+			// 99:40: -> ^( ASSIGNMENT[\"Assignment\"] var ASSIGN expr )
+			{
+				dbg.location(99,43);
+				// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:99:43: ^( ASSIGNMENT[\"Assignment\"] var ASSIGN expr )
+				{
+				CommonTree root_1 = (CommonTree)adaptor.nil();
+				dbg.location(99,45);
+				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ASSIGNMENT, "Assignment"), root_1);
+				dbg.location(99,70);
+				adaptor.addChild(root_1, stream_var.nextTree());dbg.location(99,74);
+				adaptor.addChild(root_1, stream_ASSIGN.nextNode());dbg.location(99,81);
+				adaptor.addChild(root_1, stream_expr.nextTree());
+				adaptor.addChild(root_0, root_1);
+				}
+
+			}
+
+
+			retval.tree = root_0;
+
 			}
 
 			retval.stop = input.LT(-1);
@@ -2225,7 +2458,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(93, 40);
+		dbg.location(99, 85);
 
 		}
 		finally {
@@ -2247,7 +2480,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "var"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:94:1: var : LDF ^ ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )? ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:1: var : LDF ^ ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )? ;
 	public final MGPLParser.var_return var() throws RecognitionException {
 		MGPLParser.var_return retval = new MGPLParser.var_return();
 		retval.start = input.LT(1);
@@ -2274,23 +2507,23 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "var");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(94, 0);
+		dbg.location(100, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:94:14: ( LDF ^ ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )? )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:14: ( LDF ^ ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )? )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:2: LDF ^ ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )?
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:2: LDF ^ ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(95,5);
-			LDF82=(Token)match(input,LDF,FOLLOW_LDF_in_var1326); 
+			dbg.location(101,5);
+			LDF82=(Token)match(input,LDF,FOLLOW_LDF_in_var1498); 
 			LDF82_tree = (CommonTree)adaptor.create(LDF82);
 			root_0 = (CommonTree)adaptor.becomeRoot(LDF82_tree, root_0);
-			dbg.location(95,7);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:7: ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )?
+			dbg.location(101,7);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:7: ( OBRACKET ! expr CBRACKET ! ( DOT LDF )? | DOT LDF )?
 			int alt15=3;
 			try { dbg.enterSubRule(15);
 			try { dbg.enterDecision(15, decisionCanBacktrack[15]);
@@ -2308,18 +2541,18 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:9: OBRACKET ! expr CBRACKET ! ( DOT LDF )?
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:9: OBRACKET ! expr CBRACKET ! ( DOT LDF )?
 					{
-					dbg.location(95,17);
-					OBRACKET83=(Token)match(input,OBRACKET,FOLLOW_OBRACKET_in_var1331); dbg.location(95,19);
-					pushFollow(FOLLOW_expr_in_var1334);
+					dbg.location(101,17);
+					OBRACKET83=(Token)match(input,OBRACKET,FOLLOW_OBRACKET_in_var1503); dbg.location(101,19);
+					pushFollow(FOLLOW_expr_in_var1506);
 					expr84=expr();
 					state._fsp--;
 
 					adaptor.addChild(root_0, expr84.getTree());
-					dbg.location(95,32);
-					CBRACKET85=(Token)match(input,CBRACKET,FOLLOW_CBRACKET_in_var1336); dbg.location(95,34);
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:34: ( DOT LDF )?
+					dbg.location(101,32);
+					CBRACKET85=(Token)match(input,CBRACKET,FOLLOW_CBRACKET_in_var1508); dbg.location(101,34);
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:34: ( DOT LDF )?
 					int alt14=2;
 					try { dbg.enterSubRule(14);
 					try { dbg.enterDecision(14, decisionCanBacktrack[14]);
@@ -2334,14 +2567,14 @@ public class MGPLParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:95:36: DOT LDF
+							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:36: DOT LDF
 							{
-							dbg.location(95,36);
-							DOT86=(Token)match(input,DOT,FOLLOW_DOT_in_var1341); 
+							dbg.location(101,36);
+							DOT86=(Token)match(input,DOT,FOLLOW_DOT_in_var1513); 
 							DOT86_tree = (CommonTree)adaptor.create(DOT86);
 							adaptor.addChild(root_0, DOT86_tree);
-							dbg.location(95,40);
-							LDF87=(Token)match(input,LDF,FOLLOW_LDF_in_var1343); 
+							dbg.location(101,40);
+							LDF87=(Token)match(input,LDF,FOLLOW_LDF_in_var1515); 
 							LDF87_tree = (CommonTree)adaptor.create(LDF87);
 							adaptor.addChild(root_0, LDF87_tree);
 
@@ -2356,14 +2589,14 @@ public class MGPLParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:96:5: DOT LDF
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:102:5: DOT LDF
 					{
-					dbg.location(96,5);
-					DOT88=(Token)match(input,DOT,FOLLOW_DOT_in_var1352); 
+					dbg.location(102,5);
+					DOT88=(Token)match(input,DOT,FOLLOW_DOT_in_var1524); 
 					DOT88_tree = (CommonTree)adaptor.create(DOT88);
 					adaptor.addChild(root_0, DOT88_tree);
-					dbg.location(96,9);
-					LDF89=(Token)match(input,LDF,FOLLOW_LDF_in_var1354); 
+					dbg.location(102,9);
+					LDF89=(Token)match(input,LDF,FOLLOW_LDF_in_var1526); 
 					LDF89_tree = (CommonTree)adaptor.create(LDF89);
 					adaptor.addChild(root_0, LDF89_tree);
 
@@ -2389,7 +2622,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(97, 1);
+		dbg.location(103, 1);
 
 		}
 		finally {
@@ -2411,7 +2644,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "expr"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:1: expr : ( OPARAN ! expr CPARAN !| ( op ( OPARAN ! expr CPARAN !)? )* );
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:1: expr : ( OPARAN ! expr CPARAN !| ( op ( OPARAN ! expr CPARAN !)? )* );
 	public final MGPLParser.expr_return expr() throws RecognitionException {
 		MGPLParser.expr_return retval = new MGPLParser.expr_return();
 		retval.start = input.LT(1);
@@ -2434,10 +2667,10 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "expr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(100, 0);
+		dbg.location(106, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:7: ( OPARAN ! expr CPARAN !| ( op ( OPARAN ! expr CPARAN !)? )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:7: ( OPARAN ! expr CPARAN !| ( op ( OPARAN ! expr CPARAN !)? )* )
 			int alt18=2;
 			try { dbg.enterDecision(18, decisionCanBacktrack[18]);
 
@@ -2445,7 +2678,7 @@ public class MGPLParser extends DebugParser {
 			if ( (LA18_0==OPARAN) ) {
 				alt18=1;
 			}
-			else if ( (LA18_0==CBRACKET||(LA18_0 >= COMMA && LA18_0 <= CPARAN)||LA18_0==LDF||(LA18_0 >= NOT && LA18_0 <= NUMBER)||LA18_0==SEMIKOL) ) {
+			else if ( (LA18_0==CBRACKET||(LA18_0 >= COMMA && LA18_0 <= CPARAN)||LA18_0==LDF||LA18_0==MINUS||(LA18_0 >= NOT && LA18_0 <= NUMBER)||LA18_0==SEMIKOL) ) {
 				alt18=2;
 			}
 
@@ -2462,32 +2695,32 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:10: OPARAN ! expr CPARAN !
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:10: OPARAN ! expr CPARAN !
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(100,16);
-					OPARAN90=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_expr1369); dbg.location(100,18);
-					pushFollow(FOLLOW_expr_in_expr1372);
+					dbg.location(106,16);
+					OPARAN90=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_expr1541); dbg.location(106,18);
+					pushFollow(FOLLOW_expr_in_expr1544);
 					expr91=expr();
 					state._fsp--;
 
 					adaptor.addChild(root_0, expr91.getTree());
-					dbg.location(100,29);
-					CPARAN92=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_expr1374); 
+					dbg.location(106,29);
+					CPARAN92=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_expr1546); 
 					}
 					break;
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:32: ( op ( OPARAN ! expr CPARAN !)? )*
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:4: ( op ( OPARAN ! expr CPARAN !)? )*
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(100,32);
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:32: ( op ( OPARAN ! expr CPARAN !)? )*
+					dbg.location(107,4);
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:4: ( op ( OPARAN ! expr CPARAN !)? )*
 					try { dbg.enterSubRule(17);
 
 					loop17:
@@ -2496,7 +2729,7 @@ public class MGPLParser extends DebugParser {
 						try { dbg.enterDecision(17, decisionCanBacktrack[17]);
 
 						int LA17_0 = input.LA(1);
-						if ( (LA17_0==LDF||(LA17_0 >= NOT && LA17_0 <= NUMBER)) ) {
+						if ( (LA17_0==LDF||LA17_0==MINUS||(LA17_0 >= NOT && LA17_0 <= NUMBER)) ) {
 							alt17=1;
 						}
 
@@ -2506,16 +2739,16 @@ public class MGPLParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:33: op ( OPARAN ! expr CPARAN !)?
+							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:5: op ( OPARAN ! expr CPARAN !)?
 							{
-							dbg.location(100,33);
-							pushFollow(FOLLOW_op_in_expr1379);
+							dbg.location(107,5);
+							pushFollow(FOLLOW_op_in_expr1554);
 							op93=op();
 							state._fsp--;
 
 							adaptor.addChild(root_0, op93.getTree());
-							dbg.location(100,36);
-							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:36: ( OPARAN ! expr CPARAN !)?
+							dbg.location(107,8);
+							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:8: ( OPARAN ! expr CPARAN !)?
 							int alt16=2;
 							try { dbg.enterSubRule(16);
 							try { dbg.enterDecision(16, decisionCanBacktrack[16]);
@@ -2530,17 +2763,17 @@ public class MGPLParser extends DebugParser {
 								case 1 :
 									dbg.enterAlt(1);
 
-									// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:100:37: OPARAN ! expr CPARAN !
+									// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:9: OPARAN ! expr CPARAN !
 									{
-									dbg.location(100,43);
-									OPARAN94=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_expr1382); dbg.location(100,45);
-									pushFollow(FOLLOW_expr_in_expr1385);
+									dbg.location(107,15);
+									OPARAN94=(Token)match(input,OPARAN,FOLLOW_OPARAN_in_expr1557); dbg.location(107,17);
+									pushFollow(FOLLOW_expr_in_expr1560);
 									expr95=expr();
 									state._fsp--;
 
 									adaptor.addChild(root_0, expr95.getTree());
-									dbg.location(100,56);
-									CPARAN96=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_expr1387); 
+									dbg.location(107,28);
+									CPARAN96=(Token)match(input,CPARAN,FOLLOW_CPARAN_in_expr1562); 
 									}
 									break;
 
@@ -2574,7 +2807,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(100, 62);
+		dbg.location(107, 34);
 
 		}
 		finally {
@@ -2596,7 +2829,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "op"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:1: op : konjunkt ( OR ^ konjunkt )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:1: op : konjunkt ( OR ^ konjunkt )* ;
 	public final MGPLParser.op_return op() throws RecognitionException {
 		MGPLParser.op_return retval = new MGPLParser.op_return();
 		retval.start = input.LT(1);
@@ -2612,25 +2845,25 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "op");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(101, 0);
+		dbg.location(108, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:5: ( konjunkt ( OR ^ konjunkt )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:5: ( konjunkt ( OR ^ konjunkt )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:7: konjunkt ( OR ^ konjunkt )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:7: konjunkt ( OR ^ konjunkt )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(101,7);
-			pushFollow(FOLLOW_konjunkt_in_op1402);
+			dbg.location(108,7);
+			pushFollow(FOLLOW_konjunkt_in_op1577);
 			konjunkt97=konjunkt();
 			state._fsp--;
 
 			adaptor.addChild(root_0, konjunkt97.getTree());
-			dbg.location(101,16);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:16: ( OR ^ konjunkt )*
+			dbg.location(108,16);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:16: ( OR ^ konjunkt )*
 			try { dbg.enterSubRule(19);
 
 			loop19:
@@ -2649,14 +2882,14 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:101:17: OR ^ konjunkt
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:17: OR ^ konjunkt
 					{
-					dbg.location(101,19);
-					OR98=(Token)match(input,OR,FOLLOW_OR_in_op1405); 
+					dbg.location(108,19);
+					OR98=(Token)match(input,OR,FOLLOW_OR_in_op1580); 
 					OR98_tree = (CommonTree)adaptor.create(OR98);
 					root_0 = (CommonTree)adaptor.becomeRoot(OR98_tree, root_0);
-					dbg.location(101,21);
-					pushFollow(FOLLOW_konjunkt_in_op1408);
+					dbg.location(108,21);
+					pushFollow(FOLLOW_konjunkt_in_op1583);
 					konjunkt99=konjunkt();
 					state._fsp--;
 
@@ -2687,7 +2920,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(101, 30);
+		dbg.location(108, 31);
 
 		}
 		finally {
@@ -2709,7 +2942,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "konjunkt"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:102:1: konjunkt : relat ( AND ^ relat )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:109:1: konjunkt : relat ( AND ^ relat )* ;
 	public final MGPLParser.konjunkt_return konjunkt() throws RecognitionException {
 		MGPLParser.konjunkt_return retval = new MGPLParser.konjunkt_return();
 		retval.start = input.LT(1);
@@ -2725,25 +2958,25 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "konjunkt");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(102, 0);
+		dbg.location(109, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:102:10: ( relat ( AND ^ relat )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:109:10: ( relat ( AND ^ relat )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:102:12: relat ( AND ^ relat )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:109:12: relat ( AND ^ relat )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(102,12);
-			pushFollow(FOLLOW_relat_in_konjunkt1417);
+			dbg.location(109,12);
+			pushFollow(FOLLOW_relat_in_konjunkt1593);
 			relat100=relat();
 			state._fsp--;
 
 			adaptor.addChild(root_0, relat100.getTree());
-			dbg.location(102,18);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:102:18: ( AND ^ relat )*
+			dbg.location(109,18);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:109:18: ( AND ^ relat )*
 			try { dbg.enterSubRule(20);
 
 			loop20:
@@ -2762,14 +2995,14 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:102:19: AND ^ relat
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:109:19: AND ^ relat
 					{
-					dbg.location(102,22);
-					AND101=(Token)match(input,AND,FOLLOW_AND_in_konjunkt1420); 
+					dbg.location(109,22);
+					AND101=(Token)match(input,AND,FOLLOW_AND_in_konjunkt1596); 
 					AND101_tree = (CommonTree)adaptor.create(AND101);
 					root_0 = (CommonTree)adaptor.becomeRoot(AND101_tree, root_0);
-					dbg.location(102,24);
-					pushFollow(FOLLOW_relat_in_konjunkt1423);
+					dbg.location(109,24);
+					pushFollow(FOLLOW_relat_in_konjunkt1599);
 					relat102=relat();
 					state._fsp--;
 
@@ -2800,7 +3033,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(102, 30);
+		dbg.location(109, 31);
 
 		}
 		finally {
@@ -2822,7 +3055,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "relat"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:103:1: relat : add ( ( EQUALS | LESS | LEQ ) ^ add )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:110:1: relat : add ( ( EQUALS | LESS | LEQ ) ^ add )* ;
 	public final MGPLParser.relat_return relat() throws RecognitionException {
 		MGPLParser.relat_return retval = new MGPLParser.relat_return();
 		retval.start = input.LT(1);
@@ -2838,25 +3071,25 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "relat");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(103, 0);
+		dbg.location(110, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:103:7: ( add ( ( EQUALS | LESS | LEQ ) ^ add )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:110:7: ( add ( ( EQUALS | LESS | LEQ ) ^ add )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:103:9: add ( ( EQUALS | LESS | LEQ ) ^ add )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:110:9: add ( ( EQUALS | LESS | LEQ ) ^ add )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(103,9);
-			pushFollow(FOLLOW_add_in_relat1432);
+			dbg.location(110,9);
+			pushFollow(FOLLOW_add_in_relat1609);
 			add103=add();
 			state._fsp--;
 
 			adaptor.addChild(root_0, add103.getTree());
-			dbg.location(103,13);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:103:13: ( ( EQUALS | LESS | LEQ ) ^ add )*
+			dbg.location(110,13);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:110:13: ( ( EQUALS | LESS | LEQ ) ^ add )*
 			try { dbg.enterSubRule(21);
 
 			loop21:
@@ -2875,9 +3108,9 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:103:14: ( EQUALS | LESS | LEQ ) ^ add
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:110:14: ( EQUALS | LESS | LEQ ) ^ add
 					{
-					dbg.location(103,35);
+					dbg.location(110,35);
 					set104=input.LT(1);
 					set104=input.LT(1);
 					if ( input.LA(1)==EQUALS||(input.LA(1) >= LEQ && input.LA(1) <= LESS) ) {
@@ -2889,8 +3122,8 @@ public class MGPLParser extends DebugParser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						dbg.recognitionException(mse);
 						throw mse;
-					}dbg.location(103,37);
-					pushFollow(FOLLOW_add_in_relat1448);
+					}dbg.location(110,37);
+					pushFollow(FOLLOW_add_in_relat1625);
 					add105=add();
 					state._fsp--;
 
@@ -2921,7 +3154,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(103, 41);
+		dbg.location(110, 42);
 
 		}
 		finally {
@@ -2943,7 +3176,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "add"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:104:1: add : mult ( ( PLUS | MINUS ) ^ mult )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:111:1: add : mult ( ( PLUS | MINUS ) ^ mult )* ;
 	public final MGPLParser.add_return add() throws RecognitionException {
 		MGPLParser.add_return retval = new MGPLParser.add_return();
 		retval.start = input.LT(1);
@@ -2959,25 +3192,25 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "add");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(104, 0);
+		dbg.location(111, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:104:5: ( mult ( ( PLUS | MINUS ) ^ mult )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:111:5: ( mult ( ( PLUS | MINUS ) ^ mult )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:104:7: mult ( ( PLUS | MINUS ) ^ mult )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:111:7: mult ( ( PLUS | MINUS ) ^ mult )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(104,7);
-			pushFollow(FOLLOW_mult_in_add1457);
+			dbg.location(111,7);
+			pushFollow(FOLLOW_mult_in_add1635);
 			mult106=mult();
 			state._fsp--;
 
 			adaptor.addChild(root_0, mult106.getTree());
-			dbg.location(104,12);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:104:12: ( ( PLUS | MINUS ) ^ mult )*
+			dbg.location(111,12);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:111:12: ( ( PLUS | MINUS ) ^ mult )*
 			try { dbg.enterSubRule(22);
 
 			loop22:
@@ -2986,7 +3219,17 @@ public class MGPLParser extends DebugParser {
 				try { dbg.enterDecision(22, decisionCanBacktrack[22]);
 
 				int LA22_0 = input.LA(1);
-				if ( (LA22_0==MINUS||LA22_0==PLUS) ) {
+				if ( (LA22_0==MINUS) ) {
+					int LA22_10 = input.LA(2);
+					if ( (LA22_10==NUMBER) ) {
+						alt22=1;
+					}
+					else if ( (LA22_10==LDF||LA22_10==MINUS||LA22_10==NOT) ) {
+						alt22=1;
+					}
+
+				}
+				else if ( (LA22_0==PLUS) ) {
 					alt22=1;
 				}
 
@@ -2996,9 +3239,9 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:104:13: ( PLUS | MINUS ) ^ mult
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:111:13: ( PLUS | MINUS ) ^ mult
 					{
-					dbg.location(104,27);
+					dbg.location(111,27);
 					set107=input.LT(1);
 					set107=input.LT(1);
 					if ( input.LA(1)==MINUS||input.LA(1)==PLUS ) {
@@ -3010,8 +3253,8 @@ public class MGPLParser extends DebugParser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						dbg.recognitionException(mse);
 						throw mse;
-					}dbg.location(104,29);
-					pushFollow(FOLLOW_mult_in_add1469);
+					}dbg.location(111,29);
+					pushFollow(FOLLOW_mult_in_add1647);
 					mult108=mult();
 					state._fsp--;
 
@@ -3042,7 +3285,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(104, 34);
+		dbg.location(111, 35);
 
 		}
 		finally {
@@ -3064,7 +3307,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "mult"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:105:1: mult : unary ( ( MULT | DIV ) ^ unary )* ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:1: mult : unary ( ( MULT | DIV ) ^ unary )* ;
 	public final MGPLParser.mult_return mult() throws RecognitionException {
 		MGPLParser.mult_return retval = new MGPLParser.mult_return();
 		retval.start = input.LT(1);
@@ -3080,25 +3323,25 @@ public class MGPLParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "mult");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(105, 0);
+		dbg.location(112, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:105:6: ( unary ( ( MULT | DIV ) ^ unary )* )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:6: ( unary ( ( MULT | DIV ) ^ unary )* )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:105:8: unary ( ( MULT | DIV ) ^ unary )*
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:8: unary ( ( MULT | DIV ) ^ unary )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(105,8);
-			pushFollow(FOLLOW_unary_in_mult1478);
+			dbg.location(112,8);
+			pushFollow(FOLLOW_unary_in_mult1657);
 			unary109=unary();
 			state._fsp--;
 
 			adaptor.addChild(root_0, unary109.getTree());
-			dbg.location(105,14);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:105:14: ( ( MULT | DIV ) ^ unary )*
+			dbg.location(112,14);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:14: ( ( MULT | DIV ) ^ unary )*
 			try { dbg.enterSubRule(23);
 
 			loop23:
@@ -3117,9 +3360,9 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:105:15: ( MULT | DIV ) ^ unary
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:112:15: ( MULT | DIV ) ^ unary
 					{
-					dbg.location(105,28);
+					dbg.location(112,28);
 					set110=input.LT(1);
 					set110=input.LT(1);
 					if ( input.LA(1)==DIV||input.LA(1)==MULT ) {
@@ -3131,8 +3374,8 @@ public class MGPLParser extends DebugParser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						dbg.recognitionException(mse);
 						throw mse;
-					}dbg.location(105,30);
-					pushFollow(FOLLOW_unary_in_mult1491);
+					}dbg.location(112,30);
+					pushFollow(FOLLOW_unary_in_mult1670);
 					unary111=unary();
 					state._fsp--;
 
@@ -3163,7 +3406,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(105, 36);
+		dbg.location(112, 37);
 
 		}
 		finally {
@@ -3185,7 +3428,7 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "unary"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:1: unary : ( NOT ^)? atom ;
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:1: unary : ( NOT ^| MINUS ^)? atom ;
 	public final MGPLParser.unary_return unary() throws RecognitionException {
 		MGPLParser.unary_return retval = new MGPLParser.unary_return();
 		retval.start = input.LT(1);
@@ -3193,27 +3436,29 @@ public class MGPLParser extends DebugParser {
 		CommonTree root_0 = null;
 
 		Token NOT112=null;
-		ParserRuleReturnScope atom113 =null;
+		Token MINUS113=null;
+		ParserRuleReturnScope atom114 =null;
 
 		CommonTree NOT112_tree=null;
+		CommonTree MINUS113_tree=null;
 
 		try { dbg.enterRule(getGrammarFileName(), "unary");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(106, 0);
+		dbg.location(113, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:7: ( ( NOT ^)? atom )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:7: ( ( NOT ^| MINUS ^)? atom )
 			dbg.enterAlt(1);
 
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:9: ( NOT ^)? atom
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:9: ( NOT ^| MINUS ^)? atom
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(106,9);
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:9: ( NOT ^)?
-			int alt24=2;
+			dbg.location(113,9);
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:9: ( NOT ^| MINUS ^)?
+			int alt24=3;
 			try { dbg.enterSubRule(24);
 			try { dbg.enterDecision(24, decisionCanBacktrack[24]);
 
@@ -3221,30 +3466,45 @@ public class MGPLParser extends DebugParser {
 			if ( (LA24_0==NOT) ) {
 				alt24=1;
 			}
+			else if ( (LA24_0==MINUS) ) {
+				alt24=2;
+			}
 			} finally {dbg.exitDecision(24);}
 
 			switch (alt24) {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:106:10: NOT ^
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:10: NOT ^
 					{
-					dbg.location(106,13);
-					NOT112=(Token)match(input,NOT,FOLLOW_NOT_in_unary1501); 
+					dbg.location(113,13);
+					NOT112=(Token)match(input,NOT,FOLLOW_NOT_in_unary1681); 
 					NOT112_tree = (CommonTree)adaptor.create(NOT112);
 					root_0 = (CommonTree)adaptor.becomeRoot(NOT112_tree, root_0);
+
+					}
+					break;
+				case 2 :
+					dbg.enterAlt(2);
+
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:113:17: MINUS ^
+					{
+					dbg.location(113,22);
+					MINUS113=(Token)match(input,MINUS,FOLLOW_MINUS_in_unary1686); 
+					MINUS113_tree = (CommonTree)adaptor.create(MINUS113);
+					root_0 = (CommonTree)adaptor.becomeRoot(MINUS113_tree, root_0);
 
 					}
 					break;
 
 			}
 			} finally {dbg.exitSubRule(24);}
-			dbg.location(106,17);
-			pushFollow(FOLLOW_atom_in_unary1506);
-			atom113=atom();
+			dbg.location(113,26);
+			pushFollow(FOLLOW_atom_in_unary1691);
+			atom114=atom();
 			state._fsp--;
 
-			adaptor.addChild(root_0, atom113.getTree());
+			adaptor.addChild(root_0, atom114.getTree());
 
 			}
 
@@ -3262,7 +3522,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(106, 21);
+		dbg.location(113, 30);
 
 		}
 		finally {
@@ -3284,28 +3544,28 @@ public class MGPLParser extends DebugParser {
 
 
 	// $ANTLR start "atom"
-	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:1: atom : ( NUMBER | var ( TOUCHES ^ var )? );
+	// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:114:1: atom : ( NUMBER | var ( TOUCHES ^ var )? );
 	public final MGPLParser.atom_return atom() throws RecognitionException {
 		MGPLParser.atom_return retval = new MGPLParser.atom_return();
 		retval.start = input.LT(1);
 
 		CommonTree root_0 = null;
 
-		Token NUMBER114=null;
-		Token TOUCHES116=null;
-		ParserRuleReturnScope var115 =null;
-		ParserRuleReturnScope var117 =null;
+		Token NUMBER115=null;
+		Token TOUCHES117=null;
+		ParserRuleReturnScope var116 =null;
+		ParserRuleReturnScope var118 =null;
 
-		CommonTree NUMBER114_tree=null;
-		CommonTree TOUCHES116_tree=null;
+		CommonTree NUMBER115_tree=null;
+		CommonTree TOUCHES117_tree=null;
 
 		try { dbg.enterRule(getGrammarFileName(), "atom");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(107, 0);
+		dbg.location(114, 0);
 
 		try {
-			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:7: ( NUMBER | var ( TOUCHES ^ var )? )
+			// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:114:7: ( NUMBER | var ( TOUCHES ^ var )? )
 			int alt26=2;
 			try { dbg.enterDecision(26, decisionCanBacktrack[26]);
 
@@ -3330,34 +3590,34 @@ public class MGPLParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:107:9: NUMBER
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:114:9: NUMBER
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(107,9);
-					NUMBER114=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_atom1515); 
-					NUMBER114_tree = (CommonTree)adaptor.create(NUMBER114);
-					adaptor.addChild(root_0, NUMBER114_tree);
+					dbg.location(114,9);
+					NUMBER115=(Token)match(input,NUMBER,FOLLOW_NUMBER_in_atom1700); 
+					NUMBER115_tree = (CommonTree)adaptor.create(NUMBER115);
+					adaptor.addChild(root_0, NUMBER115_tree);
 
 					}
 					break;
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:4: var ( TOUCHES ^ var )?
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:115:4: var ( TOUCHES ^ var )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(108,4);
-					pushFollow(FOLLOW_var_in_atom1521);
-					var115=var();
+					dbg.location(115,4);
+					pushFollow(FOLLOW_var_in_atom1706);
+					var116=var();
 					state._fsp--;
 
-					adaptor.addChild(root_0, var115.getTree());
-					dbg.location(108,9);
-					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:9: ( TOUCHES ^ var )?
+					adaptor.addChild(root_0, var116.getTree());
+					dbg.location(115,9);
+					// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:115:9: ( TOUCHES ^ var )?
 					int alt25=2;
 					try { dbg.enterSubRule(25);
 					try { dbg.enterDecision(25, decisionCanBacktrack[25]);
@@ -3372,18 +3632,18 @@ public class MGPLParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:108:10: TOUCHES ^ var
+							// /home/phrizzel/ponyshit/repo/compilerbau/MGPL.g:115:10: TOUCHES ^ var
 							{
-							dbg.location(108,17);
-							TOUCHES116=(Token)match(input,TOUCHES,FOLLOW_TOUCHES_in_atom1525); 
-							TOUCHES116_tree = (CommonTree)adaptor.create(TOUCHES116);
-							root_0 = (CommonTree)adaptor.becomeRoot(TOUCHES116_tree, root_0);
-							dbg.location(108,19);
-							pushFollow(FOLLOW_var_in_atom1528);
-							var117=var();
+							dbg.location(115,17);
+							TOUCHES117=(Token)match(input,TOUCHES,FOLLOW_TOUCHES_in_atom1710); 
+							TOUCHES117_tree = (CommonTree)adaptor.create(TOUCHES117);
+							root_0 = (CommonTree)adaptor.becomeRoot(TOUCHES117_tree, root_0);
+							dbg.location(115,19);
+							pushFollow(FOLLOW_var_in_atom1713);
+							var118=var();
 							state._fsp--;
 
-							adaptor.addChild(root_0, var117.getTree());
+							adaptor.addChild(root_0, var118.getTree());
 
 							}
 							break;
@@ -3409,7 +3669,7 @@ public class MGPLParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(109, 1);
+		dbg.location(115, 24);
 
 		}
 		finally {
@@ -3426,119 +3686,120 @@ public class MGPLParser extends DebugParser {
 
 
 
-	public static final BitSet FOLLOW_GAME_in_prog855 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_prog858 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_OPARAN_in_prog860 = new BitSet(new long[]{0x0000000000801000L});
-	public static final BitSet FOLLOW_attrAssList_in_prog863 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_prog866 = new BitSet(new long[]{0x0000104200400400L});
-	public static final BitSet FOLLOW_decl_in_prog869 = new BitSet(new long[]{0x0000104200400400L});
-	public static final BitSet FOLLOW_stmtBlock_in_prog872 = new BitSet(new long[]{0x0000000400000022L});
-	public static final BitSet FOLLOW_block_in_prog874 = new BitSet(new long[]{0x0000000400000022L});
-	public static final BitSet FOLLOW_varDecl_in_decl890 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_SEMIKOL_in_decl892 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_objDecl_in_decl899 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_SEMIKOL_in_decl901 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INT_in_varDecl916 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_varDecl919 = new BitSet(new long[]{0x0000000000000042L});
-	public static final BitSet FOLLOW_init_in_varDecl921 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INT_in_varDecl929 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_varDecl932 = new BitSet(new long[]{0x0000000100000000L});
-	public static final BitSet FOLLOW_OBRACKET_in_varDecl934 = new BitSet(new long[]{0x0000000080000000L});
-	public static final BitSet FOLLOW_NUMBER_in_varDecl937 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_CBRACKET_in_varDecl939 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ASSIGN_in_init957 = new BitSet(new long[]{0x00000008C0800000L});
-	public static final BitSet FOLLOW_expr_in_init959 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_objType_in_objDecl971 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_objDecl973 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_OPARAN_in_objDecl976 = new BitSet(new long[]{0x0000000000801000L});
-	public static final BitSet FOLLOW_attrAssList_in_objDecl979 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_objDecl982 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_objType_in_objDecl989 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_objDecl991 = new BitSet(new long[]{0x0000000100000000L});
-	public static final BitSet FOLLOW_OBRACKET_in_objDecl994 = new BitSet(new long[]{0x0000000080000000L});
-	public static final BitSet FOLLOW_NUMBER_in_objDecl997 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_CBRACKET_in_objDecl999 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_attrAss_in_attrAssList1029 = new BitSet(new long[]{0x0000000000000802L});
-	public static final BitSet FOLLOW_COMMA_in_attrAssList1032 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_attrAss_in_attrAssList1035 = new BitSet(new long[]{0x0000000000000802L});
-	public static final BitSet FOLLOW_LDF_in_attrAss1045 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_ASSIGN_in_attrAss1047 = new BitSet(new long[]{0x00000008C0800000L});
-	public static final BitSet FOLLOW_expr_in_attrAss1049 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_animBlock_in_block1077 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_eventBlock_in_block1083 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ANIMATION_in_animBlock1095 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_animBlock1098 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_OPARAN_in_animBlock1100 = new BitSet(new long[]{0x0000104000000400L});
-	public static final BitSet FOLLOW_objType_in_animBlock1103 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_animBlock1105 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_animBlock1107 = new BitSet(new long[]{0x0000000200000000L});
-	public static final BitSet FOLLOW_stmtBlock_in_animBlock1110 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ON_in_eventBlock1119 = new BitSet(new long[]{0x0000248001010000L});
-	public static final BitSet FOLLOW_keyStroke_in_eventBlock1122 = new BitSet(new long[]{0x0000000200000000L});
-	public static final BitSet FOLLOW_stmtBlock_in_eventBlock1124 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OCURBRA_in_stmtBlock1170 = new BitSet(new long[]{0x0000000000A80200L});
-	public static final BitSet FOLLOW_stmt_in_stmtBlock1173 = new BitSet(new long[]{0x0000000000A80200L});
-	public static final BitSet FOLLOW_CCURBRA_in_stmtBlock1176 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ifStmt_in_stmt1192 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forStmt_in_stmt1198 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_assStmt_in_stmt1204 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_IF_in_ifStmt1219 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_OPARAN_in_ifStmt1222 = new BitSet(new long[]{0x00000008C0801000L});
-	public static final BitSet FOLLOW_expr_in_ifStmt1225 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_ifStmt1227 = new BitSet(new long[]{0x0000000200000000L});
-	public static final BitSet FOLLOW_stmtBlock_in_ifStmt1230 = new BitSet(new long[]{0x0000000000020002L});
-	public static final BitSet FOLLOW_ELSE_in_ifStmt1234 = new BitSet(new long[]{0x0000000200000000L});
-	public static final BitSet FOLLOW_stmtBlock_in_ifStmt1237 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_FOR_in_forStmt1252 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_OPARAN_in_forStmt1255 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_assStmt2_in_forStmt1258 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_SEMIKOL_in_forStmt1260 = new BitSet(new long[]{0x00000108C0800000L});
-	public static final BitSet FOLLOW_expr_in_forStmt1263 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_SEMIKOL_in_forStmt1265 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_assStmt2_in_forStmt1268 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_forStmt1270 = new BitSet(new long[]{0x0000000200000000L});
-	public static final BitSet FOLLOW_stmtBlock_in_forStmt1273 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_var_in_assStmt21281 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_ASSIGN_in_assStmt21283 = new BitSet(new long[]{0x00000008C0800000L});
-	public static final BitSet FOLLOW_expr_in_assStmt21286 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_var_in_assStmt1299 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_ASSIGN_in_assStmt1301 = new BitSet(new long[]{0x00000108C0800000L});
-	public static final BitSet FOLLOW_expr_in_assStmt1304 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_SEMIKOL_in_assStmt1306 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LDF_in_var1326 = new BitSet(new long[]{0x0000000100008002L});
-	public static final BitSet FOLLOW_OBRACKET_in_var1331 = new BitSet(new long[]{0x00000008C0800100L});
-	public static final BitSet FOLLOW_expr_in_var1334 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_CBRACKET_in_var1336 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_DOT_in_var1341 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_var1343 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DOT_in_var1352 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_LDF_in_var1354 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OPARAN_in_expr1369 = new BitSet(new long[]{0x00000008C0801000L});
-	public static final BitSet FOLLOW_expr_in_expr1372 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_expr1374 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_op_in_expr1379 = new BitSet(new long[]{0x00000008C0800002L});
-	public static final BitSet FOLLOW_OPARAN_in_expr1382 = new BitSet(new long[]{0x00000008C0801000L});
-	public static final BitSet FOLLOW_expr_in_expr1385 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CPARAN_in_expr1387 = new BitSet(new long[]{0x00000000C0800002L});
-	public static final BitSet FOLLOW_konjunkt_in_op1402 = new BitSet(new long[]{0x0000001000000002L});
-	public static final BitSet FOLLOW_OR_in_op1405 = new BitSet(new long[]{0x00000000C0800000L});
-	public static final BitSet FOLLOW_konjunkt_in_op1408 = new BitSet(new long[]{0x0000001000000002L});
-	public static final BitSet FOLLOW_relat_in_konjunkt1417 = new BitSet(new long[]{0x0000000000000012L});
-	public static final BitSet FOLLOW_AND_in_konjunkt1420 = new BitSet(new long[]{0x00000000C0800000L});
-	public static final BitSet FOLLOW_relat_in_konjunkt1423 = new BitSet(new long[]{0x0000000000000012L});
-	public static final BitSet FOLLOW_add_in_relat1432 = new BitSet(new long[]{0x0000000006040002L});
-	public static final BitSet FOLLOW_set_in_relat1435 = new BitSet(new long[]{0x00000000C0800000L});
-	public static final BitSet FOLLOW_add_in_relat1448 = new BitSet(new long[]{0x0000000006040002L});
-	public static final BitSet FOLLOW_mult_in_add1457 = new BitSet(new long[]{0x0000002010000002L});
-	public static final BitSet FOLLOW_set_in_add1460 = new BitSet(new long[]{0x00000000C0800000L});
-	public static final BitSet FOLLOW_mult_in_add1469 = new BitSet(new long[]{0x0000002010000002L});
-	public static final BitSet FOLLOW_unary_in_mult1478 = new BitSet(new long[]{0x0000000020004002L});
-	public static final BitSet FOLLOW_set_in_mult1481 = new BitSet(new long[]{0x00000000C0800000L});
-	public static final BitSet FOLLOW_unary_in_mult1491 = new BitSet(new long[]{0x0000000020004002L});
-	public static final BitSet FOLLOW_NOT_in_unary1501 = new BitSet(new long[]{0x0000000080800000L});
-	public static final BitSet FOLLOW_atom_in_unary1506 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NUMBER_in_atom1515 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_var_in_atom1521 = new BitSet(new long[]{0x0000080000000002L});
-	public static final BitSet FOLLOW_TOUCHES_in_atom1525 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_var_in_atom1528 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GAME_in_prog952 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_prog954 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_OPARAN_in_prog956 = new BitSet(new long[]{0x0000000008008000L});
+	public static final BitSet FOLLOW_attrAssList_in_prog958 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_prog961 = new BitSet(new long[]{0x0008104004002000L});
+	public static final BitSet FOLLOW_decl_in_prog963 = new BitSet(new long[]{0x0008104004002000L});
+	public static final BitSet FOLLOW_stmtBlock_in_prog966 = new BitSet(new long[]{0x0000008000000042L});
+	public static final BitSet FOLLOW_block_in_prog968 = new BitSet(new long[]{0x0000008000000042L});
+	public static final BitSet FOLLOW_varDecl_in_decl1020 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_SEMIKOL_in_decl1022 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_objDecl_in_decl1038 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_SEMIKOL_in_decl1040 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_INT_in_varDecl1063 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_varDecl1066 = new BitSet(new long[]{0x0000000000000082L});
+	public static final BitSet FOLLOW_init_in_varDecl1068 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_INT_in_varDecl1076 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_varDecl1079 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_OBRACKET_in_varDecl1081 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_NUMBER_in_varDecl1084 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBRACKET_in_varDecl1086 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ASSIGN_in_init1103 = new BitSet(new long[]{0x0000010D08000000L});
+	public static final BitSet FOLLOW_expr_in_init1105 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_objType_in_objDecl1118 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_objDecl1120 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_OPARAN_in_objDecl1123 = new BitSet(new long[]{0x0000000008008000L});
+	public static final BitSet FOLLOW_attrAssList_in_objDecl1126 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_objDecl1129 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_objType_in_objDecl1136 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_objDecl1138 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_OBRACKET_in_objDecl1141 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_NUMBER_in_objDecl1144 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBRACKET_in_objDecl1146 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_attrAss_in_attrAssList1175 = new BitSet(new long[]{0x0000000000004002L});
+	public static final BitSet FOLLOW_COMMA_in_attrAssList1178 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_attrAss_in_attrAssList1180 = new BitSet(new long[]{0x0000000000004002L});
+	public static final BitSet FOLLOW_LDF_in_attrAss1190 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_ASSIGN_in_attrAss1192 = new BitSet(new long[]{0x0000010D08000000L});
+	public static final BitSet FOLLOW_expr_in_attrAss1194 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_animBlock_in_block1223 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_eventBlock_in_block1238 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ANIMATION_in_animBlock1257 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_animBlock1259 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_OPARAN_in_animBlock1261 = new BitSet(new long[]{0x0008100000002000L});
+	public static final BitSet FOLLOW_objType_in_animBlock1264 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_animBlock1266 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_animBlock1268 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_stmtBlock_in_animBlock1271 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ON_in_eventBlock1281 = new BitSet(new long[]{0x0011200010080000L});
+	public static final BitSet FOLLOW_keyStroke_in_eventBlock1284 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_stmtBlock_in_eventBlock1286 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OCURBRA_in_stmtBlock1332 = new BitSet(new long[]{0x000000000A801000L});
+	public static final BitSet FOLLOW_stmt_in_stmtBlock1335 = new BitSet(new long[]{0x000000000A801000L});
+	public static final BitSet FOLLOW_CCURBRA_in_stmtBlock1338 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ifStmt_in_stmt1355 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forStmt_in_stmt1361 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_assStmt_in_stmt1367 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_IF_in_ifStmt1380 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_OPARAN_in_ifStmt1383 = new BitSet(new long[]{0x0000010D08008000L});
+	public static final BitSet FOLLOW_expr_in_ifStmt1386 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_ifStmt1388 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_stmtBlock_in_ifStmt1391 = new BitSet(new long[]{0x0000000000100002L});
+	public static final BitSet FOLLOW_ELSE_in_ifStmt1395 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_stmtBlock_in_ifStmt1398 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FOR_in_forStmt1413 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_OPARAN_in_forStmt1416 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_assStmt2_in_forStmt1419 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_SEMIKOL_in_forStmt1421 = new BitSet(new long[]{0x0000410D08000000L});
+	public static final BitSet FOLLOW_expr_in_forStmt1424 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_SEMIKOL_in_forStmt1426 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_assStmt2_in_forStmt1429 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_forStmt1431 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_stmtBlock_in_forStmt1434 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_var_in_assStmt21442 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_ASSIGN_in_assStmt21444 = new BitSet(new long[]{0x0000010D08000000L});
+	public static final BitSet FOLLOW_expr_in_assStmt21447 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_var_in_assStmt1460 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_ASSIGN_in_assStmt1462 = new BitSet(new long[]{0x0000410D08000000L});
+	public static final BitSet FOLLOW_expr_in_assStmt1464 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_SEMIKOL_in_assStmt1466 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LDF_in_var1498 = new BitSet(new long[]{0x0000002000040002L});
+	public static final BitSet FOLLOW_OBRACKET_in_var1503 = new BitSet(new long[]{0x0000010D08000800L});
+	public static final BitSet FOLLOW_expr_in_var1506 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CBRACKET_in_var1508 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_DOT_in_var1513 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_var1515 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DOT_in_var1524 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_LDF_in_var1526 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OPARAN_in_expr1541 = new BitSet(new long[]{0x0000010D08008000L});
+	public static final BitSet FOLLOW_expr_in_expr1544 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_expr1546 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_op_in_expr1554 = new BitSet(new long[]{0x0000010D08000002L});
+	public static final BitSet FOLLOW_OPARAN_in_expr1557 = new BitSet(new long[]{0x0000010D08008000L});
+	public static final BitSet FOLLOW_expr_in_expr1560 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_CPARAN_in_expr1562 = new BitSet(new long[]{0x0000000D08000002L});
+	public static final BitSet FOLLOW_konjunkt_in_op1577 = new BitSet(new long[]{0x0000020000000002L});
+	public static final BitSet FOLLOW_OR_in_op1580 = new BitSet(new long[]{0x0000000D08000000L});
+	public static final BitSet FOLLOW_konjunkt_in_op1583 = new BitSet(new long[]{0x0000020000000002L});
+	public static final BitSet FOLLOW_relat_in_konjunkt1593 = new BitSet(new long[]{0x0000000000000012L});
+	public static final BitSet FOLLOW_AND_in_konjunkt1596 = new BitSet(new long[]{0x0000000D08000000L});
+	public static final BitSet FOLLOW_relat_in_konjunkt1599 = new BitSet(new long[]{0x0000000000000012L});
+	public static final BitSet FOLLOW_add_in_relat1609 = new BitSet(new long[]{0x0000000060200002L});
+	public static final BitSet FOLLOW_set_in_relat1612 = new BitSet(new long[]{0x0000000D08000000L});
+	public static final BitSet FOLLOW_add_in_relat1625 = new BitSet(new long[]{0x0000000060200002L});
+	public static final BitSet FOLLOW_mult_in_add1635 = new BitSet(new long[]{0x0000040100000002L});
+	public static final BitSet FOLLOW_set_in_add1638 = new BitSet(new long[]{0x0000000D08000000L});
+	public static final BitSet FOLLOW_mult_in_add1647 = new BitSet(new long[]{0x0000040100000002L});
+	public static final BitSet FOLLOW_unary_in_mult1657 = new BitSet(new long[]{0x0000000200020002L});
+	public static final BitSet FOLLOW_set_in_mult1660 = new BitSet(new long[]{0x0000000D08000000L});
+	public static final BitSet FOLLOW_unary_in_mult1670 = new BitSet(new long[]{0x0000000200020002L});
+	public static final BitSet FOLLOW_NOT_in_unary1681 = new BitSet(new long[]{0x0000000808000000L});
+	public static final BitSet FOLLOW_MINUS_in_unary1686 = new BitSet(new long[]{0x0000000808000000L});
+	public static final BitSet FOLLOW_atom_in_unary1691 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_NUMBER_in_atom1700 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_var_in_atom1706 = new BitSet(new long[]{0x0004000000000002L});
+	public static final BitSet FOLLOW_TOUCHES_in_atom1710 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_var_in_atom1713 = new BitSet(new long[]{0x0000000000000002L});
 }
