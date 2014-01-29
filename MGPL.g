@@ -1,97 +1,81 @@
 grammar MGPL;
 
 options {
-	backtrack=false;
+    backtrack=false;
 }
 
 // token rules -- complete like mgpl enbf a2
 tokens {
-        GAME        = 'game';
-        INT         = 'int';
-        DOT         = '.';
-        SEMIKOL     = ';';
-        OPARAN      = '(';
-        CPARAN      = ')';
-        OBRACKET    = '[';
-        CBRACKET    = ']';
-        OCURBRA     = '{';
-        CCURBRA     = '}';
-        ASSIGN      = '=';
-        NOT         = '!';
-        OR          = '||';
-        AND         = '&&';
-        EQUALS      = '==';
-        LESS        = '<';
-        LEQ         = '<=';
-        PLUS        = '+';
-        MINUS       = '-';
-        MULT        = '*';
-        DIV         = '/';
-        IF          = 'if';
-        ELSE        = 'else';
-        FOR         = 'for';
-        RECTANGLE   = 'rectangle';
-        TRIANGLE    = 'triangle';
-        CIRCLE      = 'circle';
-        ANIMATION   = 'animation';
-        ON          = 'on';
-        SPACE       = 'space';
-        LEFTARROW   = 'leftarrow';
-        RIGHTARROW  = 'rightarrow';
-        UPARROW     = 'uparrow';
-        DOWNARROW   = 'downarrow';
-        TOUCHES     = 'touches';
-}
-
-// java header
-@header {
-package antlr.projekt1;
-}
-
-@lexer::header {
-package antlr.projekt2;
+    INT         = 'int';
+    ASSIGN      = '=';
+    NOT         = '!';
+    OR          = '||';
+    AND         = '&&';
+    EQUALS      = '==';
+    LESS        = '<';
+    LEQ         = '<=';
+    PLUS        = '+';
+    MINUS       = '-';
+    MULT        = '*';
+    DIV         = '/';
+    IF          = 'if';
+    ELSE        = 'else';
+    FOR         = 'for';
+    RECTANGLE   = 'rectangle';
+    TRIANGLE    = 'triangle';
+    CIRCLE      = 'circle';
+    ANIMATION   = 'animation';
+    ON          = 'on';
+    SPACE       = 'space';
+    LEFTARROW   = 'leftarrow';
+    RIGHTARROW  = 'rightarrow';
+    UPARROW     = 'uparrow';
+    DOWNARROW   = 'downarrow';
+    TOUCHES     = 'touches';
 }
 
 // parser rules
-prog        : GAME LDF OPARAN attrAssList? CPARAN decl* stmtBlock block*;
-decl        : varDecl SEMIKOL | objDecl SEMIKOL;
-varDecl     : ( INT LDF init? ) | ( INT LDF OBRACKET NUMBER CBRACKET );
+prog        : 'game' LDF '(' attrAssList? ')' decl* stmtBlock block*;
+decl        : varDecl ';' | objDecl ';' ;
+varDecl     : ( INT LDF init? ) | ( INT LDF '[' NUMBER ']' );
 init        : ASSIGN expr;
-objDecl     : objType LDF OPARAN attrAssList? CPARAN | objType LDF OBRACKET NUMBER CBRACKET;
+objDecl     : objType LDF '[' attrAssList? ']' | objType LDF '[' NUMBER ']';
 objType     : RECTANGLE | TRIANGLE | CIRCLE;
-attrAssList : ( LDF ASSIGN expr ) ( SEMIKOL LDF ASSIGN expr )*;
+attrAssList : ( LDF ASSIGN expr ) ( ';' LDF ASSIGN expr )*;
 block       : animBlock | eventBlock;
-animBlock   : ANIMATION LDF OPARAN objType LDF CPARAN stmtBlock;
+animBlock   : ANIMATION LDF '(' objType LDF ')' stmtBlock;
 eventBlock  : ON keyStroke stmtBlock;
 keyStroke   : SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW;
-stmtBlock   : OCURBRA stmt* CCURBRA;
+stmtBlock   : '{' stmt* '}' ;
 stmt        : ifStmt | forStmt | assStmt;
-ifStmt      : IF OPARAN expr CPARAN stmtBlock ( ELSE stmtBlock )?;
-forStmt     : FOR OPARAN assStmt SEMIKOL expr SEMIKOL assStmt CPARAN stmtBlock;
+ifStmt      : IF '(' expr ')' stmtBlock ( ELSE stmtBlock )?;
+forStmt     : FOR '(' assStmt ';' expr ';' assStmt ')' stmtBlock;
 assStmt     : var ASSIGN expr;
-var         : LDF ( OBRACKET expr CBRACKET ( DOT LDF)?  | DOT LDF )?;
-// expressions 
+var         : LDF ( '[' expr ']' ( '.' LDF)?  | '.' LDF )?;
+
+// expressions
 // expr standard expressions := num | var | ( expr) | not |...
 expr        : ( ground |unary ground ) op?;
+
 // ground expressions
-ground      : NUMBER | var ( TOUCHES var )? | OPARAN expr CPARAN ;
+ground      : NUMBER | var ( TOUCHES var )? | '(' expr ')' ;
+
 // operator precedence
 op          : multExpr;
 multExpr    : addExpr ((MULT | DIV) ground)* ;
-addExpr	    : relatExpr ((MINUS | PLUS) ground)*;
+addExpr     : relatExpr ((MINUS | PLUS) ground)*;
 relatExpr   : andExpr ((EQUALS | LESS | LEQ) ground)*;
 andExpr     : orExpr (AND ground)*;
-orExpr 	    : OR ground;
+orExpr      : OR ground;
 unary       : (MINUS | NOT) ;
 
 // lexer rules
 LDF                 :   ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*;
-//CHAR                :   ( LOWCASE | UPCASE );
 NUMBER              :   ( DIGIT )+;
-//NEGNUMBER         :   ( DIGIT )+;
 fragment LOWCASE    :   'a' .. 'z';
 fragment UPCASE     :   'A' ..  'Z';
 fragment DIGIT      :   '0' .. '9';
-WS		    : ( ' ' | '\r' | '\t' | '\u000C' | '\n' ) {skip();};
+
+WS          : ( ' ' | '\r' | '\t' | '\u000C' | '\n' ) {skip();};
 // comments
-SINGLE_COMMENT	    : '//' ~( '\r' | '\n' )* 	{ skip();};
+SINGLE_COMMENT      : '//' ~( '\r' | '\n' )*    { skip();};
