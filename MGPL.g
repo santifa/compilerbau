@@ -1,81 +1,78 @@
+//Henrik Jürges 751237
+//Fritz Meiners 743338
+
 grammar MGPL;
 
 options {
     backtrack=false;
+    ASTLabelType=CommonTree;
+    output=AST;
+    k=1;
 }
 
-// token rules -- complete like mgpl enbf a2
 tokens {
-    INT         = 'int';
-    ASSIGN      = '=';
-    NOT         = '!';
-    OR          = '||';
-    AND         = '&&';
-    EQUALS      = '==';
-    LESS        = '<';
-    LEQ         = '<=';
-    PLUS        = '+';
-    MINUS       = '-';
-    MULT        = '*';
-    DIV         = '/';
-    IF          = 'if';
-    ELSE        = 'else';
-    FOR         = 'for';
-    RECTANGLE   = 'rectangle';
-    TRIANGLE    = 'triangle';
-    CIRCLE      = 'circle';
-    ANIMATION   = 'animation';
-    ON          = 'on';
-    SPACE       = 'space';
-    LEFTARROW   = 'leftarrow';
-    RIGHTARROW  = 'rightarrow';
-    UPARROW     = 'uparrow';
-    DOWNARROW   = 'downarrow';
-    TOUCHES     = 'touches';
+    NOT             = '!';
+    OR              = '||';
+    AND             = '&&';
+    EQUALS          = '==';
+    LESS            = '<';
+    LEQ             = '<=';
+    PLUS            = '+';
+    MINUS           = '-';
+    MULT            = '*';
+    DIV             = '/';
+    ATTR;
+    ATTR2;
+    OBJDECL;
+    VARDECL;
+    ANIM;
+    EVENT;
+    ASSIGNMENT;
+    PROG;
+    STMT;
+    STMTBLOCK;
 }
+
 
 // parser rules
-prog        : 'game' LDF '(' attrAssList? ')' decl* stmtBlock block*;
-decl        : varDecl ';' | objDecl ';' ;
-varDecl     : ( INT LDF init? ) | ( INT LDF '[' NUMBER ']' );
-init        : ASSIGN expr;
-objDecl     : objType LDF '[' attrAssList? ']' | objType LDF '[' NUMBER ']';
-objType     : RECTANGLE | TRIANGLE | CIRCLE;
-attrAssList : ( LDF ASSIGN expr ) ( ';' LDF ASSIGN expr )*;
-block       : animBlock | eventBlock;
-animBlock   : ANIMATION LDF '(' objType LDF ')' stmtBlock;
-eventBlock  : ON keyStroke stmtBlock;
-keyStroke   : SPACE | LEFTARROW | RIGHTARROW | UPARROW | DOWNARROW;
-stmtBlock   : '{' stmt* '}' ;
-stmt        : ifStmt | forStmt | assStmt;
-ifStmt      : IF '(' expr ')' stmtBlock ( ELSE stmtBlock )?;
-forStmt     : FOR '(' assStmt ';' expr ';' assStmt ')' stmtBlock;
-assStmt     : var ASSIGN expr;
-var         : LDF ( '[' expr ']' ( '.' LDF)?  | '.' LDF )?;
+prog            : 'game' IDF '(' attrAssList? ')' decl* stmtBlock block* EOF  -> ^(PROG["Game"] IDF) ^(ATTR2["Attribute"] attrAssList?) ^(PROG["Declaration"] decl*) ^(STMT["Statements"] stmtBlock) block*;
+decl            : varDecl ';'  -> ^(VARDECL["Variable"] varDecl ) | objDecl ';' -> ^(OBJDECL["Object"] objDecl );
+varDecl         : 'int'^ IDF (init? | '['! NUMBER ']'!);
+init            : '=' expr;
+objDecl         : objType IDF^ '['! (attrAssList? | NUMBER) ']'!;
+objType         : 'rectangle' | 'triangle' | 'circle';
+attrAssList     : attrAss (',' attrAss)*;
+attrAss         : IDF '=' expr -> ^(ATTR ["Attribut"] IDF '='! expr);
+block           : animBlock -> ^(ANIM["Animation"] animBlock) | eventBlock -> ^(EVENT["Event"] eventBlock);
+animBlock       : 'animation'! IDF '('! objType IDF ')'! stmtBlock;
+eventBlock      : 'on' keyStroke stmtBlock;
+keyStroke       : 'space' | 'leftarrow' | 'rightarrow' | 'uparrow' | 'downarrow';
+stmtBlock       : '{' stmt* '}' -> ^(STMTBLOCK["Statement"] stmt*);
+stmt            : ifStmt | forStmt | assStmt;
+ifStmt          : 'if'^ '('! expr ')'! stmtBlock (elseStmt)?;
+elseStmt        : 'else'^ stmtBlock;
+forStmt         : 'for'^ '('! assStmt2 ';'! expr ';'! assStmt2 ')'! stmtBlock;
+assStmt2        : var '='^ expr;
+assStmt         : var '=' expr ';' -> ^(ASSIGNMENT["Assignment"] var '='! expr);
+var             : IDF^ ( '['! expr ']'! ( '.' IDF)? | '.' IDF)?;
 
-// expressions
-// expr standard expressions := num | var | ( expr) | not |...
-expr        : ( ground |unary ground ) op?;
-
-// ground expressions
-ground      : NUMBER | var ( TOUCHES var )? | '(' expr ')' ;
-
-// operator precedence
-op          : multExpr;
-multExpr    : addExpr ((MULT | DIV) ground)* ;
-addExpr     : relatExpr ((MINUS | PLUS) ground)*;
-relatExpr   : andExpr ((EQUALS | LESS | LEQ) ground)*;
-andExpr     : orExpr (AND ground)*;
-orExpr      : OR ground;
-unary       : (MINUS | NOT) ;
+// expressions with paran and precedence
+expr     : disj;
+disj     : conj (OR^ conj)*;
+conj     : relat (AND^ relat)*;
+relat    : add ((EQUALS | LESS | LEQ)^ add)*;
+add      : mult ((PLUS | MINUS)^ mult)*;
+mult     : unary ((MULT | DIV)^ unary)*;
+unary    : (NOT | MINUS)* atom;
+atom     : NUMBER | var ('touches'^ var)? | '(' expr ')';
 
 // lexer rules
-LDF                 :   ( LOWCASE | UPCASE ) ( '_' | DIGIT | LOWCASE | UPCASE )*;
-NUMBER              :   ( DIGIT )+;
-fragment LOWCASE    :   'a' .. 'z';
-fragment UPCASE     :   'A' ..  'Z';
-fragment DIGIT      :   '0' .. '9';
+IDF              : (LOWCASE | UPCASE) ('_' | DIGIT | LOWCASE | UPCASE)*;
+NUMBER           : (DIGIT)+;
+fragment LOWCASE : 'a' .. 'z';
+fragment UPCASE  : 'A' ..  'Z';
+fragment DIGIT   : '0' .. '9';
+WS               : (' ' | '\r' | '\t' | '\u000C' | '\n') {skip();};
 
-WS          : ( ' ' | '\r' | '\t' | '\u000C' | '\n' ) {skip();};
 // comments
-SINGLE_COMMENT      : '//' ~( '\r' | '\n' )*    { skip();};
+SINGLE_COMMENT   : '//' ~('\r' | '\n')* { $channel=HIDDEN;};
