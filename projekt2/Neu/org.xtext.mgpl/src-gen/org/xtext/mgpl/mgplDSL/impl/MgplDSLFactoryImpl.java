@@ -79,8 +79,10 @@ public class MgplDSLFactoryImpl extends EFactoryImpl implements MgplDSLFactory
       case MgplDSLPackage.ASS_STMT2: return createAssStmt2();
       case MgplDSLPackage.ATTR_LIST: return createAttrList();
       case MgplDSLPackage.ATTR_ASS: return createAttrAss();
-      case MgplDSLPackage.VARI: return createVARI();
+      case MgplDSLPackage.BOOL: return createBOOL();
+      case MgplDSLPackage.ARI: return createARI();
       case MgplDSLPackage.ATOM: return createAtom();
+      case MgplDSLPackage.VARI: return createVARI();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -256,10 +258,21 @@ public class MgplDSLFactoryImpl extends EFactoryImpl implements MgplDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VARI createVARI()
+  public BOOL createBOOL()
   {
-    VARIImpl vari = new VARIImpl();
-    return vari;
+    BOOLImpl bool = new BOOLImpl();
+    return bool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ARI createARI()
+  {
+    ARIImpl ari = new ARIImpl();
+    return ari;
   }
 
   /**
@@ -271,6 +284,17 @@ public class MgplDSLFactoryImpl extends EFactoryImpl implements MgplDSLFactory
   {
     AtomImpl atom = new AtomImpl();
     return atom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VARI createVARI()
+  {
+    VARIImpl vari = new VARIImpl();
+    return vari;
   }
 
   /**

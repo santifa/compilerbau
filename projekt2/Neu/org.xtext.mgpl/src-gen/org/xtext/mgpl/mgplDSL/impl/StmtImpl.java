@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.mgpl.mgplDSL.BOOL;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.Stmt;
-import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ public class StmtImpl extends MinimalEObjectImpl.Container implements Stmt
    * @generated
    * @ordered
    */
-  protected VARI expr;
+  protected BOOL expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class StmtImpl extends MinimalEObjectImpl.Container implements Stmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public VARI getExpr()
+  public BOOL getExpr()
   {
     return expr;
   }
@@ -76,9 +76,9 @@ public class StmtImpl extends MinimalEObjectImpl.Container implements Stmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(BOOL newExpr, NotificationChain msgs)
   {
-    VARI oldExpr = expr;
+    BOOL oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class StmtImpl extends MinimalEObjectImpl.Container implements Stmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(VARI newExpr)
+  public void setExpr(BOOL newExpr)
   {
     if (newExpr != expr)
     {
@@ -152,7 +152,7 @@ public class StmtImpl extends MinimalEObjectImpl.Container implements Stmt
     switch (featureID)
     {
       case MgplDSLPackage.STMT__EXPR:
-        setExpr((VARI)newValue);
+        setExpr((BOOL)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class StmtImpl extends MinimalEObjectImpl.Container implements Stmt
     switch (featureID)
     {
       case MgplDSLPackage.STMT__EXPR:
-        setExpr((VARI)null);
+        setExpr((BOOL)null);
         return;
     }
     super.eUnset(featureID);

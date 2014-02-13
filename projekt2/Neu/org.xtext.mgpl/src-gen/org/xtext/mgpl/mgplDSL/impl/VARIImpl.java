@@ -2,12 +2,8 @@
  */
 package org.xtext.mgpl.mgplDSL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,10 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.xtext.mgpl.mgplDSL.Atom;
+import org.xtext.mgpl.mgplDSL.BOOL;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.VARI;
 
@@ -29,12 +22,6 @@ import org.xtext.mgpl.mgplDSL.VARI;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getConj <em>Conj</em>}</li>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getRelat <em>Relat</em>}</li>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getAdd <em>Add</em>}</li>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getMult <em>Mult</em>}</li>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getUnary <em>Unary</em>}</li>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getAtom <em>Atom</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl#getSubname <em>Subname</em>}</li>
@@ -45,66 +32,6 @@ import org.xtext.mgpl.mgplDSL.VARI;
  */
 public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
 {
-  /**
-   * The cached value of the '{@link #getConj() <em>Conj</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConj()
-   * @generated
-   * @ordered
-   */
-  protected EList<VARI> conj;
-
-  /**
-   * The cached value of the '{@link #getRelat() <em>Relat</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRelat()
-   * @generated
-   * @ordered
-   */
-  protected EList<VARI> relat;
-
-  /**
-   * The cached value of the '{@link #getAdd() <em>Add</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAdd()
-   * @generated
-   * @ordered
-   */
-  protected EList<VARI> add;
-
-  /**
-   * The cached value of the '{@link #getMult() <em>Mult</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMult()
-   * @generated
-   * @ordered
-   */
-  protected EList<VARI> mult;
-
-  /**
-   * The cached value of the '{@link #getUnary() <em>Unary</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUnary()
-   * @generated
-   * @ordered
-   */
-  protected EList<VARI> unary;
-
-  /**
-   * The cached value of the '{@link #getAtom() <em>Atom</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAtom()
-   * @generated
-   * @ordered
-   */
-  protected Atom atom;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -133,7 +60,7 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
    * @generated
    * @ordered
    */
-  protected VARI expr;
+  protected BOOL expr;
 
   /**
    * The default value of the '{@link #getSubname() <em>Subname</em>}' attribute.
@@ -181,124 +108,6 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VARI> getConj()
-  {
-    if (conj == null)
-    {
-      conj = new EObjectContainmentEList<VARI>(VARI.class, this, MgplDSLPackage.VARI__CONJ);
-    }
-    return conj;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VARI> getRelat()
-  {
-    if (relat == null)
-    {
-      relat = new EObjectContainmentEList<VARI>(VARI.class, this, MgplDSLPackage.VARI__RELAT);
-    }
-    return relat;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VARI> getAdd()
-  {
-    if (add == null)
-    {
-      add = new EObjectContainmentEList<VARI>(VARI.class, this, MgplDSLPackage.VARI__ADD);
-    }
-    return add;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VARI> getMult()
-  {
-    if (mult == null)
-    {
-      mult = new EObjectContainmentEList<VARI>(VARI.class, this, MgplDSLPackage.VARI__MULT);
-    }
-    return mult;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VARI> getUnary()
-  {
-    if (unary == null)
-    {
-      unary = new EObjectContainmentEList<VARI>(VARI.class, this, MgplDSLPackage.VARI__UNARY);
-    }
-    return unary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Atom getAtom()
-  {
-    return atom;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAtom(Atom newAtom, NotificationChain msgs)
-  {
-    Atom oldAtom = atom;
-    atom = newAtom;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MgplDSLPackage.VARI__ATOM, oldAtom, newAtom);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAtom(Atom newAtom)
-  {
-    if (newAtom != atom)
-    {
-      NotificationChain msgs = null;
-      if (atom != null)
-        msgs = ((InternalEObject)atom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.VARI__ATOM, null, msgs);
-      if (newAtom != null)
-        msgs = ((InternalEObject)newAtom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.VARI__ATOM, null, msgs);
-      msgs = basicSetAtom(newAtom, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.VARI__ATOM, newAtom, newAtom));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getName()
   {
     return name;
@@ -322,7 +131,7 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
    * <!-- end-user-doc -->
    * @generated
    */
-  public VARI getExpr()
+  public BOOL getExpr()
   {
     return expr;
   }
@@ -332,9 +141,9 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(BOOL newExpr, NotificationChain msgs)
   {
-    VARI oldExpr = expr;
+    BOOL oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -349,7 +158,7 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(VARI newExpr)
+  public void setExpr(BOOL newExpr)
   {
     if (newExpr != expr)
     {
@@ -398,18 +207,6 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
   {
     switch (featureID)
     {
-      case MgplDSLPackage.VARI__CONJ:
-        return ((InternalEList<?>)getConj()).basicRemove(otherEnd, msgs);
-      case MgplDSLPackage.VARI__RELAT:
-        return ((InternalEList<?>)getRelat()).basicRemove(otherEnd, msgs);
-      case MgplDSLPackage.VARI__ADD:
-        return ((InternalEList<?>)getAdd()).basicRemove(otherEnd, msgs);
-      case MgplDSLPackage.VARI__MULT:
-        return ((InternalEList<?>)getMult()).basicRemove(otherEnd, msgs);
-      case MgplDSLPackage.VARI__UNARY:
-        return ((InternalEList<?>)getUnary()).basicRemove(otherEnd, msgs);
-      case MgplDSLPackage.VARI__ATOM:
-        return basicSetAtom(null, msgs);
       case MgplDSLPackage.VARI__EXPR:
         return basicSetExpr(null, msgs);
     }
@@ -426,18 +223,6 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
   {
     switch (featureID)
     {
-      case MgplDSLPackage.VARI__CONJ:
-        return getConj();
-      case MgplDSLPackage.VARI__RELAT:
-        return getRelat();
-      case MgplDSLPackage.VARI__ADD:
-        return getAdd();
-      case MgplDSLPackage.VARI__MULT:
-        return getMult();
-      case MgplDSLPackage.VARI__UNARY:
-        return getUnary();
-      case MgplDSLPackage.VARI__ATOM:
-        return getAtom();
       case MgplDSLPackage.VARI__NAME:
         return getName();
       case MgplDSLPackage.VARI__EXPR:
@@ -453,40 +238,16 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MgplDSLPackage.VARI__CONJ:
-        getConj().clear();
-        getConj().addAll((Collection<? extends VARI>)newValue);
-        return;
-      case MgplDSLPackage.VARI__RELAT:
-        getRelat().clear();
-        getRelat().addAll((Collection<? extends VARI>)newValue);
-        return;
-      case MgplDSLPackage.VARI__ADD:
-        getAdd().clear();
-        getAdd().addAll((Collection<? extends VARI>)newValue);
-        return;
-      case MgplDSLPackage.VARI__MULT:
-        getMult().clear();
-        getMult().addAll((Collection<? extends VARI>)newValue);
-        return;
-      case MgplDSLPackage.VARI__UNARY:
-        getUnary().clear();
-        getUnary().addAll((Collection<? extends VARI>)newValue);
-        return;
-      case MgplDSLPackage.VARI__ATOM:
-        setAtom((Atom)newValue);
-        return;
       case MgplDSLPackage.VARI__NAME:
         setName((String)newValue);
         return;
       case MgplDSLPackage.VARI__EXPR:
-        setExpr((VARI)newValue);
+        setExpr((BOOL)newValue);
         return;
       case MgplDSLPackage.VARI__SUBNAME:
         setSubname((String)newValue);
@@ -505,29 +266,11 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
   {
     switch (featureID)
     {
-      case MgplDSLPackage.VARI__CONJ:
-        getConj().clear();
-        return;
-      case MgplDSLPackage.VARI__RELAT:
-        getRelat().clear();
-        return;
-      case MgplDSLPackage.VARI__ADD:
-        getAdd().clear();
-        return;
-      case MgplDSLPackage.VARI__MULT:
-        getMult().clear();
-        return;
-      case MgplDSLPackage.VARI__UNARY:
-        getUnary().clear();
-        return;
-      case MgplDSLPackage.VARI__ATOM:
-        setAtom((Atom)null);
-        return;
       case MgplDSLPackage.VARI__NAME:
         setName(NAME_EDEFAULT);
         return;
       case MgplDSLPackage.VARI__EXPR:
-        setExpr((VARI)null);
+        setExpr((BOOL)null);
         return;
       case MgplDSLPackage.VARI__SUBNAME:
         setSubname(SUBNAME_EDEFAULT);
@@ -546,18 +289,6 @@ public class VARIImpl extends MinimalEObjectImpl.Container implements VARI
   {
     switch (featureID)
     {
-      case MgplDSLPackage.VARI__CONJ:
-        return conj != null && !conj.isEmpty();
-      case MgplDSLPackage.VARI__RELAT:
-        return relat != null && !relat.isEmpty();
-      case MgplDSLPackage.VARI__ADD:
-        return add != null && !add.isEmpty();
-      case MgplDSLPackage.VARI__MULT:
-        return mult != null && !mult.isEmpty();
-      case MgplDSLPackage.VARI__UNARY:
-        return unary != null && !unary.isEmpty();
-      case MgplDSLPackage.VARI__ATOM:
-        return atom != null;
       case MgplDSLPackage.VARI__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MgplDSLPackage.VARI__EXPR:

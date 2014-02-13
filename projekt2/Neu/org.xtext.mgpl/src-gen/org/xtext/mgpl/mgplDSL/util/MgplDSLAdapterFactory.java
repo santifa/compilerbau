@@ -150,14 +150,24 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
         return createAttrAssAdapter();
       }
       @Override
-      public Adapter caseVARI(VARI object)
+      public Adapter caseBOOL(BOOL object)
       {
-        return createVARIAdapter();
+        return createBOOLAdapter();
+      }
+      @Override
+      public Adapter caseARI(ARI object)
+      {
+        return createARIAdapter();
       }
       @Override
       public Adapter caseAtom(Atom object)
       {
         return createAtomAdapter();
+      }
+      @Override
+      public Adapter caseVARI(VARI object)
+      {
+        return createVARIAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -407,16 +417,31 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.VARI <em>VARI</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.BOOL <em>BOOL</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.VARI
+   * @see org.xtext.mgpl.mgplDSL.BOOL
    * @generated
    */
-  public Adapter createVARIAdapter()
+  public Adapter createBOOLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.ARI <em>ARI</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.mgpl.mgplDSL.ARI
+   * @generated
+   */
+  public Adapter createARIAdapter()
   {
     return null;
   }
@@ -432,6 +457,21 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtomAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.VARI <em>VARI</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.mgpl.mgplDSL.VARI
+   * @generated
+   */
+  public Adapter createVARIAdapter()
   {
     return null;
   }

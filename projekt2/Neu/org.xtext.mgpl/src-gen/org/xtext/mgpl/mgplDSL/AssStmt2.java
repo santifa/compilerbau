@@ -58,12 +58,12 @@ public interface AssStmt2 extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(VARI)
+   * @see #setExpr(BOOL)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAssStmt2_Expr()
    * @model containment="true"
    * @generated
    */
-  VARI getExpr();
+  BOOL getExpr();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.AssStmt2#getExpr <em>Expr</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface AssStmt2 extends EObject
    * @see #getExpr()
    * @generated
    */
-  void setExpr(VARI value);
+  void setExpr(BOOL value);
 
 } // AssStmt2

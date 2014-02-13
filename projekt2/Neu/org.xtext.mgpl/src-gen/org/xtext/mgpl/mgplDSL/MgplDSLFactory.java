@@ -158,13 +158,22 @@ public interface MgplDSLFactory extends EFactory
   AttrAss createAttrAss();
 
   /**
-   * Returns a new object of class '<em>VARI</em>'.
+   * Returns a new object of class '<em>BOOL</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>VARI</em>'.
+   * @return a new object of class '<em>BOOL</em>'.
    * @generated
    */
-  VARI createVARI();
+  BOOL createBOOL();
+
+  /**
+   * Returns a new object of class '<em>ARI</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ARI</em>'.
+   * @generated
+   */
+  ARI createARI();
 
   /**
    * Returns a new object of class '<em>Atom</em>'.
@@ -174,6 +183,15 @@ public interface MgplDSLFactory extends EFactory
    * @generated
    */
   Atom createAtom();
+
+  /**
+   * Returns a new object of class '<em>VARI</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>VARI</em>'.
+   * @generated
+   */
+  VARI createVARI();
 
   /**
    * Returns the package supported by this factory.

@@ -3,11 +3,6 @@
  */
 package org.xtext.mgpl.validation;
 
-import org.eclipse.xtext.validation.Check;
-import org.xtext.mgpl.mgplDSL.Atom;
-import org.xtext.mgpl.mgplDSL.AttrAss;
-import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
-import org.xtext.mgpl.mgplDSL.VARI;
 import org.xtext.mgpl.validation.AbstractMgplDSLValidator;
 
 /**
@@ -17,26 +12,4 @@ import org.xtext.mgpl.validation.AbstractMgplDSLValidator;
  */
 @SuppressWarnings("all")
 public class MgplDSLValidator extends AbstractMgplDSLValidator {
-  @Check
-  public void checkSpeed(final AttrAss aa) {
-    VARI _expr = aa.getExpr();
-    Atom _atom = _expr.getAtom();
-    int value = _atom.getValue();
-    System.out.println(value);
-    String _name = aa.getName();
-    System.out.println(_name);
-    String _name_1 = aa.getName();
-    boolean _equalsIgnoreCase = _name_1.equalsIgnoreCase("speed");
-    if (_equalsIgnoreCase) {
-      boolean _or = false;
-      if ((value < 0)) {
-        _or = true;
-      } else {
-        _or = ((value < 0) || (value > 100));
-      }
-      if (_or) {
-        this.error("Speed between 0 and 100", MgplDSLPackage.Literals.ATOM__VALUE);
-      }
-    }
-  }
 }

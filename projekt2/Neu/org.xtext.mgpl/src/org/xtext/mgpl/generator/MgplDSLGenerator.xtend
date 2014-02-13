@@ -8,7 +8,10 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.naming.IQualifiedNameProvider
+import org.xtext.mgpl.mgplDSL.AttrAss
+import org.xtext.mgpl.mgplDSL.Declaration
 import org.xtext.mgpl.mgplDSL.Model
+import org.xtext.mgpl.mgplDSL.VARI
 
 /**
  * Generates code from your model files on save.
@@ -20,10 +23,73 @@ class MgplDSLGenerator implements IGenerator {
 	@Inject extension IQualifiedNameProvider
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		for (e : resource.allContents.toIterable.filter(typeof(Model))) {
-			fsa.generateFile(e.fullyQualifiedName.toString("/") + ".java", e.compile )
+			fsa.generateFile(e.fullyQualifiedName.toString("/") + ".java", compile(e) );
+		}
+		
+		for (d : resource.allContents.toIterable.filter(typeof(Declaration))) {
+				fsa.generateFile(d.fullyQualifiedName.toString("/") + ".java", d.compile );	
 		}
 	}
+
+	def compile(Model m) '''
+		«IF m.eContainer != null»
+			package «m.fullyQualifiedName»;
+		«ENDIF»
+		
+		public class «m.name» {
+			«FOR a:m.attr.attr»
+				«a.compile»
+			«ENDFOR»
+			
+			«FOR d:m.decl»
+				«IF d.vari != null»
+					«d.compile»
+				«ENDIF»
+			«ENDFOR»
+			
+«««			«FOR d:m.decl»
+«««				«IF d.obj != null»
+«««					«d.obj.type.toFirstUpper» «d.obj.name» = 
+«««						«IF d.obj.attr != null» 
+«««							«d.obj.attr.fullyQualifiedName»; 
+«««						«ELSE» 
+«««							new ArrayList(«d.obj.value»); 
+«««						«ENDIF»
+«««				«ENDIF»
+«««				«IF d.vari != null»
+«««				«ENDIF»	
+«««			«ENDFOR»
+			public static void main(String[] args) {
+				
+			}
+		}
+	'''
 	
+	def compile(VARI v) '''
+		«FOR vari:v.expr.conj»
+			
+		«ENDFOR»
+	'''
 	
-	
+	def compile(AttrAss a) '''
+		«IF a.expr != null»
+		private «a.name» = «a.expr.add»;
+		«FOR e:a.expr.conj»
+			 «FOR v:e.add»
+			 	«v.atom.value»
+			 «ENDFOR»
+		«ENDFOR»
+		«ENDIF»
+	'''
+
+	def CharSequence compile(Declaration d) '''
+		«IF d.eContainer != null»
+			package «d.fullyQualifiedName»;
+		«ENDIF»
+
+		«IF d.obj != null»		
+			public class «d.obj.name» {
+			}
+		«ENDIF»
+	'''
 }

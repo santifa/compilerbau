@@ -3,12 +3,29 @@
  */
 package org.xtext.mgpl.generator;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.mgpl.mgplDSL.ARI;
+import org.xtext.mgpl.mgplDSL.Atom;
+import org.xtext.mgpl.mgplDSL.AttrAss;
+import org.xtext.mgpl.mgplDSL.AttrList;
+import org.xtext.mgpl.mgplDSL.BOOL;
+import org.xtext.mgpl.mgplDSL.Declaration;
+import org.xtext.mgpl.mgplDSL.Model;
+import org.xtext.mgpl.mgplDSL.VARE;
+import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * Generates code from your model files on save.
@@ -22,7 +39,165 @@ public class MgplDSLGenerator implements IGenerator {
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method compile is undefined for the type MgplDSLGenerator");
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    Iterable<Model> _filter = Iterables.<Model>filter(_iterable, Model.class);
+    for (final Model e : _filter) {
+      QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(e);
+      String _string = _fullyQualifiedName.toString("/");
+      String _plus = (_string + ".java");
+      CharSequence _compile = this.compile(e);
+      fsa.generateFile(_plus, _compile);
+    }
+    TreeIterator<EObject> _allContents_1 = resource.getAllContents();
+    Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
+    Iterable<Declaration> _filter_1 = Iterables.<Declaration>filter(_iterable_1, Declaration.class);
+    for (final Declaration d : _filter_1) {
+      QualifiedName _fullyQualifiedName_1 = this._iQualifiedNameProvider.getFullyQualifiedName(d);
+      String _string_1 = _fullyQualifiedName_1.toString("/");
+      String _plus_1 = (_string_1 + ".java");
+      CharSequence _compile_1 = this.compile(d);
+      fsa.generateFile(_plus_1, _compile_1);
+    }
+  }
+  
+  public CharSequence compile(final Model m) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EObject _eContainer = m.eContainer();
+      boolean _notEquals = (!Objects.equal(_eContainer, null));
+      if (_notEquals) {
+        _builder.append("package ");
+        QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(m);
+        _builder.append(_fullyQualifiedName, "");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append("public class ");
+    String _name = m.getName();
+    _builder.append(_name, "");
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    {
+      AttrList _attr = m.getAttr();
+      EList<AttrAss> _attr_1 = _attr.getAttr();
+      for(final AttrAss a : _attr_1) {
+        _builder.append("\t");
+        CharSequence _compile = this.compile(a);
+        _builder.append(_compile, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      EList<Declaration> _decl = m.getDecl();
+      for(final Declaration d : _decl) {
+        {
+          VARE _vari = d.getVari();
+          boolean _notEquals_1 = (!Objects.equal(_vari, null));
+          if (_notEquals_1) {
+            _builder.append("\t");
+            CharSequence _compile_1 = this.compile(d);
+            _builder.append(_compile_1, "\t");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public static void main(String[] args) {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final VARI v) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      BOOL _expr = v.getExpr();
+      EList<BOOL> _conj = _expr.getConj();
+      for(final BOOL vari : _conj) {
+        _builder.append("\t");
+        _builder.newLine();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence compile(final AttrAss a) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      BOOL _expr = a.getExpr();
+      boolean _notEquals = (!Objects.equal(_expr, null));
+      if (_notEquals) {
+        _builder.append("private ");
+        String _name = a.getName();
+        _builder.append(_name, "");
+        _builder.append(" = ");
+        BOOL _expr_1 = a.getExpr();
+        EList<ARI> _add = _expr_1.getAdd();
+        _builder.append(_add, "");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+        {
+          BOOL _expr_2 = a.getExpr();
+          EList<BOOL> _conj = _expr_2.getConj();
+          for(final BOOL e : _conj) {
+            {
+              EList<ARI> _add_1 = e.getAdd();
+              for(final ARI v : _add_1) {
+                Atom _atom = v.getAtom();
+                int _value = _atom.getValue();
+                _builder.append(_value, "");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence compile(final Declaration d) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EObject _eContainer = d.eContainer();
+      boolean _notEquals = (!Objects.equal(_eContainer, null));
+      if (_notEquals) {
+        _builder.append("package ");
+        QualifiedName _fullyQualifiedName = this._iQualifiedNameProvider.getFullyQualifiedName(d);
+        _builder.append(_fullyQualifiedName, "");
+        _builder.append(";");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    {
+      VARE _obj = d.getObj();
+      boolean _notEquals_1 = (!Objects.equal(_obj, null));
+      if (_notEquals_1) {
+        _builder.append("public class ");
+        VARE _obj_1 = d.getObj();
+        String _name = _obj_1.getName();
+        _builder.append(_name, "");
+        _builder.append(" {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("}");
+        _builder.newLine();
+      }
+    }
+    return _builder;
   }
 }

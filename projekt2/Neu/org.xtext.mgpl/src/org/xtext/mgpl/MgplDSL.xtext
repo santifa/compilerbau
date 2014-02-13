@@ -13,11 +13,11 @@ Declaration:
 	(vari=VarDecl | obj=ObjDecl) ';'
 ;
 
-VarDecl returns VARE:
+VarDecl:
 	'int' name=ID ( ('=' expr=Expr)? | '[' value=INT ']') 
 ;
 
-ObjDecl returns VARE:
+ObjDecl:
 	type=ObjType name=ID ('(' attr=AttrList ')' | '[' value=INT ']') 
 ;
 
@@ -80,27 +80,27 @@ AttrAss:
 ;
 
 // define expressions
-Expr returns VARI:
+Expr returns BOOL:
 	conj+= Conj ('||' conj+=Conj)*
 ;
 
-Conj returns VARI:
+Conj returns BOOL:
 	relat+=Relat ('&&' relat+=Relat)*
 ;
 
-Relat returns VARI:
+Relat returns BOOL:
 	add+=Add (('==' | '<' | '<=') add+=Add)*
 ;
 
-Add returns VARI:
+Add returns ARI:
 	mult+=Mult (('+' | '-') mult+=Mult)*
 ;
 
-Mult returns VARI:
+Mult returns ARI:
 	unary+=Unary (('*' | '/') unary+=Unary)*
 ;
 
-Unary returns VARI:
+Unary returns ARI:
 	('!' | '-')* atom=Atom
 ;
 

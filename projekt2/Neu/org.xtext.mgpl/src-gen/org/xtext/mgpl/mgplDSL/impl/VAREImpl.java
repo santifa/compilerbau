@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.mgpl.mgplDSL.AttrList;
+import org.xtext.mgpl.mgplDSL.BOOL;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.VARE;
-import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class VAREImpl extends MinimalEObjectImpl.Container implements VARE
    * @generated
    * @ordered
    */
-  protected VARI expr;
+  protected BOOL expr;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -164,7 +164,7 @@ public class VAREImpl extends MinimalEObjectImpl.Container implements VARE
    * <!-- end-user-doc -->
    * @generated
    */
-  public VARI getExpr()
+  public BOOL getExpr()
   {
     return expr;
   }
@@ -174,9 +174,9 @@ public class VAREImpl extends MinimalEObjectImpl.Container implements VARE
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(BOOL newExpr, NotificationChain msgs)
   {
-    VARI oldExpr = expr;
+    BOOL oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -191,7 +191,7 @@ public class VAREImpl extends MinimalEObjectImpl.Container implements VARE
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(VARI newExpr)
+  public void setExpr(BOOL newExpr)
   {
     if (newExpr != expr)
     {
@@ -357,7 +357,7 @@ public class VAREImpl extends MinimalEObjectImpl.Container implements VARE
         setName((String)newValue);
         return;
       case MgplDSLPackage.VARE__EXPR:
-        setExpr((VARI)newValue);
+        setExpr((BOOL)newValue);
         return;
       case MgplDSLPackage.VARE__VALUE:
         setValue((Integer)newValue);
@@ -386,7 +386,7 @@ public class VAREImpl extends MinimalEObjectImpl.Container implements VARE
         setName(NAME_EDEFAULT);
         return;
       case MgplDSLPackage.VARE__EXPR:
-        setExpr((VARI)null);
+        setExpr((BOOL)null);
         return;
       case MgplDSLPackage.VARE__VALUE:
         setValue(VALUE_EDEFAULT);

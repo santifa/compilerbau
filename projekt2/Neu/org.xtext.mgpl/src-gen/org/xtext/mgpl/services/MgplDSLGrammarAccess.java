@@ -767,7 +767,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConjConjParserRuleCall_1_1_0 = (RuleCall)cConjAssignment_1_1.eContents().get(0);
 		
 		//// define expressions
-		//Expr returns VARI:
+		//Expr returns BOOL:
 		//	conj+=Conj ("||" conj+=Conj)*;
 		public ParserRule getRule() { return rule; }
 
@@ -803,7 +803,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRelatAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRelatRelatParserRuleCall_1_1_0 = (RuleCall)cRelatAssignment_1_1.eContents().get(0);
 		
-		//Conj returns VARI:
+		//Conj returns BOOL:
 		//	relat+=Relat ("&&" relat+=Relat)*;
 		public ParserRule getRule() { return rule; }
 
@@ -842,7 +842,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAddAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cAddAddParserRuleCall_1_1_0 = (RuleCall)cAddAssignment_1_1.eContents().get(0);
 		
-		//Relat returns VARI:
+		//Relat returns BOOL:
 		//	add+=Add (("==" | "<" | "<=") add+=Add)*;
 		public ParserRule getRule() { return rule; }
 
@@ -889,7 +889,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMultAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cMultMultParserRuleCall_1_1_0 = (RuleCall)cMultAssignment_1_1.eContents().get(0);
 		
-		//Add returns VARI:
+		//Add returns ARI:
 		//	mult+=Mult (("+" | "-") mult+=Mult)*;
 		public ParserRule getRule() { return rule; }
 
@@ -933,7 +933,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUnaryAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cUnaryUnaryParserRuleCall_1_1_0 = (RuleCall)cUnaryAssignment_1_1.eContents().get(0);
 		
-		//Mult returns VARI:
+		//Mult returns ARI:
 		//	unary+=Unary (("*" | "/") unary+=Unary)*;
 		public ParserRule getRule() { return rule; }
 
@@ -974,7 +974,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAtomAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAtomAtomParserRuleCall_1_0 = (RuleCall)cAtomAssignment_1.eContents().get(0);
 		
-		//Unary returns VARI:
+		//Unary returns ARI:
 		//	("!" | "-")* atom=Atom;
 		public ParserRule getRule() { return rule; }
 
@@ -1391,7 +1391,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// define expressions
-	//Expr returns VARI:
+	//Expr returns BOOL:
 	//	conj+=Conj ("||" conj+=Conj)*;
 	public ExprElements getExprAccess() {
 		return (pExpr != null) ? pExpr : (pExpr = new ExprElements());
@@ -1401,7 +1401,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getExprAccess().getRule();
 	}
 
-	//Conj returns VARI:
+	//Conj returns BOOL:
 	//	relat+=Relat ("&&" relat+=Relat)*;
 	public ConjElements getConjAccess() {
 		return (pConj != null) ? pConj : (pConj = new ConjElements());
@@ -1411,7 +1411,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getConjAccess().getRule();
 	}
 
-	//Relat returns VARI:
+	//Relat returns BOOL:
 	//	add+=Add (("==" | "<" | "<=") add+=Add)*;
 	public RelatElements getRelatAccess() {
 		return (pRelat != null) ? pRelat : (pRelat = new RelatElements());
@@ -1421,7 +1421,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelatAccess().getRule();
 	}
 
-	//Add returns VARI:
+	//Add returns ARI:
 	//	mult+=Mult (("+" | "-") mult+=Mult)*;
 	public AddElements getAddAccess() {
 		return (pAdd != null) ? pAdd : (pAdd = new AddElements());
@@ -1431,7 +1431,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAddAccess().getRule();
 	}
 
-	//Mult returns VARI:
+	//Mult returns ARI:
 	//	unary+=Unary (("*" | "/") unary+=Unary)*;
 	public MultElements getMultAccess() {
 		return (pMult != null) ? pMult : (pMult = new MultElements());
@@ -1441,7 +1441,7 @@ public class MgplDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getMultAccess().getRule();
 	}
 
-	//Unary returns VARI:
+	//Unary returns ARI:
 	//	("!" | "-")* atom=Atom;
 	public UnaryElements getUnaryAccess() {
 		return (pUnary != null) ? pUnary : (pUnary = new UnaryElements());

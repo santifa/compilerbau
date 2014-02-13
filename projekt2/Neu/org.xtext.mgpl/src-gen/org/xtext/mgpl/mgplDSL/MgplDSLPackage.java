@@ -666,14 +666,14 @@ public interface MgplDSLPackage extends EPackage
   int ATTR_ASS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl <em>VARI</em>}' class.
+   * The meta object id for the '{@link org.xtext.mgpl.mgplDSL.impl.BOOLImpl <em>BOOL</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.mgpl.mgplDSL.impl.VARIImpl
-   * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getVARI()
+   * @see org.xtext.mgpl.mgplDSL.impl.BOOLImpl
+   * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getBOOL()
    * @generated
    */
-  int VARI = 15;
+  int BOOL = 15;
 
   /**
    * The feature id for the '<em><b>Conj</b></em>' containment reference list.
@@ -682,7 +682,7 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARI__CONJ = 0;
+  int BOOL__CONJ = 0;
 
   /**
    * The feature id for the '<em><b>Relat</b></em>' containment reference list.
@@ -691,7 +691,7 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARI__RELAT = 1;
+  int BOOL__RELAT = 1;
 
   /**
    * The feature id for the '<em><b>Add</b></em>' containment reference list.
@@ -700,7 +700,26 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARI__ADD = 2;
+  int BOOL__ADD = 2;
+
+  /**
+   * The number of structural features of the '<em>BOOL</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.mgpl.mgplDSL.impl.ARIImpl <em>ARI</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.mgpl.mgplDSL.impl.ARIImpl
+   * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getARI()
+   * @generated
+   */
+  int ARI = 16;
 
   /**
    * The feature id for the '<em><b>Mult</b></em>' containment reference list.
@@ -709,7 +728,7 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARI__MULT = 3;
+  int ARI__MULT = 0;
 
   /**
    * The feature id for the '<em><b>Unary</b></em>' containment reference list.
@@ -718,7 +737,7 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARI__UNARY = 4;
+  int ARI__UNARY = 1;
 
   /**
    * The feature id for the '<em><b>Atom</b></em>' containment reference.
@@ -727,43 +746,16 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARI__ATOM = 5;
+  int ARI__ATOM = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>ARI</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARI__NAME = 6;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARI__EXPR = 7;
-
-  /**
-   * The feature id for the '<em><b>Subname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARI__SUBNAME = 8;
-
-  /**
-   * The number of structural features of the '<em>VARI</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARI_FEATURE_COUNT = 9;
+  int ARI_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl <em>Atom</em>}' class.
@@ -773,7 +765,7 @@ public interface MgplDSLPackage extends EPackage
    * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getAtom()
    * @generated
    */
-  int ATOM = 16;
+  int ATOM = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -819,6 +811,52 @@ public interface MgplDSLPackage extends EPackage
    * @ordered
    */
   int ATOM_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl <em>VARI</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.mgpl.mgplDSL.impl.VARIImpl
+   * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getVARI()
+   * @generated
+   */
+  int VARI = 18;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARI__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARI__EXPR = 1;
+
+  /**
+   * The feature id for the '<em><b>Subname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARI__SUBNAME = 2;
+
+  /**
+   * The number of structural features of the '<em>VARI</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARI_FEATURE_COUNT = 3;
 
 
   /**
@@ -1313,113 +1351,90 @@ public interface MgplDSLPackage extends EPackage
   EReference getAttrAss_Expr();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.mgpl.mgplDSL.VARI <em>VARI</em>}'.
+   * Returns the meta object for class '{@link org.xtext.mgpl.mgplDSL.BOOL <em>BOOL</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>VARI</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI
+   * @return the meta object for class '<em>BOOL</em>'.
+   * @see org.xtext.mgpl.mgplDSL.BOOL
    * @generated
    */
-  EClass getVARI();
+  EClass getBOOL();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.VARI#getConj <em>Conj</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.BOOL#getConj <em>Conj</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Conj</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getConj()
-   * @see #getVARI()
+   * @see org.xtext.mgpl.mgplDSL.BOOL#getConj()
+   * @see #getBOOL()
    * @generated
    */
-  EReference getVARI_Conj();
+  EReference getBOOL_Conj();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.VARI#getRelat <em>Relat</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.BOOL#getRelat <em>Relat</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Relat</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getRelat()
-   * @see #getVARI()
+   * @see org.xtext.mgpl.mgplDSL.BOOL#getRelat()
+   * @see #getBOOL()
    * @generated
    */
-  EReference getVARI_Relat();
+  EReference getBOOL_Relat();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.VARI#getAdd <em>Add</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.BOOL#getAdd <em>Add</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Add</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getAdd()
-   * @see #getVARI()
+   * @see org.xtext.mgpl.mgplDSL.BOOL#getAdd()
+   * @see #getBOOL()
    * @generated
    */
-  EReference getVARI_Add();
+  EReference getBOOL_Add();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.VARI#getMult <em>Mult</em>}'.
+   * Returns the meta object for class '{@link org.xtext.mgpl.mgplDSL.ARI <em>ARI</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>ARI</em>'.
+   * @see org.xtext.mgpl.mgplDSL.ARI
+   * @generated
+   */
+  EClass getARI();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.ARI#getMult <em>Mult</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Mult</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getMult()
-   * @see #getVARI()
+   * @see org.xtext.mgpl.mgplDSL.ARI#getMult()
+   * @see #getARI()
    * @generated
    */
-  EReference getVARI_Mult();
+  EReference getARI_Mult();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.VARI#getUnary <em>Unary</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.mgpl.mgplDSL.ARI#getUnary <em>Unary</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Unary</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getUnary()
-   * @see #getVARI()
+   * @see org.xtext.mgpl.mgplDSL.ARI#getUnary()
+   * @see #getARI()
    * @generated
    */
-  EReference getVARI_Unary();
+  EReference getARI_Unary();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.mgpl.mgplDSL.VARI#getAtom <em>Atom</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.mgpl.mgplDSL.ARI#getAtom <em>Atom</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Atom</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getAtom()
-   * @see #getVARI()
+   * @see org.xtext.mgpl.mgplDSL.ARI#getAtom()
+   * @see #getARI()
    * @generated
    */
-  EReference getVARI_Atom();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.mgpl.mgplDSL.VARI#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getName()
-   * @see #getVARI()
-   * @generated
-   */
-  EAttribute getVARI_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.mgpl.mgplDSL.VARI#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getExpr()
-   * @see #getVARI()
-   * @generated
-   */
-  EReference getVARI_Expr();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.mgpl.mgplDSL.VARI#getSubname <em>Subname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Subname</em>'.
-   * @see org.xtext.mgpl.mgplDSL.VARI#getSubname()
-   * @see #getVARI()
-   * @generated
-   */
-  EAttribute getVARI_Subname();
+  EReference getARI_Atom();
 
   /**
    * Returns the meta object for class '{@link org.xtext.mgpl.mgplDSL.Atom <em>Atom</em>}'.
@@ -1474,6 +1489,49 @@ public interface MgplDSLPackage extends EPackage
    * @generated
    */
   EReference getAtom_Expr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.mgpl.mgplDSL.VARI <em>VARI</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>VARI</em>'.
+   * @see org.xtext.mgpl.mgplDSL.VARI
+   * @generated
+   */
+  EClass getVARI();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.mgpl.mgplDSL.VARI#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.mgpl.mgplDSL.VARI#getName()
+   * @see #getVARI()
+   * @generated
+   */
+  EAttribute getVARI_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.mgpl.mgplDSL.VARI#getExpr <em>Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.mgpl.mgplDSL.VARI#getExpr()
+   * @see #getVARI()
+   * @generated
+   */
+  EReference getVARI_Expr();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.mgpl.mgplDSL.VARI#getSubname <em>Subname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Subname</em>'.
+   * @see org.xtext.mgpl.mgplDSL.VARI#getSubname()
+   * @see #getVARI()
+   * @generated
+   */
+  EAttribute getVARI_Subname();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1897,14 +1955,14 @@ public interface MgplDSLPackage extends EPackage
     EReference ATTR_ASS__EXPR = eINSTANCE.getAttrAss_Expr();
 
     /**
-     * The meta object literal for the '{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl <em>VARI</em>}' class.
+     * The meta object literal for the '{@link org.xtext.mgpl.mgplDSL.impl.BOOLImpl <em>BOOL</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.mgpl.mgplDSL.impl.VARIImpl
-     * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getVARI()
+     * @see org.xtext.mgpl.mgplDSL.impl.BOOLImpl
+     * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getBOOL()
      * @generated
      */
-    EClass VARI = eINSTANCE.getVARI();
+    EClass BOOL = eINSTANCE.getBOOL();
 
     /**
      * The meta object literal for the '<em><b>Conj</b></em>' containment reference list feature.
@@ -1912,7 +1970,7 @@ public interface MgplDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARI__CONJ = eINSTANCE.getVARI_Conj();
+    EReference BOOL__CONJ = eINSTANCE.getBOOL_Conj();
 
     /**
      * The meta object literal for the '<em><b>Relat</b></em>' containment reference list feature.
@@ -1920,7 +1978,7 @@ public interface MgplDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARI__RELAT = eINSTANCE.getVARI_Relat();
+    EReference BOOL__RELAT = eINSTANCE.getBOOL_Relat();
 
     /**
      * The meta object literal for the '<em><b>Add</b></em>' containment reference list feature.
@@ -1928,7 +1986,17 @@ public interface MgplDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARI__ADD = eINSTANCE.getVARI_Add();
+    EReference BOOL__ADD = eINSTANCE.getBOOL_Add();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.mgpl.mgplDSL.impl.ARIImpl <em>ARI</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.mgpl.mgplDSL.impl.ARIImpl
+     * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getARI()
+     * @generated
+     */
+    EClass ARI = eINSTANCE.getARI();
 
     /**
      * The meta object literal for the '<em><b>Mult</b></em>' containment reference list feature.
@@ -1936,7 +2004,7 @@ public interface MgplDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARI__MULT = eINSTANCE.getVARI_Mult();
+    EReference ARI__MULT = eINSTANCE.getARI_Mult();
 
     /**
      * The meta object literal for the '<em><b>Unary</b></em>' containment reference list feature.
@@ -1944,7 +2012,7 @@ public interface MgplDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARI__UNARY = eINSTANCE.getVARI_Unary();
+    EReference ARI__UNARY = eINSTANCE.getARI_Unary();
 
     /**
      * The meta object literal for the '<em><b>Atom</b></em>' containment reference feature.
@@ -1952,31 +2020,7 @@ public interface MgplDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARI__ATOM = eINSTANCE.getVARI_Atom();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARI__NAME = eINSTANCE.getVARI_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARI__EXPR = eINSTANCE.getVARI_Expr();
-
-    /**
-     * The meta object literal for the '<em><b>Subname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARI__SUBNAME = eINSTANCE.getVARI_Subname();
+    EReference ARI__ATOM = eINSTANCE.getARI_Atom();
 
     /**
      * The meta object literal for the '{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl <em>Atom</em>}' class.
@@ -2019,6 +2063,40 @@ public interface MgplDSLPackage extends EPackage
      * @generated
      */
     EReference ATOM__EXPR = eINSTANCE.getAtom_Expr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.mgpl.mgplDSL.impl.VARIImpl <em>VARI</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.mgpl.mgplDSL.impl.VARIImpl
+     * @see org.xtext.mgpl.mgplDSL.impl.MgplDSLPackageImpl#getVARI()
+     * @generated
+     */
+    EClass VARI = eINSTANCE.getVARI();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARI__NAME = eINSTANCE.getVARI_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARI__EXPR = eINSTANCE.getVARI_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Subname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARI__SUBNAME = eINSTANCE.getVARI_Subname();
 
   }
 

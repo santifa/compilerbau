@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.mgpl.mgplDSL.Atom;
+import org.xtext.mgpl.mgplDSL.BOOL;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.VARI;
 
@@ -81,7 +82,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * @generated
    * @ordered
    */
-  protected VARI expr;
+  protected BOOL expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -228,7 +229,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public VARI getExpr()
+  public BOOL getExpr()
   {
     return expr;
   }
@@ -238,9 +239,9 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(BOOL newExpr, NotificationChain msgs)
   {
-    VARI oldExpr = expr;
+    BOOL oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -255,7 +256,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(VARI newExpr)
+  public void setExpr(BOOL newExpr)
   {
     if (newExpr != expr)
     {
@@ -333,7 +334,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
         setVar2((VARI)newValue);
         return;
       case MgplDSLPackage.ATOM__EXPR:
-        setExpr((VARI)newValue);
+        setExpr((BOOL)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -359,7 +360,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
         setVar2((VARI)null);
         return;
       case MgplDSLPackage.ATOM__EXPR:
-        setExpr((VARI)null);
+        setExpr((BOOL)null);
         return;
     }
     super.eUnset(featureID);

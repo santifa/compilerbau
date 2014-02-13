@@ -27,15 +27,15 @@ class MgplDSLValidator extends AbstractMgplDSLValidator {
 //		}
 //	}
 
-	@Check
-	def checkSpeed(AttrAss aa) {
-		var value = aa.expr.atom.value
-		System.out.println(value);
-		System.out.println(aa.name);
-		if (aa.name.equalsIgnoreCase("speed")) {
-			if (value < 0 || value > 100) {
-				error("Speed between 0 and 100", MgplDSLPackage.Literals.ATOM__VALUE);
-			}
-		}
-	}
+//	@Check
+//	def checkSpeed(AttrAss aa) {
+//		var value = aa.expr.atom.value
+//		System.out.println(value);
+//		System.out.println(aa.name);
+//		if (aa.name.equalsIgnoreCase("speed")) {
+//			if (value < 0 || value > 100) {
+//				error("Speed between 0 and 100", MgplDSLPackage.Literals.ATOM__VALUE);
+//			}
+//		}
+//	}
 }

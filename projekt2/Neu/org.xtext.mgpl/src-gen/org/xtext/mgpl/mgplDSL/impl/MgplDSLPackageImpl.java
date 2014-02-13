@@ -145,7 +145,14 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variEClass = null;
+  private EClass boolEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ariEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,6 +160,13 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * @generated
    */
   private EClass atomEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -682,9 +696,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVARI()
+  public EClass getBOOL()
   {
-    return variEClass;
+    return boolEClass;
   }
 
   /**
@@ -692,9 +706,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVARI_Conj()
+  public EReference getBOOL_Conj()
   {
-    return (EReference)variEClass.getEStructuralFeatures().get(0);
+    return (EReference)boolEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -702,9 +716,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVARI_Relat()
+  public EReference getBOOL_Relat()
   {
-    return (EReference)variEClass.getEStructuralFeatures().get(1);
+    return (EReference)boolEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -712,9 +726,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVARI_Add()
+  public EReference getBOOL_Add()
   {
-    return (EReference)variEClass.getEStructuralFeatures().get(2);
+    return (EReference)boolEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -722,9 +736,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVARI_Mult()
+  public EClass getARI()
   {
-    return (EReference)variEClass.getEStructuralFeatures().get(3);
+    return ariEClass;
   }
 
   /**
@@ -732,9 +746,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVARI_Unary()
+  public EReference getARI_Mult()
   {
-    return (EReference)variEClass.getEStructuralFeatures().get(4);
+    return (EReference)ariEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -742,9 +756,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVARI_Atom()
+  public EReference getARI_Unary()
   {
-    return (EReference)variEClass.getEStructuralFeatures().get(5);
+    return (EReference)ariEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -752,29 +766,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVARI_Name()
+  public EReference getARI_Atom()
   {
-    return (EAttribute)variEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getVARI_Expr()
-  {
-    return (EReference)variEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVARI_Subname()
-  {
-    return (EAttribute)variEClass.getEStructuralFeatures().get(8);
+    return (EReference)ariEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -825,6 +819,46 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
   public EReference getAtom_Expr()
   {
     return (EReference)atomEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVARI()
+  {
+    return variEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVARI_Name()
+  {
+    return (EAttribute)variEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVARI_Expr()
+  {
+    return (EReference)variEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVARI_Subname()
+  {
+    return (EAttribute)variEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -918,22 +952,26 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
     createEAttribute(attrAssEClass, ATTR_ASS__NAME);
     createEReference(attrAssEClass, ATTR_ASS__EXPR);
 
-    variEClass = createEClass(VARI);
-    createEReference(variEClass, VARI__CONJ);
-    createEReference(variEClass, VARI__RELAT);
-    createEReference(variEClass, VARI__ADD);
-    createEReference(variEClass, VARI__MULT);
-    createEReference(variEClass, VARI__UNARY);
-    createEReference(variEClass, VARI__ATOM);
-    createEAttribute(variEClass, VARI__NAME);
-    createEReference(variEClass, VARI__EXPR);
-    createEAttribute(variEClass, VARI__SUBNAME);
+    boolEClass = createEClass(BOOL);
+    createEReference(boolEClass, BOOL__CONJ);
+    createEReference(boolEClass, BOOL__RELAT);
+    createEReference(boolEClass, BOOL__ADD);
+
+    ariEClass = createEClass(ARI);
+    createEReference(ariEClass, ARI__MULT);
+    createEReference(ariEClass, ARI__UNARY);
+    createEReference(ariEClass, ARI__ATOM);
 
     atomEClass = createEClass(ATOM);
     createEAttribute(atomEClass, ATOM__VALUE);
     createEReference(atomEClass, ATOM__VAR1);
     createEReference(atomEClass, ATOM__VAR2);
     createEReference(atomEClass, ATOM__EXPR);
+
+    variEClass = createEClass(VARI);
+    createEAttribute(variEClass, VARI__NAME);
+    createEReference(variEClass, VARI__EXPR);
+    createEAttribute(variEClass, VARI__SUBNAME);
   }
 
   /**
@@ -985,7 +1023,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
 
     initEClass(vareEClass, org.xtext.mgpl.mgplDSL.VARE.class, "VARE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVARE_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARE_Expr(), this.getVARI(), null, "expr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARE_Expr(), this.getBOOL(), null, "expr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVARE_Value(), ecorePackage.getEInt(), "value", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVARE_Type(), ecorePackage.getEString(), "type", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVARE_Attr(), this.getAttrList(), null, "attr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1005,7 +1043,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
     initEReference(getStatementBlock_Stmt(), this.getStmt(), null, "stmt", null, 0, -1, StatementBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stmtEClass, Stmt.class, "Stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStmt_Expr(), this.getVARI(), null, "expr", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStmt_Expr(), this.getBOOL(), null, "expr", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forStmtEClass, ForStmt.class, "ForStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getForStmt_Ass1(), this.getAssStmt(), null, "ass1", null, 0, 1, ForStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1024,31 +1062,35 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
 
     initEClass(assStmt2EClass, AssStmt2.class, "AssStmt2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAssStmt2_Var(), this.getVARI(), null, "var", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAssStmt2_Expr(), this.getVARI(), null, "expr", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssStmt2_Expr(), this.getBOOL(), null, "expr", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attrListEClass, AttrList.class, "AttrList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttrList_Attr(), this.getAttrAss(), null, "attr", null, 0, -1, AttrList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attrAssEClass, AttrAss.class, "AttrAss", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttrAss_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttrAss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttrAss_Expr(), this.getVARI(), null, "expr", null, 0, 1, AttrAss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttrAss_Expr(), this.getBOOL(), null, "expr", null, 0, 1, AttrAss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variEClass, org.xtext.mgpl.mgplDSL.VARI.class, "VARI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVARI_Conj(), this.getVARI(), null, "conj", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARI_Relat(), this.getVARI(), null, "relat", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARI_Add(), this.getVARI(), null, "add", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARI_Mult(), this.getVARI(), null, "mult", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARI_Unary(), this.getVARI(), null, "unary", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARI_Atom(), this.getAtom(), null, "atom", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVARI_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVARI_Expr(), this.getVARI(), null, "expr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVARI_Subname(), ecorePackage.getEString(), "subname", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(boolEClass, org.xtext.mgpl.mgplDSL.BOOL.class, "BOOL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBOOL_Conj(), this.getBOOL(), null, "conj", null, 0, -1, org.xtext.mgpl.mgplDSL.BOOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBOOL_Relat(), this.getBOOL(), null, "relat", null, 0, -1, org.xtext.mgpl.mgplDSL.BOOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBOOL_Add(), this.getARI(), null, "add", null, 0, -1, org.xtext.mgpl.mgplDSL.BOOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ariEClass, org.xtext.mgpl.mgplDSL.ARI.class, "ARI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getARI_Mult(), this.getARI(), null, "mult", null, 0, -1, org.xtext.mgpl.mgplDSL.ARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getARI_Unary(), this.getARI(), null, "unary", null, 0, -1, org.xtext.mgpl.mgplDSL.ARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getARI_Atom(), this.getAtom(), null, "atom", null, 0, 1, org.xtext.mgpl.mgplDSL.ARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAtom_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtom_Var1(), this.getVARI(), null, "var1", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtom_Var2(), this.getVARI(), null, "var2", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtom_Expr(), this.getVARI(), null, "expr", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtom_Expr(), this.getBOOL(), null, "expr", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variEClass, org.xtext.mgpl.mgplDSL.VARI.class, "VARI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVARI_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Expr(), this.getBOOL(), null, "expr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVARI_Subname(), ecorePackage.getEString(), "subname", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -182,10 +182,17 @@ public class MgplDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MgplDSLPackage.VARI:
+      case MgplDSLPackage.BOOL:
       {
-        VARI vari = (VARI)theEObject;
-        T result = caseVARI(vari);
+        BOOL bool = (BOOL)theEObject;
+        T result = caseBOOL(bool);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MgplDSLPackage.ARI:
+      {
+        ARI ari = (ARI)theEObject;
+        T result = caseARI(ari);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -193,6 +200,13 @@ public class MgplDSLSwitch<T> extends Switch<T>
       {
         Atom atom = (Atom)theEObject;
         T result = caseAtom(atom);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MgplDSLPackage.VARI:
+      {
+        VARI vari = (VARI)theEObject;
+        T result = caseVARI(vari);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -441,17 +455,33 @@ public class MgplDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>VARI</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>BOOL</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>VARI</em>'.
+   * @return the result of interpreting the object as an instance of '<em>BOOL</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVARI(VARI object)
+  public T caseBOOL(BOOL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ARI</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ARI</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseARI(ARI object)
   {
     return null;
   }
@@ -468,6 +498,22 @@ public class MgplDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtom(Atom object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>VARI</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>VARI</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVARI(VARI object)
   {
     return null;
   }
