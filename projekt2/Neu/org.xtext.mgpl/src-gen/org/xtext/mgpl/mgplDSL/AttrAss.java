@@ -58,12 +58,12 @@ public interface AttrAss extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(Expr)
+   * @see #setExpr(VARI)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAttrAss_Expr()
    * @model containment="true"
    * @generated
    */
-  Expr getExpr();
+  VARI getExpr();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.AttrAss#getExpr <em>Expr</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface AttrAss extends EObject
    * @see #getExpr()
    * @generated
    */
-  void setExpr(Expr value);
+  void setExpr(VARI value);
 
 } // AttrAss

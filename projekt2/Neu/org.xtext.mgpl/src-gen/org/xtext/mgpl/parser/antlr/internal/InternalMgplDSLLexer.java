@@ -177,10 +177,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:16:7: ( '[' )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:16:9: '['
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:16:7: ( '=' )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:16:9: '='
             {
-            match('['); 
+            match('='); 
 
             }
 
@@ -197,10 +197,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:17:7: ( ']' )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:17:9: ']'
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:17:7: ( '[' )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:17:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -217,10 +217,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:18:7: ( '=' )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:18:9: '='
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:18:7: ( ']' )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:18:9: ']'
             {
-            match('='); 
+            match(']'); 
 
             }
 
@@ -815,10 +815,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2055:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2055:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1941:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1941:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2055:11: ( '^' )?
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1941:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -827,7 +827,7 @@ public class InternalMgplDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2055:11: '^'
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1941:11: '^'
                     {
                     match('^'); 
 
@@ -845,7 +845,7 @@ public class InternalMgplDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2055:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1941:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -894,10 +894,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2057:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2057:12: ( '0' .. '9' )+
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1943:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1943:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2057:12: ( '0' .. '9' )+
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1943:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -911,7 +911,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2057:13: '0' .. '9'
+            	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1943:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -943,10 +943,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -964,10 +964,10 @@ public class InternalMgplDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -983,7 +983,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -999,7 +999,7 @@ public class InternalMgplDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1024,10 +1024,10 @@ public class InternalMgplDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1043,7 +1043,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1059,7 +1059,7 @@ public class InternalMgplDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2059:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1945:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1102,12 +1102,12 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2061:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2061:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1947:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1947:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2061:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1947:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1132,7 +1132,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2061:52: .
+            	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1947:52: .
             	    {
             	    matchAny(); 
 
@@ -1162,12 +1162,12 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1180,7 +1180,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1200,7 +1200,7 @@ public class InternalMgplDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1209,9 +1209,9 @@ public class InternalMgplDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:41: ( '\\r' )?
+                    // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1220,7 +1220,7 @@ public class InternalMgplDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2063:41: '\\r'
+                            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1949:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1252,10 +1252,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2065:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2065:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1951:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1951:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2065:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1951:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1309,8 +1309,8 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2067:16: ( . )
-            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:2067:18: .
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1953:16: ( . )
+            // ../org.xtext.mgpl/src-gen/org/xtext/mgpl/parser/antlr/internal/InternalMgplDSL.g:1953:18: .
             {
             matchAny(); 
 
@@ -1638,7 +1638,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\50\3\uffff\1\50\2\uffff\1\61\11\50\2\uffff\2\50\1\uffff"+
+        "\1\uffff\1\50\3\uffff\1\50\1\57\2\uffff\11\50\2\uffff\2\50\1\uffff"+
         "\2\46\1\105\3\uffff\1\113\2\uffff\1\46\2\uffff\2\46\2\uffff\1\50"+
         "\4\uffff\1\50\1\123\4\uffff\1\50\1\125\11\50\2\uffff\2\50\20\uffff"+
         "\1\50\1\142\1\uffff\1\50\1\uffff\11\50\1\155\1\50\1\157\1\uffff"+
@@ -1649,7 +1649,7 @@ public class InternalMgplDSLLexer extends Lexer {
     static final String DFA12_eofS =
         "\u00a2\uffff";
     static final String DFA12_minS =
-        "\1\0\1\141\3\uffff\1\146\2\uffff\1\75\2\156\1\145\1\157\1\151\1"+
+        "\1\0\1\141\3\uffff\1\146\1\75\2\uffff\2\156\1\145\1\157\1\151\1"+
         "\160\1\145\1\160\1\157\2\uffff\1\157\1\154\1\uffff\1\174\1\46\1"+
         "\75\3\uffff\1\52\2\uffff\1\101\2\uffff\2\0\2\uffff\1\155\4\uffff"+
         "\1\164\1\60\4\uffff\1\151\1\60\1\143\1\147\1\151\1\165\1\162\1\141"+
@@ -1662,7 +1662,7 @@ public class InternalMgplDSLLexer extends Lexer {
         "\60\1\157\1\156\1\145\1\157\1\60\1\uffff\1\167\1\uffff\1\167\2\60"+
         "\1\167\1\uffff\2\60\2\uffff\1\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\141\3\uffff\1\156\2\uffff\1\75\2\156\1\151\1\162\1\151"+
+        "\1\uffff\1\141\3\uffff\1\156\1\75\2\uffff\2\156\1\151\1\162\1\151"+
         "\1\160\1\145\1\160\1\157\2\uffff\1\157\1\154\1\uffff\1\174\1\46"+
         "\1\75\3\uffff\1\57\2\uffff\1\172\2\uffff\2\uffff\2\uffff\1\155\4"+
         "\uffff\1\164\1\172\4\uffff\1\151\1\172\1\143\1\147\1\151\1\165\1"+
@@ -1675,9 +1675,9 @@ public class InternalMgplDSLLexer extends Lexer {
         "\172\1\uffff\1\157\1\172\1\157\1\156\1\145\1\157\1\172\1\uffff\1"+
         "\167\1\uffff\1\167\2\172\1\167\1\uffff\2\172\2\uffff\1\172\3\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\1\4\1\uffff\1\6\1\7\12\uffff\1\23\1\24\2\uffff"+
+        "\2\uffff\1\2\1\3\1\4\2\uffff\1\7\1\10\11\uffff\1\23\1\24\2\uffff"+
         "\1\30\3\uffff\1\36\1\37\1\40\1\uffff\1\42\1\44\1\uffff\1\45\1\46"+
-        "\2\uffff\1\52\1\53\1\uffff\1\45\1\2\1\3\1\4\2\uffff\1\6\1\7\1\33"+
+        "\2\uffff\1\52\1\53\1\uffff\1\45\1\2\1\3\1\4\2\uffff\1\33\1\6\1\7"+
         "\1\10\13\uffff\1\23\1\24\2\uffff\1\30\1\31\1\32\1\35\1\34\1\36\1"+
         "\37\1\40\1\50\1\51\1\41\1\42\1\44\1\46\1\47\1\52\2\uffff\1\26\1"+
         "\uffff\1\12\14\uffff\1\5\12\uffff\1\25\1\uffff\1\1\12\uffff\1\27"+
@@ -1687,8 +1687,8 @@ public class InternalMgplDSLLexer extends Lexer {
         "\1\2\42\uffff\1\1\1\0\175\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\46\2\45\2\46\1\45\22\46\1\45\1\36\1\43\3\46\1\30\1\44\1"+
-            "\2\1\3\1\34\1\32\1\26\1\33\1\37\1\35\12\42\1\46\1\4\1\31\1\10"+
-            "\3\46\32\41\1\6\1\46\1\7\1\40\1\41\1\46\1\11\1\41\1\15\1\21"+
+            "\2\1\3\1\34\1\32\1\26\1\33\1\37\1\35\12\42\1\46\1\4\1\31\1\6"+
+            "\3\46\32\41\1\7\1\46\1\10\1\40\1\41\1\46\1\11\1\41\1\15\1\21"+
             "\1\25\1\24\1\1\1\41\1\5\2\41\1\17\2\41\1\12\2\41\1\13\1\16\1"+
             "\14\1\20\5\41\1\22\1\27\1\23\uff82\46",
             "\1\47",
@@ -1696,9 +1696,9 @@ public class InternalMgplDSLLexer extends Lexer {
             "",
             "",
             "\1\55\7\uffff\1\54",
+            "\1\56",
             "",
             "",
-            "\1\60",
             "\1\62",
             "\1\63",
             "\1\64\3\uffff\1\65",
@@ -1924,11 +1924,11 @@ public class InternalMgplDSLLexer extends Lexer {
 
                         else if ( (LA12_0=='i') ) {s = 5;}
 
-                        else if ( (LA12_0=='[') ) {s = 6;}
+                        else if ( (LA12_0=='=') ) {s = 6;}
 
-                        else if ( (LA12_0==']') ) {s = 7;}
+                        else if ( (LA12_0=='[') ) {s = 7;}
 
-                        else if ( (LA12_0=='=') ) {s = 8;}
+                        else if ( (LA12_0==']') ) {s = 8;}
 
                         else if ( (LA12_0=='a') ) {s = 9;}
 

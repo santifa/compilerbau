@@ -79,13 +79,6 @@ public class MgplDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MgplDSLPackage.GAME:
-      {
-        Game game = (Game)theEObject;
-        T result = caseGame(game);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MgplDSLPackage.DECLARATION:
       {
         Declaration declaration = (Declaration)theEObject;
@@ -93,24 +86,10 @@ public class MgplDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MgplDSLPackage.VAR_DECL:
+      case MgplDSLPackage.VARE:
       {
-        VarDecl varDecl = (VarDecl)theEObject;
-        T result = caseVarDecl(varDecl);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.INIT:
-      {
-        Init init = (Init)theEObject;
-        T result = caseInit(init);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.OBJ_DECL:
-      {
-        ObjDecl objDecl = (ObjDecl)theEObject;
-        T result = caseObjDecl(objDecl);
+        VARE vare = (VARE)theEObject;
+        T result = caseVARE(vare);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -203,53 +182,10 @@ public class MgplDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MgplDSLPackage.EXPR:
+      case MgplDSLPackage.VARI:
       {
-        Expr expr = (Expr)theEObject;
-        T result = caseExpr(expr);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.DISJ:
-      {
-        Disj disj = (Disj)theEObject;
-        T result = caseDisj(disj);
-        if (result == null) result = caseExpr(disj);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.CONJ:
-      {
-        Conj conj = (Conj)theEObject;
-        T result = caseConj(conj);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.RELAT:
-      {
-        Relat relat = (Relat)theEObject;
-        T result = caseRelat(relat);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.ADD:
-      {
-        Add add = (Add)theEObject;
-        T result = caseAdd(add);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.MULT:
-      {
-        Mult mult = (Mult)theEObject;
-        T result = caseMult(mult);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.UNARY:
-      {
-        Unary unary = (Unary)theEObject;
-        T result = caseUnary(unary);
+        VARI vari = (VARI)theEObject;
+        T result = caseVARI(vari);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -257,13 +193,6 @@ public class MgplDSLSwitch<T> extends Switch<T>
       {
         Atom atom = (Atom)theEObject;
         T result = caseAtom(atom);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MgplDSLPackage.VAR:
-      {
-        Var var = (Var)theEObject;
-        T result = caseVar(var);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -288,22 +217,6 @@ public class MgplDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Game</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Game</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGame(Game object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -320,49 +233,17 @@ public class MgplDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Var Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>VARE</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>VARE</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVarDecl(VarDecl object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Init</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Init</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInit(Init object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Obj Decl</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Obj Decl</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseObjDecl(ObjDecl object)
+  public T caseVARE(VARE object)
   {
     return null;
   }
@@ -560,113 +441,17 @@ public class MgplDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expr</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>VARI</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expr</em>'.
+   * @return the result of interpreting the object as an instance of '<em>VARI</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpr(Expr object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Disj</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Disj</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDisj(Disj object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Conj</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Conj</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConj(Conj object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Relat</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Relat</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRelat(Relat object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Add</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Add</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAdd(Add object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Mult</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mult</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMult(Mult object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Unary</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unary</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnary(Unary object)
+  public T caseVARI(VARI object)
   {
     return null;
   }
@@ -683,22 +468,6 @@ public class MgplDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtom(Atom object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Var</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Var</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVar(Var object)
   {
     return null;
   }

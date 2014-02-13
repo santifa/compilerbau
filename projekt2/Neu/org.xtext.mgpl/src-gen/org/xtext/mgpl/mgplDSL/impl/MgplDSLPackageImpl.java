@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.mgpl.mgplDSL.Add;
 import org.xtext.mgpl.mgplDSL.AnimBlock;
 import org.xtext.mgpl.mgplDSL.AssStmt;
 import org.xtext.mgpl.mgplDSL.AssStmt2;
@@ -17,27 +16,16 @@ import org.xtext.mgpl.mgplDSL.Atom;
 import org.xtext.mgpl.mgplDSL.AttrAss;
 import org.xtext.mgpl.mgplDSL.AttrList;
 import org.xtext.mgpl.mgplDSL.Block;
-import org.xtext.mgpl.mgplDSL.Conj;
 import org.xtext.mgpl.mgplDSL.Declaration;
-import org.xtext.mgpl.mgplDSL.Disj;
 import org.xtext.mgpl.mgplDSL.ElseStmt;
 import org.xtext.mgpl.mgplDSL.EventBlock;
-import org.xtext.mgpl.mgplDSL.Expr;
 import org.xtext.mgpl.mgplDSL.ForStmt;
-import org.xtext.mgpl.mgplDSL.Game;
 import org.xtext.mgpl.mgplDSL.IfStmt;
-import org.xtext.mgpl.mgplDSL.Init;
 import org.xtext.mgpl.mgplDSL.MgplDSLFactory;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.Model;
-import org.xtext.mgpl.mgplDSL.Mult;
-import org.xtext.mgpl.mgplDSL.ObjDecl;
-import org.xtext.mgpl.mgplDSL.Relat;
 import org.xtext.mgpl.mgplDSL.StatementBlock;
 import org.xtext.mgpl.mgplDSL.Stmt;
-import org.xtext.mgpl.mgplDSL.Unary;
-import org.xtext.mgpl.mgplDSL.Var;
-import org.xtext.mgpl.mgplDSL.VarDecl;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,13 +47,6 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass gameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass declarationEClass = null;
 
   /**
@@ -73,21 +54,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass varDeclEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass initEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass objDeclEClass = null;
+  private EClass vareEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -178,49 +145,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass exprEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass disjEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass conjEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass relatEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass addEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass multEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass unaryEClass = null;
+  private EClass variEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -228,13 +153,6 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * @generated
    */
   private EClass atomEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass varEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -314,9 +232,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Game()
+  public EAttribute getModel_Name()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -324,7 +242,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Decl()
+  public EReference getModel_Attr()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
   }
@@ -334,7 +252,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Stmt()
+  public EReference getModel_Decl()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(2);
   }
@@ -344,7 +262,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Blocks()
+  public EReference getModel_Stmt()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(3);
   }
@@ -354,29 +272,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGame()
+  public EReference getModel_Blocks()
   {
-    return gameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGame_Name()
-  {
-    return (EAttribute)gameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGame_Attr()
-  {
-    return (EReference)gameEClass.getEStructuralFeatures().get(1);
+    return (EReference)modelEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -394,7 +292,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDeclaration_Var()
+  public EReference getDeclaration_Vari()
   {
     return (EReference)declarationEClass.getEStructuralFeatures().get(0);
   }
@@ -414,9 +312,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVarDecl()
+  public EClass getVARE()
   {
-    return varDeclEClass;
+    return vareEClass;
   }
 
   /**
@@ -424,9 +322,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVarDecl_Name()
+  public EAttribute getVARE_Name()
   {
-    return (EAttribute)varDeclEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)vareEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -434,9 +332,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVarDecl_Expr()
+  public EReference getVARE_Expr()
   {
-    return (EReference)varDeclEClass.getEStructuralFeatures().get(1);
+    return (EReference)vareEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -444,9 +342,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVarDecl_Int()
+  public EAttribute getVARE_Value()
   {
-    return (EAttribute)varDeclEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)vareEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -454,9 +352,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getInit()
+  public EAttribute getVARE_Type()
   {
-    return initEClass;
+    return (EAttribute)vareEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -464,59 +362,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInit_Expr()
+  public EReference getVARE_Attr()
   {
-    return (EReference)initEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getObjDecl()
-  {
-    return objDeclEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getObjDecl_Type()
-  {
-    return (EAttribute)objDeclEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getObjDecl_Name()
-  {
-    return (EAttribute)objDeclEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getObjDecl_Attr()
-  {
-    return (EReference)objDeclEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getObjDecl_Int()
-  {
-    return (EAttribute)objDeclEClass.getEStructuralFeatures().get(3);
+    return (EReference)vareEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -834,9 +682,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpr()
+  public EClass getVARI()
   {
-    return exprEClass;
+    return variEClass;
   }
 
   /**
@@ -844,9 +692,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDisj()
+  public EReference getVARI_Conj()
   {
-    return disjEClass;
+    return (EReference)variEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -854,9 +702,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDisj_Conj()
+  public EReference getVARI_Relat()
   {
-    return (EReference)disjEClass.getEStructuralFeatures().get(0);
+    return (EReference)variEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -864,9 +712,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getConj()
+  public EReference getVARI_Add()
   {
-    return conjEClass;
+    return (EReference)variEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -874,9 +722,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConj_Relat()
+  public EReference getVARI_Mult()
   {
-    return (EReference)conjEClass.getEStructuralFeatures().get(0);
+    return (EReference)variEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -884,9 +732,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRelat()
+  public EReference getVARI_Unary()
   {
-    return relatEClass;
+    return (EReference)variEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -894,9 +742,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRelat_Add()
+  public EReference getVARI_Atom()
   {
-    return (EReference)relatEClass.getEStructuralFeatures().get(0);
+    return (EReference)variEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -904,9 +752,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAdd()
+  public EAttribute getVARI_Name()
   {
-    return addEClass;
+    return (EAttribute)variEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -914,9 +762,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAdd_Mult()
+  public EReference getVARI_Expr()
   {
-    return (EReference)addEClass.getEStructuralFeatures().get(0);
+    return (EReference)variEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -924,39 +772,9 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMult()
+  public EAttribute getVARI_Subname()
   {
-    return multEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMult_Unary()
-  {
-    return (EReference)multEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUnary()
-  {
-    return unaryEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUnary_Atom()
-  {
-    return (EReference)unaryEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)variEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -974,7 +792,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtom_Int()
+  public EAttribute getAtom_Value()
   {
     return (EAttribute)atomEClass.getEStructuralFeatures().get(0);
   }
@@ -1014,46 +832,6 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVar()
-  {
-    return varEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVar_Name()
-  {
-    return (EAttribute)varEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getVar_Expr()
-  {
-    return (EReference)varEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVar_Subname()
-  {
-    return (EAttribute)varEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public MgplDSLFactory getMgplDSLFactory()
   {
     return (MgplDSLFactory)getEFactoryInstance();
@@ -1080,32 +858,22 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GAME);
+    createEAttribute(modelEClass, MODEL__NAME);
+    createEReference(modelEClass, MODEL__ATTR);
     createEReference(modelEClass, MODEL__DECL);
     createEReference(modelEClass, MODEL__STMT);
     createEReference(modelEClass, MODEL__BLOCKS);
 
-    gameEClass = createEClass(GAME);
-    createEAttribute(gameEClass, GAME__NAME);
-    createEReference(gameEClass, GAME__ATTR);
-
     declarationEClass = createEClass(DECLARATION);
-    createEReference(declarationEClass, DECLARATION__VAR);
+    createEReference(declarationEClass, DECLARATION__VARI);
     createEReference(declarationEClass, DECLARATION__OBJ);
 
-    varDeclEClass = createEClass(VAR_DECL);
-    createEAttribute(varDeclEClass, VAR_DECL__NAME);
-    createEReference(varDeclEClass, VAR_DECL__EXPR);
-    createEAttribute(varDeclEClass, VAR_DECL__INT);
-
-    initEClass = createEClass(INIT);
-    createEReference(initEClass, INIT__EXPR);
-
-    objDeclEClass = createEClass(OBJ_DECL);
-    createEAttribute(objDeclEClass, OBJ_DECL__TYPE);
-    createEAttribute(objDeclEClass, OBJ_DECL__NAME);
-    createEReference(objDeclEClass, OBJ_DECL__ATTR);
-    createEAttribute(objDeclEClass, OBJ_DECL__INT);
+    vareEClass = createEClass(VARE);
+    createEAttribute(vareEClass, VARE__NAME);
+    createEReference(vareEClass, VARE__EXPR);
+    createEAttribute(vareEClass, VARE__VALUE);
+    createEAttribute(vareEClass, VARE__TYPE);
+    createEReference(vareEClass, VARE__ATTR);
 
     blockEClass = createEClass(BLOCK);
     createEReference(blockEClass, BLOCK__STMT);
@@ -1150,36 +918,22 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
     createEAttribute(attrAssEClass, ATTR_ASS__NAME);
     createEReference(attrAssEClass, ATTR_ASS__EXPR);
 
-    exprEClass = createEClass(EXPR);
-
-    disjEClass = createEClass(DISJ);
-    createEReference(disjEClass, DISJ__CONJ);
-
-    conjEClass = createEClass(CONJ);
-    createEReference(conjEClass, CONJ__RELAT);
-
-    relatEClass = createEClass(RELAT);
-    createEReference(relatEClass, RELAT__ADD);
-
-    addEClass = createEClass(ADD);
-    createEReference(addEClass, ADD__MULT);
-
-    multEClass = createEClass(MULT);
-    createEReference(multEClass, MULT__UNARY);
-
-    unaryEClass = createEClass(UNARY);
-    createEReference(unaryEClass, UNARY__ATOM);
+    variEClass = createEClass(VARI);
+    createEReference(variEClass, VARI__CONJ);
+    createEReference(variEClass, VARI__RELAT);
+    createEReference(variEClass, VARI__ADD);
+    createEReference(variEClass, VARI__MULT);
+    createEReference(variEClass, VARI__UNARY);
+    createEReference(variEClass, VARI__ATOM);
+    createEAttribute(variEClass, VARI__NAME);
+    createEReference(variEClass, VARI__EXPR);
+    createEAttribute(variEClass, VARI__SUBNAME);
 
     atomEClass = createEClass(ATOM);
-    createEAttribute(atomEClass, ATOM__INT);
+    createEAttribute(atomEClass, ATOM__VALUE);
     createEReference(atomEClass, ATOM__VAR1);
     createEReference(atomEClass, ATOM__VAR2);
     createEReference(atomEClass, ATOM__EXPR);
-
-    varEClass = createEClass(VAR);
-    createEAttribute(varEClass, VAR__NAME);
-    createEReference(varEClass, VAR__EXPR);
-    createEAttribute(varEClass, VAR__SUBNAME);
   }
 
   /**
@@ -1216,36 +970,25 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
     forStmtEClass.getESuperTypes().add(this.getStmt());
     ifStmtEClass.getESuperTypes().add(this.getStmt());
     assStmtEClass.getESuperTypes().add(this.getStmt());
-    disjEClass.getESuperTypes().add(this.getExpr());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Game(), this.getGame(), null, "game", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Attr(), this.getAttrList(), null, "attr", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Decl(), this.getDeclaration(), null, "decl", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Stmt(), this.getStatementBlock(), null, "stmt", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Blocks(), this.getBlock(), null, "blocks", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGame_Name(), ecorePackage.getEString(), "name", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGame_Attr(), this.getAttrList(), null, "attr", null, 0, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDeclaration_Var(), this.getVarDecl(), null, "var", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclaration_Obj(), this.getObjDecl(), null, "obj", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaration_Vari(), this.getVARE(), null, "vari", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaration_Obj(), this.getVARE(), null, "obj", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVarDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVarDecl_Expr(), this.getInit(), null, "expr", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVarDecl_Int(), ecorePackage.getEInt(), "int", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(initEClass, Init.class, "Init", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInit_Expr(), this.getExpr(), null, "expr", null, 0, 1, Init.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(objDeclEClass, ObjDecl.class, "ObjDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getObjDecl_Type(), ecorePackage.getEString(), "type", null, 0, 1, ObjDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getObjDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, ObjDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjDecl_Attr(), this.getAttrList(), null, "attr", null, 0, 1, ObjDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getObjDecl_Int(), ecorePackage.getEInt(), "int", null, 0, 1, ObjDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(vareEClass, org.xtext.mgpl.mgplDSL.VARE.class, "VARE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVARE_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARE_Expr(), this.getVARI(), null, "expr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVARE_Value(), ecorePackage.getEInt(), "value", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVARE_Type(), ecorePackage.getEString(), "type", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARE_Attr(), this.getAttrList(), null, "attr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBlock_Stmt(), this.getStatementBlock(), null, "stmt", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1262,7 +1005,7 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
     initEReference(getStatementBlock_Stmt(), this.getStmt(), null, "stmt", null, 0, -1, StatementBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stmtEClass, Stmt.class, "Stmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStmt_Expr(), this.getExpr(), null, "expr", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStmt_Expr(), this.getVARI(), null, "expr", null, 0, 1, Stmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forStmtEClass, ForStmt.class, "ForStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getForStmt_Ass1(), this.getAssStmt(), null, "ass1", null, 0, 1, ForStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1277,49 +1020,35 @@ public class MgplDSLPackageImpl extends EPackageImpl implements MgplDSLPackage
     initEReference(getElseStmt_Stmt(), this.getStatementBlock(), null, "stmt", null, 0, 1, ElseStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assStmtEClass, AssStmt.class, "AssStmt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssStmt_Var(), this.getVar(), null, "var", null, 0, 1, AssStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssStmt_Var(), this.getVARI(), null, "var", null, 0, 1, AssStmt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assStmt2EClass, AssStmt2.class, "AssStmt2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssStmt2_Var(), this.getVar(), null, "var", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAssStmt2_Expr(), this.getExpr(), null, "expr", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssStmt2_Var(), this.getVARI(), null, "var", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssStmt2_Expr(), this.getVARI(), null, "expr", null, 0, 1, AssStmt2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attrListEClass, AttrList.class, "AttrList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttrList_Attr(), this.getAttrAss(), null, "attr", null, 0, -1, AttrList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attrAssEClass, AttrAss.class, "AttrAss", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttrAss_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttrAss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttrAss_Expr(), this.getExpr(), null, "expr", null, 0, 1, AttrAss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttrAss_Expr(), this.getVARI(), null, "expr", null, 0, 1, AttrAss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(disjEClass, Disj.class, "Disj", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDisj_Conj(), this.getConj(), null, "conj", null, 0, -1, Disj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(conjEClass, Conj.class, "Conj", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConj_Relat(), this.getRelat(), null, "relat", null, 0, -1, Conj.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(relatEClass, Relat.class, "Relat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRelat_Add(), this.getAdd(), null, "add", null, 0, -1, Relat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(addEClass, Add.class, "Add", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAdd_Mult(), this.getMult(), null, "mult", null, 0, -1, Add.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(multEClass, Mult.class, "Mult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMult_Unary(), this.getUnary(), null, "unary", null, 0, -1, Mult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(unaryEClass, Unary.class, "Unary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnary_Atom(), this.getAtom(), null, "atom", null, 0, 1, Unary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(variEClass, org.xtext.mgpl.mgplDSL.VARI.class, "VARI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVARI_Conj(), this.getVARI(), null, "conj", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Relat(), this.getVARI(), null, "relat", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Add(), this.getVARI(), null, "add", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Mult(), this.getVARI(), null, "mult", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Unary(), this.getVARI(), null, "unary", null, 0, -1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Atom(), this.getAtom(), null, "atom", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVARI_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVARI_Expr(), this.getVARI(), null, "expr", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVARI_Subname(), ecorePackage.getEString(), "subname", null, 0, 1, org.xtext.mgpl.mgplDSL.VARI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtom_Int(), ecorePackage.getEInt(), "int", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtom_Var1(), this.getVar(), null, "var1", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtom_Var2(), this.getVar(), null, "var2", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtom_Expr(), this.getExpr(), null, "expr", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(varEClass, Var.class, "Var", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Var.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVar_Expr(), this.getExpr(), null, "expr", null, 0, 1, Var.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVar_Subname(), ecorePackage.getEString(), "subname", null, 0, 1, Var.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtom_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtom_Var1(), this.getVARI(), null, "var1", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtom_Var2(), this.getVARI(), null, "var2", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtom_Expr(), this.getVARI(), null, "expr", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.mgpl.mgplDSL.AttrAss;
-import org.xtext.mgpl.mgplDSL.Expr;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
+import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public class AttrAssImpl extends MinimalEObjectImpl.Container implements AttrAss
    * @generated
    * @ordered
    */
-  protected Expr expr;
+  protected VARI expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +110,7 @@ public class AttrAssImpl extends MinimalEObjectImpl.Container implements AttrAss
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getExpr()
+  public VARI getExpr()
   {
     return expr;
   }
@@ -120,9 +120,9 @@ public class AttrAssImpl extends MinimalEObjectImpl.Container implements AttrAss
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(Expr newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
   {
-    Expr oldExpr = expr;
+    VARI oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -137,7 +137,7 @@ public class AttrAssImpl extends MinimalEObjectImpl.Container implements AttrAss
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(Expr newExpr)
+  public void setExpr(VARI newExpr)
   {
     if (newExpr != expr)
     {
@@ -201,7 +201,7 @@ public class AttrAssImpl extends MinimalEObjectImpl.Container implements AttrAss
         setName((String)newValue);
         return;
       case MgplDSLPackage.ATTR_ASS__EXPR:
-        setExpr((Expr)newValue);
+        setExpr((VARI)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +221,7 @@ public class AttrAssImpl extends MinimalEObjectImpl.Container implements AttrAss
         setName(NAME_EDEFAULT);
         return;
       case MgplDSLPackage.ATTR_ASS__EXPR:
-        setExpr((Expr)null);
+        setExpr((VARI)null);
         return;
     }
     super.eUnset(featureID);

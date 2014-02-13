@@ -507,10 +507,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:32:7: ( '[' )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:32:9: '['
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:32:7: ( '=' )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:32:9: '='
             {
-            match('['); 
+            match('='); 
 
             }
 
@@ -527,10 +527,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:33:7: ( ']' )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:33:9: ']'
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:33:7: ( '[' )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:33:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -547,10 +547,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:34:7: ( '=' )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:34:9: '='
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:34:7: ( ']' )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:34:9: ']'
             {
-            match('='); 
+            match(']'); 
 
             }
 
@@ -815,10 +815,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5749:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5749:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5542:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5542:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5749:11: ( '^' )?
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5542:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -827,7 +827,7 @@ public class InternalMgplDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5749:11: '^'
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5542:11: '^'
                     {
                     match('^'); 
 
@@ -845,7 +845,7 @@ public class InternalMgplDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5749:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5542:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -894,10 +894,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5751:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5751:12: ( '0' .. '9' )+
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5544:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5544:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5751:12: ( '0' .. '9' )+
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5544:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -911,7 +911,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5751:13: '0' .. '9'
+            	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5544:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -943,10 +943,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -964,10 +964,10 @@ public class InternalMgplDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -983,7 +983,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -999,7 +999,7 @@ public class InternalMgplDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1024,10 +1024,10 @@ public class InternalMgplDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1043,7 +1043,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1059,7 +1059,7 @@ public class InternalMgplDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5753:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5546:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1102,12 +1102,12 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5755:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5755:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5548:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5548:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5755:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5548:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1132,7 +1132,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5755:52: .
+            	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5548:52: .
             	    {
             	    matchAny(); 
 
@@ -1162,12 +1162,12 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1180,7 +1180,7 @@ public class InternalMgplDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1200,7 +1200,7 @@ public class InternalMgplDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1209,9 +1209,9 @@ public class InternalMgplDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:41: ( '\\r' )?
+                    // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1220,7 +1220,7 @@ public class InternalMgplDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5757:41: '\\r'
+                            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5550:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1252,10 +1252,10 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5759:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5759:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5552:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5552:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5759:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5552:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1309,8 +1309,8 @@ public class InternalMgplDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5761:16: ( . )
-            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5761:18: .
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5554:16: ( . )
+            // ../org.xtext.mgpl.ui/src-gen/org/xtext/mgpl/ui/contentassist/antlr/internal/InternalMgplDSL.g:5554:18: .
             {
             matchAny(); 
 
@@ -1677,10 +1677,10 @@ public class InternalMgplDSLLexer extends Lexer {
         "\1\172\4\uffff";
     static final String DFA12_acceptS =
         "\12\uffff\1\14\1\15\1\16\1\uffff\1\20\1\uffff\1\22\1\23\1\24\1\uffff"+
-        "\1\26\1\27\2\uffff\1\33\1\34\2\uffff\1\40\2\uffff\1\44\1\uffff\1"+
-        "\45\1\46\2\uffff\1\52\1\53\2\uffff\1\45\7\uffff\1\11\1\30\1\13\1"+
+        "\1\27\1\30\2\uffff\1\33\1\34\2\uffff\1\40\2\uffff\1\44\1\uffff\1"+
+        "\45\1\46\2\uffff\1\52\1\53\2\uffff\1\45\7\uffff\1\11\1\26\1\13\1"+
         "\12\1\14\1\15\1\16\1\50\1\51\1\17\1\20\1\uffff\1\22\1\23\1\24\2"+
-        "\uffff\1\26\1\27\2\uffff\1\33\1\34\2\uffff\1\40\1\41\1\42\1\44\1"+
+        "\uffff\1\27\1\30\2\uffff\1\33\1\34\2\uffff\1\40\1\41\1\42\1\44\1"+
         "\46\1\47\1\52\13\uffff\1\36\1\uffff\1\32\14\uffff\1\25\1\uffff\1"+
         "\35\12\uffff\1\21\1\uffff\1\37\5\uffff\1\4\10\uffff\1\3\7\uffff"+
         "\1\43\1\uffff\1\7\4\uffff\1\2\3\uffff\1\1\1\uffff\1\5\1\10\1\31"+

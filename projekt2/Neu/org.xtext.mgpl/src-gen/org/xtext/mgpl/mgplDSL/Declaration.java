@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.Declaration#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.Declaration#getVari <em>Vari</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Declaration#getObj <em>Obj</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Declaration extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Var</b></em>' containment reference.
+   * Returns the value of the '<em><b>Vari</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Vari</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(VarDecl)
-   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getDeclaration_Var()
+   * @return the value of the '<em>Vari</em>' containment reference.
+   * @see #setVari(VARE)
+   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getDeclaration_Vari()
    * @model containment="true"
    * @generated
    */
-  VarDecl getVar();
+  VARE getVari();
 
   /**
-   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Declaration#getVar <em>Var</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Declaration#getVari <em>Vari</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' containment reference.
-   * @see #getVar()
+   * @param value the new value of the '<em>Vari</em>' containment reference.
+   * @see #getVari()
    * @generated
    */
-  void setVar(VarDecl value);
+  void setVari(VARE value);
 
   /**
    * Returns the value of the '<em><b>Obj</b></em>' containment reference.
@@ -58,12 +58,12 @@ public interface Declaration extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Obj</em>' containment reference.
-   * @see #setObj(ObjDecl)
+   * @see #setObj(VARE)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getDeclaration_Obj()
    * @model containment="true"
    * @generated
    */
-  ObjDecl getObj();
+  VARE getObj();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Declaration#getObj <em>Obj</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface Declaration extends EObject
    * @see #getObj()
    * @generated
    */
-  void setObj(ObjDecl value);
+  void setObj(VARE value);
 
 } // Declaration

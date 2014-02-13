@@ -58,7 +58,7 @@ public class MgplDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     '+' | '-'
+	 *     '-' | '+'
 	 */
 	protected void emit_Add_HyphenMinusKeyword_1_0_1_or_PlusSignKeyword_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -74,7 +74,7 @@ public class MgplDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     '<=' | '==' | '<'
+	 *     '<' | '<=' | '=='
 	 */
 	protected void emit_Relat_EqualsSignEqualsSignKeyword_1_0_0_or_LessThanSignEqualsSignKeyword_1_0_2_or_LessThanSignKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

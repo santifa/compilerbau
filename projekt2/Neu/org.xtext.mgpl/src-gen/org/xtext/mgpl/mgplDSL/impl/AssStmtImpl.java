@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.mgpl.mgplDSL.AssStmt;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
-import org.xtext.mgpl.mgplDSL.Var;
+import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ public class AssStmtImpl extends StmtImpl implements AssStmt
    * @generated
    * @ordered
    */
-  protected Var var;
+  protected VARI var;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class AssStmtImpl extends StmtImpl implements AssStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var getVar()
+  public VARI getVar()
   {
     return var;
   }
@@ -75,9 +75,9 @@ public class AssStmtImpl extends StmtImpl implements AssStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar(Var newVar, NotificationChain msgs)
+  public NotificationChain basicSetVar(VARI newVar, NotificationChain msgs)
   {
-    Var oldVar = var;
+    VARI oldVar = var;
     var = newVar;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class AssStmtImpl extends StmtImpl implements AssStmt
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(Var newVar)
+  public void setVar(VARI newVar)
   {
     if (newVar != var)
     {
@@ -151,7 +151,7 @@ public class AssStmtImpl extends StmtImpl implements AssStmt
     switch (featureID)
     {
       case MgplDSLPackage.ASS_STMT__VAR:
-        setVar((Var)newValue);
+        setVar((VARI)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class AssStmtImpl extends StmtImpl implements AssStmt
     switch (featureID)
     {
       case MgplDSLPackage.ASS_STMT__VAR:
-        setVar((Var)null);
+        setVar((VARI)null);
         return;
     }
     super.eUnset(featureID);

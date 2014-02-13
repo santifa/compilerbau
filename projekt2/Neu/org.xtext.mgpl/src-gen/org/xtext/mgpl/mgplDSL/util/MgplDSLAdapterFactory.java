@@ -80,29 +80,14 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGame(Game object)
-      {
-        return createGameAdapter();
-      }
-      @Override
       public Adapter caseDeclaration(Declaration object)
       {
         return createDeclarationAdapter();
       }
       @Override
-      public Adapter caseVarDecl(VarDecl object)
+      public Adapter caseVARE(VARE object)
       {
-        return createVarDeclAdapter();
-      }
-      @Override
-      public Adapter caseInit(Init object)
-      {
-        return createInitAdapter();
-      }
-      @Override
-      public Adapter caseObjDecl(ObjDecl object)
-      {
-        return createObjDeclAdapter();
+        return createVAREAdapter();
       }
       @Override
       public Adapter caseBlock(Block object)
@@ -165,49 +150,14 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
         return createAttrAssAdapter();
       }
       @Override
-      public Adapter caseExpr(Expr object)
+      public Adapter caseVARI(VARI object)
       {
-        return createExprAdapter();
-      }
-      @Override
-      public Adapter caseDisj(Disj object)
-      {
-        return createDisjAdapter();
-      }
-      @Override
-      public Adapter caseConj(Conj object)
-      {
-        return createConjAdapter();
-      }
-      @Override
-      public Adapter caseRelat(Relat object)
-      {
-        return createRelatAdapter();
-      }
-      @Override
-      public Adapter caseAdd(Add object)
-      {
-        return createAddAdapter();
-      }
-      @Override
-      public Adapter caseMult(Mult object)
-      {
-        return createMultAdapter();
-      }
-      @Override
-      public Adapter caseUnary(Unary object)
-      {
-        return createUnaryAdapter();
+        return createVARIAdapter();
       }
       @Override
       public Adapter caseAtom(Atom object)
       {
         return createAtomAdapter();
-      }
-      @Override
-      public Adapter caseVar(Var object)
-      {
-        return createVarAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -247,21 +197,6 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Game <em>Game</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Game
-   * @generated
-   */
-  public Adapter createGameAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Declaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -277,46 +212,16 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.VarDecl <em>Var Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.VARE <em>VARE</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.VarDecl
+   * @see org.xtext.mgpl.mgplDSL.VARE
    * @generated
    */
-  public Adapter createVarDeclAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Init <em>Init</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Init
-   * @generated
-   */
-  public Adapter createInitAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.ObjDecl <em>Obj Decl</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.ObjDecl
-   * @generated
-   */
-  public Adapter createObjDeclAdapter()
+  public Adapter createVAREAdapter()
   {
     return null;
   }
@@ -502,106 +407,16 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Expr <em>Expr</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.VARI <em>VARI</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Expr
+   * @see org.xtext.mgpl.mgplDSL.VARI
    * @generated
    */
-  public Adapter createExprAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Disj <em>Disj</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Disj
-   * @generated
-   */
-  public Adapter createDisjAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Conj <em>Conj</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Conj
-   * @generated
-   */
-  public Adapter createConjAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Relat <em>Relat</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Relat
-   * @generated
-   */
-  public Adapter createRelatAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Add <em>Add</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Add
-   * @generated
-   */
-  public Adapter createAddAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Mult <em>Mult</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Mult
-   * @generated
-   */
-  public Adapter createMultAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Unary <em>Unary</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Unary
-   * @generated
-   */
-  public Adapter createUnaryAdapter()
+  public Adapter createVARIAdapter()
   {
     return null;
   }
@@ -617,21 +432,6 @@ public class MgplDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtomAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.mgpl.mgplDSL.Var <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.mgpl.mgplDSL.Var
-   * @generated
-   */
-  public Adapter createVarAdapter()
   {
     return null;
   }

@@ -3,10 +3,12 @@
  */
 package org.xtext.mgpl.generator
 
+import com.google.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import org.xtext.mgpl.mgplDSL.Game
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import org.xtext.mgpl.mgplDSL.Model
 
 /**
  * Generates code from your model files on save.
@@ -15,7 +17,13 @@ import org.xtext.mgpl.mgplDSL.Game
  */
 class MgplDSLGenerator implements IGenerator {
 
+	@Inject extension IQualifiedNameProvider
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-	
+		for (e : resource.allContents.toIterable.filter(typeof(Model))) {
+			fsa.generateFile(e.fullyQualifiedName.toString("/") + ".java", e.compile )
+		}
 	}
+	
+	
+	
 }

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.Atom#getInt <em>Int</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.Atom#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Atom#getVar1 <em>Var1</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Atom#getVar2 <em>Var2</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Atom#getExpr <em>Expr</em>}</li>
@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Atom extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Int</b></em>' attribute.
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Int</em>' attribute isn't clear,
+   * If the meaning of the '<em>Value</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Int</em>' attribute.
-   * @see #setInt(int)
-   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAtom_Int()
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(int)
+   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAtom_Value()
    * @model
    * @generated
    */
-  int getInt();
+  int getValue();
 
   /**
-   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Atom#getInt <em>Int</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Atom#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Int</em>' attribute.
-   * @see #getInt()
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
    * @generated
    */
-  void setInt(int value);
+  void setValue(int value);
 
   /**
    * Returns the value of the '<em><b>Var1</b></em>' containment reference.
@@ -60,12 +60,12 @@ public interface Atom extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Var1</em>' containment reference.
-   * @see #setVar1(Var)
+   * @see #setVar1(VARI)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAtom_Var1()
    * @model containment="true"
    * @generated
    */
-  Var getVar1();
+  VARI getVar1();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Atom#getVar1 <em>Var1</em>}' containment reference.
@@ -75,7 +75,7 @@ public interface Atom extends EObject
    * @see #getVar1()
    * @generated
    */
-  void setVar1(Var value);
+  void setVar1(VARI value);
 
   /**
    * Returns the value of the '<em><b>Var2</b></em>' containment reference.
@@ -86,12 +86,12 @@ public interface Atom extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Var2</em>' containment reference.
-   * @see #setVar2(Var)
+   * @see #setVar2(VARI)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAtom_Var2()
    * @model containment="true"
    * @generated
    */
-  Var getVar2();
+  VARI getVar2();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Atom#getVar2 <em>Var2</em>}' containment reference.
@@ -101,7 +101,7 @@ public interface Atom extends EObject
    * @see #getVar2()
    * @generated
    */
-  void setVar2(Var value);
+  void setVar2(VARI value);
 
   /**
    * Returns the value of the '<em><b>Expr</b></em>' containment reference.
@@ -112,12 +112,12 @@ public interface Atom extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(Expr)
+   * @see #setExpr(VARI)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAtom_Expr()
    * @model containment="true"
    * @generated
    */
-  Expr getExpr();
+  VARI getExpr();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Atom#getExpr <em>Expr</em>}' containment reference.
@@ -127,6 +127,6 @@ public interface Atom extends EObject
    * @see #getExpr()
    * @generated
    */
-  void setExpr(Expr value);
+  void setExpr(VARI value);
 
 } // Atom

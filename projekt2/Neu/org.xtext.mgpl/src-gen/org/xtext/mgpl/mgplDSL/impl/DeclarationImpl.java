@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.mgpl.mgplDSL.Declaration;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
-import org.xtext.mgpl.mgplDSL.ObjDecl;
-import org.xtext.mgpl.mgplDSL.VarDecl;
+import org.xtext.mgpl.mgplDSL.VARE;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.xtext.mgpl.mgplDSL.VarDecl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.DeclarationImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.impl.DeclarationImpl#getVari <em>Vari</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.DeclarationImpl#getObj <em>Obj</em>}</li>
  * </ul>
  * </p>
@@ -33,14 +32,14 @@ import org.xtext.mgpl.mgplDSL.VarDecl;
 public class DeclarationImpl extends MinimalEObjectImpl.Container implements Declaration
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * The cached value of the '{@link #getVari() <em>Vari</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getVari()
    * @generated
    * @ordered
    */
-  protected VarDecl var;
+  protected VARE vari;
 
   /**
    * The cached value of the '{@link #getObj() <em>Obj</em>}' containment reference.
@@ -50,7 +49,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * @generated
    * @ordered
    */
-  protected ObjDecl obj;
+  protected VARE obj;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,9 +77,9 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public VarDecl getVar()
+  public VARE getVari()
   {
-    return var;
+    return vari;
   }
 
   /**
@@ -88,13 +87,13 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar(VarDecl newVar, NotificationChain msgs)
+  public NotificationChain basicSetVari(VARE newVari, NotificationChain msgs)
   {
-    VarDecl oldVar = var;
-    var = newVar;
+    VARE oldVari = vari;
+    vari = newVari;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MgplDSLPackage.DECLARATION__VAR, oldVar, newVar);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MgplDSLPackage.DECLARATION__VARI, oldVari, newVari);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -105,20 +104,20 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(VarDecl newVar)
+  public void setVari(VARE newVari)
   {
-    if (newVar != var)
+    if (newVari != vari)
     {
       NotificationChain msgs = null;
-      if (var != null)
-        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.DECLARATION__VAR, null, msgs);
-      if (newVar != null)
-        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.DECLARATION__VAR, null, msgs);
-      msgs = basicSetVar(newVar, msgs);
+      if (vari != null)
+        msgs = ((InternalEObject)vari).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.DECLARATION__VARI, null, msgs);
+      if (newVari != null)
+        msgs = ((InternalEObject)newVari).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.DECLARATION__VARI, null, msgs);
+      msgs = basicSetVari(newVari, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.DECLARATION__VAR, newVar, newVar));
+      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.DECLARATION__VARI, newVari, newVari));
   }
 
   /**
@@ -126,7 +125,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public ObjDecl getObj()
+  public VARE getObj()
   {
     return obj;
   }
@@ -136,9 +135,9 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetObj(ObjDecl newObj, NotificationChain msgs)
+  public NotificationChain basicSetObj(VARE newObj, NotificationChain msgs)
   {
-    ObjDecl oldObj = obj;
+    VARE oldObj = obj;
     obj = newObj;
     if (eNotificationRequired())
     {
@@ -153,7 +152,7 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setObj(ObjDecl newObj)
+  public void setObj(VARE newObj)
   {
     if (newObj != obj)
     {
@@ -179,8 +178,8 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case MgplDSLPackage.DECLARATION__VAR:
-        return basicSetVar(null, msgs);
+      case MgplDSLPackage.DECLARATION__VARI:
+        return basicSetVari(null, msgs);
       case MgplDSLPackage.DECLARATION__OBJ:
         return basicSetObj(null, msgs);
     }
@@ -197,8 +196,8 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case MgplDSLPackage.DECLARATION__VAR:
-        return getVar();
+      case MgplDSLPackage.DECLARATION__VARI:
+        return getVari();
       case MgplDSLPackage.DECLARATION__OBJ:
         return getObj();
     }
@@ -215,11 +214,11 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case MgplDSLPackage.DECLARATION__VAR:
-        setVar((VarDecl)newValue);
+      case MgplDSLPackage.DECLARATION__VARI:
+        setVari((VARE)newValue);
         return;
       case MgplDSLPackage.DECLARATION__OBJ:
-        setObj((ObjDecl)newValue);
+        setObj((VARE)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +234,11 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case MgplDSLPackage.DECLARATION__VAR:
-        setVar((VarDecl)null);
+      case MgplDSLPackage.DECLARATION__VARI:
+        setVari((VARE)null);
         return;
       case MgplDSLPackage.DECLARATION__OBJ:
-        setObj((ObjDecl)null);
+        setObj((VARE)null);
         return;
     }
     super.eUnset(featureID);
@@ -255,8 +254,8 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   {
     switch (featureID)
     {
-      case MgplDSLPackage.DECLARATION__VAR:
-        return var != null;
+      case MgplDSLPackage.DECLARATION__VARI:
+        return vari != null;
       case MgplDSLPackage.DECLARATION__OBJ:
         return obj != null;
     }

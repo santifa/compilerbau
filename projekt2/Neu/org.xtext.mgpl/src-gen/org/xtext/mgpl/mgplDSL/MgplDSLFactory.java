@@ -32,15 +32,6 @@ public interface MgplDSLFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Game</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Game</em>'.
-   * @generated
-   */
-  Game createGame();
-
-  /**
    * Returns a new object of class '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -50,31 +41,13 @@ public interface MgplDSLFactory extends EFactory
   Declaration createDeclaration();
 
   /**
-   * Returns a new object of class '<em>Var Decl</em>'.
+   * Returns a new object of class '<em>VARE</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var Decl</em>'.
+   * @return a new object of class '<em>VARE</em>'.
    * @generated
    */
-  VarDecl createVarDecl();
-
-  /**
-   * Returns a new object of class '<em>Init</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Init</em>'.
-   * @generated
-   */
-  Init createInit();
-
-  /**
-   * Returns a new object of class '<em>Obj Decl</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Obj Decl</em>'.
-   * @generated
-   */
-  ObjDecl createObjDecl();
+  VARE createVARE();
 
   /**
    * Returns a new object of class '<em>Block</em>'.
@@ -185,67 +158,13 @@ public interface MgplDSLFactory extends EFactory
   AttrAss createAttrAss();
 
   /**
-   * Returns a new object of class '<em>Expr</em>'.
+   * Returns a new object of class '<em>VARI</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expr</em>'.
+   * @return a new object of class '<em>VARI</em>'.
    * @generated
    */
-  Expr createExpr();
-
-  /**
-   * Returns a new object of class '<em>Disj</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Disj</em>'.
-   * @generated
-   */
-  Disj createDisj();
-
-  /**
-   * Returns a new object of class '<em>Conj</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Conj</em>'.
-   * @generated
-   */
-  Conj createConj();
-
-  /**
-   * Returns a new object of class '<em>Relat</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Relat</em>'.
-   * @generated
-   */
-  Relat createRelat();
-
-  /**
-   * Returns a new object of class '<em>Add</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Add</em>'.
-   * @generated
-   */
-  Add createAdd();
-
-  /**
-   * Returns a new object of class '<em>Mult</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mult</em>'.
-   * @generated
-   */
-  Mult createMult();
-
-  /**
-   * Returns a new object of class '<em>Unary</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unary</em>'.
-   * @generated
-   */
-  Unary createUnary();
+  VARI createVARI();
 
   /**
    * Returns a new object of class '<em>Atom</em>'.
@@ -255,15 +174,6 @@ public interface MgplDSLFactory extends EFactory
    * @generated
    */
   Atom createAtom();
-
-  /**
-   * Returns a new object of class '<em>Var</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Var</em>'.
-   * @generated
-   */
-  Var createVar();
 
   /**
    * Returns the package supported by this factory.

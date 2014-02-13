@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.mgpl.mgplDSL.AttrList;
 import org.xtext.mgpl.mgplDSL.Block;
 import org.xtext.mgpl.mgplDSL.Declaration;
-import org.xtext.mgpl.mgplDSL.Game;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.Model;
 import org.xtext.mgpl.mgplDSL.StatementBlock;
@@ -32,7 +32,8 @@ import org.xtext.mgpl.mgplDSL.StatementBlock;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.ModelImpl#getGame <em>Game</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.impl.ModelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.impl.ModelImpl#getAttr <em>Attr</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.ModelImpl#getDecl <em>Decl</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.ModelImpl#getStmt <em>Stmt</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.ModelImpl#getBlocks <em>Blocks</em>}</li>
@@ -44,14 +45,34 @@ import org.xtext.mgpl.mgplDSL.StatementBlock;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGame() <em>Game</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGame()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Game game;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAttr() <em>Attr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttr()
+   * @generated
+   * @ordered
+   */
+  protected AttrList attr;
 
   /**
    * The cached value of the '{@link #getDecl() <em>Decl</em>}' containment reference list.
@@ -109,9 +130,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public Game getGame()
+  public String getName()
   {
-    return game;
+    return name;
   }
 
   /**
@@ -119,13 +140,36 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetGame(Game newGame, NotificationChain msgs)
+  public void setName(String newName)
   {
-    Game oldGame = game;
-    game = newGame;
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.MODEL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttrList getAttr()
+  {
+    return attr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAttr(AttrList newAttr, NotificationChain msgs)
+  {
+    AttrList oldAttr = attr;
+    attr = newAttr;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MgplDSLPackage.MODEL__GAME, oldGame, newGame);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MgplDSLPackage.MODEL__ATTR, oldAttr, newAttr);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -136,20 +180,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGame(Game newGame)
+  public void setAttr(AttrList newAttr)
   {
-    if (newGame != game)
+    if (newAttr != attr)
     {
       NotificationChain msgs = null;
-      if (game != null)
-        msgs = ((InternalEObject)game).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.MODEL__GAME, null, msgs);
-      if (newGame != null)
-        msgs = ((InternalEObject)newGame).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.MODEL__GAME, null, msgs);
-      msgs = basicSetGame(newGame, msgs);
+      if (attr != null)
+        msgs = ((InternalEObject)attr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.MODEL__ATTR, null, msgs);
+      if (newAttr != null)
+        msgs = ((InternalEObject)newAttr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MgplDSLPackage.MODEL__ATTR, null, msgs);
+      msgs = basicSetAttr(newAttr, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.MODEL__GAME, newGame, newGame));
+      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.MODEL__ATTR, newAttr, newAttr));
   }
 
   /**
@@ -238,8 +282,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MgplDSLPackage.MODEL__GAME:
-        return basicSetGame(null, msgs);
+      case MgplDSLPackage.MODEL__ATTR:
+        return basicSetAttr(null, msgs);
       case MgplDSLPackage.MODEL__DECL:
         return ((InternalEList<?>)getDecl()).basicRemove(otherEnd, msgs);
       case MgplDSLPackage.MODEL__STMT:
@@ -260,8 +304,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MgplDSLPackage.MODEL__GAME:
-        return getGame();
+      case MgplDSLPackage.MODEL__NAME:
+        return getName();
+      case MgplDSLPackage.MODEL__ATTR:
+        return getAttr();
       case MgplDSLPackage.MODEL__DECL:
         return getDecl();
       case MgplDSLPackage.MODEL__STMT:
@@ -283,8 +329,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MgplDSLPackage.MODEL__GAME:
-        setGame((Game)newValue);
+      case MgplDSLPackage.MODEL__NAME:
+        setName((String)newValue);
+        return;
+      case MgplDSLPackage.MODEL__ATTR:
+        setAttr((AttrList)newValue);
         return;
       case MgplDSLPackage.MODEL__DECL:
         getDecl().clear();
@@ -311,8 +360,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MgplDSLPackage.MODEL__GAME:
-        setGame((Game)null);
+      case MgplDSLPackage.MODEL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case MgplDSLPackage.MODEL__ATTR:
+        setAttr((AttrList)null);
         return;
       case MgplDSLPackage.MODEL__DECL:
         getDecl().clear();
@@ -337,8 +389,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MgplDSLPackage.MODEL__GAME:
-        return game != null;
+      case MgplDSLPackage.MODEL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MgplDSLPackage.MODEL__ATTR:
+        return attr != null;
       case MgplDSLPackage.MODEL__DECL:
         return decl != null && !decl.isEmpty();
       case MgplDSLPackage.MODEL__STMT:
@@ -347,6 +401,23 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return blocks != null && !blocks.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ModelImpl

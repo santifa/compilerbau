@@ -8,32 +8,22 @@
   <genPackages prefix="MgplDSL" basePackage="org.xtext.mgpl" disposableProviderFactory="true"
       fileExtensions="mgpl" ecorePackage="MgplDSL.ecore#/">
     <genClasses ecoreClass="MgplDSL.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Model/game"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Model/attr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Model/decl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Model/stmt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Model/blocks"/>
     </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Game">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//Game/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Game/attr"/>
-    </genClasses>
     <genClasses ecoreClass="MgplDSL.ecore#//Declaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Declaration/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Declaration/vari"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Declaration/obj"/>
     </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//VarDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VarDecl/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VarDecl/expr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VarDecl/int"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Init">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Init/expr"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//ObjDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//ObjDecl/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//ObjDecl/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//ObjDecl/attr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//ObjDecl/int"/>
+    <genClasses ecoreClass="MgplDSL.ecore#//VARE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VARE/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARE/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VARE/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VARE/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARE/attr"/>
     </genClasses>
     <genClasses ecoreClass="MgplDSL.ecore#//Block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Block/stmt"/>
@@ -78,35 +68,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//AttrAss/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//AttrAss/expr"/>
     </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Expr"/>
-    <genClasses ecoreClass="MgplDSL.ecore#//Disj">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Disj/conj"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Conj">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Conj/relat"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Relat">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Relat/add"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Add">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Add/mult"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Mult">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Mult/unary"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Unary">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Unary/atom"/>
+    <genClasses ecoreClass="MgplDSL.ecore#//VARI">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/conj"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/relat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/add"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/mult"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/unary"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/atom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VARI/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//VARI/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//VARI/subname"/>
     </genClasses>
     <genClasses ecoreClass="MgplDSL.ecore#//Atom">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//Atom/int"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//Atom/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Atom/var1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Atom/var2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Atom/expr"/>
-    </genClasses>
-    <genClasses ecoreClass="MgplDSL.ecore#//Var">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//Var/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MgplDSL.ecore#//Var/expr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MgplDSL.ecore#//Var/subname"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

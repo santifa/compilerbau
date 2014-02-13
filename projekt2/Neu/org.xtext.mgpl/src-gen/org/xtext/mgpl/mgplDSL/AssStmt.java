@@ -30,12 +30,12 @@ public interface AssStmt extends Stmt
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Var</em>' containment reference.
-   * @see #setVar(Var)
+   * @see #setVar(VARI)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getAssStmt_Var()
    * @model containment="true"
    * @generated
    */
-  Var getVar();
+  VARI getVar();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.AssStmt#getVar <em>Var</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface AssStmt extends Stmt
    * @see #getVar()
    * @generated
    */
-  void setVar(Var value);
+  void setVar(VARI value);
 
 } // AssStmt

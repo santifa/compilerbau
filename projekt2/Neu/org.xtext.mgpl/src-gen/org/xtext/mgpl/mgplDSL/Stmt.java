@@ -31,12 +31,12 @@ public interface Stmt extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(Expr)
+   * @see #setExpr(VARI)
    * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getStmt_Expr()
    * @model containment="true"
    * @generated
    */
-  Expr getExpr();
+  VARI getExpr();
 
   /**
    * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Stmt#getExpr <em>Expr</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface Stmt extends EObject
    * @see #getExpr()
    * @generated
    */
-  void setExpr(Expr value);
+  void setExpr(VARI value);
 
 } // Stmt

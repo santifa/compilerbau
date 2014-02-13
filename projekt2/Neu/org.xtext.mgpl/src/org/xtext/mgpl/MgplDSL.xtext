@@ -3,30 +3,22 @@ grammar org.xtext.mgpl.MgplDSL with org.eclipse.xtext.common.Terminals
 generate mgplDSL "http://www.xtext.org/mgpl/MgplDSL"
 
 Model:
-	game=Game
+	'game' name=ID	'('	attr=AttrList ')'
 	decl+=Declaration*
 	stmt=StatementBlock
 	blocks+=Block*
 ;
-	
-Game:
-	'game' name=ID	'('	attr=AttrList ')'
-;
 
 Declaration:
-	(var=VarDecl | obj=ObjDecl) ';'
+	(vari=VarDecl | obj=ObjDecl) ';'
 ;
 
-VarDecl:
-	'int' name=ID ( expr=Init? | '[' int=INT ']') 
+VarDecl returns VARE:
+	'int' name=ID ( ('=' expr=Expr)? | '[' value=INT ']') 
 ;
 
-Init:
-	'=' expr=Expr
-;
-
-ObjDecl:
-	type=ObjType name=ID ('(' attr=AttrList ')' | '[' int=INT ']') 
+ObjDecl returns VARE:
+	type=ObjType name=ID ('(' attr=AttrList ')' | '[' value=INT ']') 
 ;
 
 Block:
@@ -88,40 +80,35 @@ AttrAss:
 ;
 
 // define expressions
-Expr:
-	Disj
-;
-
-Disj:
+Expr returns VARI:
 	conj+= Conj ('||' conj+=Conj)*
 ;
 
-Conj:
+Conj returns VARI:
 	relat+=Relat ('&&' relat+=Relat)*
 ;
 
-Relat:
+Relat returns VARI:
 	add+=Add (('==' | '<' | '<=') add+=Add)*
 ;
 
-Add:
+Add returns VARI:
 	mult+=Mult (('+' | '-') mult+=Mult)*
 ;
 
-Mult:
+Mult returns VARI:
 	unary+=Unary (('*' | '/') unary+=Unary)*
 ;
 
-Unary:
+Unary returns VARI:
 	('!' | '-')* atom=Atom
 ;
 
 Atom:
-	{Atom} (int=INT | var1=Var ( 'touches' var2=Var)? | '(' expr=Expr ')') 
+	(value=INT | var1=Var ( 'touches' var2=Var)? | '(' expr=Expr ')') 
 ;
 
 // define variables
-Var:
-	name=ID
-	( '[' expr=Expr ']' ('.' subname=ID)? | '.' subname=ID )?
+Var returns VARI:
+	name=ID	( '[' expr=Expr ']' ('.' subname=ID)? | '.' subname=ID )?
 ;

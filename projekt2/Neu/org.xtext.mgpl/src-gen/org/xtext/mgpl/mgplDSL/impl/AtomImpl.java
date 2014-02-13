@@ -12,9 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.mgpl.mgplDSL.Atom;
-import org.xtext.mgpl.mgplDSL.Expr;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
-import org.xtext.mgpl.mgplDSL.Var;
+import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.xtext.mgpl.mgplDSL.Var;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl#getInt <em>Int</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl#getVar1 <em>Var1</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl#getVar2 <em>Var2</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.impl.AtomImpl#getExpr <em>Expr</em>}</li>
@@ -35,24 +34,24 @@ import org.xtext.mgpl.mgplDSL.Var;
 public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
 {
   /**
-   * The default value of the '{@link #getInt() <em>Int</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInt()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final int INT_EDEFAULT = 0;
+  protected static final int VALUE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getInt() <em>Int</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInt()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected int int_ = INT_EDEFAULT;
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getVar1() <em>Var1</em>}' containment reference.
@@ -62,7 +61,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * @generated
    * @ordered
    */
-  protected Var var1;
+  protected VARI var1;
 
   /**
    * The cached value of the '{@link #getVar2() <em>Var2</em>}' containment reference.
@@ -72,7 +71,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * @generated
    * @ordered
    */
-  protected Var var2;
+  protected VARI var2;
 
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -82,7 +81,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * @generated
    * @ordered
    */
-  protected Expr expr;
+  protected VARI expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,9 +109,9 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getInt()
+  public int getValue()
   {
-    return int_;
+    return value;
   }
 
   /**
@@ -120,12 +119,12 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInt(int newInt)
+  public void setValue(int newValue)
   {
-    int oldInt = int_;
-    int_ = newInt;
+    int oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.ATOM__INT, oldInt, int_));
+      eNotify(new ENotificationImpl(this, Notification.SET, MgplDSLPackage.ATOM__VALUE, oldValue, value));
   }
 
   /**
@@ -133,7 +132,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var getVar1()
+  public VARI getVar1()
   {
     return var1;
   }
@@ -143,9 +142,9 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar1(Var newVar1, NotificationChain msgs)
+  public NotificationChain basicSetVar1(VARI newVar1, NotificationChain msgs)
   {
-    Var oldVar1 = var1;
+    VARI oldVar1 = var1;
     var1 = newVar1;
     if (eNotificationRequired())
     {
@@ -160,7 +159,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar1(Var newVar1)
+  public void setVar1(VARI newVar1)
   {
     if (newVar1 != var1)
     {
@@ -181,7 +180,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var getVar2()
+  public VARI getVar2()
   {
     return var2;
   }
@@ -191,9 +190,9 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar2(Var newVar2, NotificationChain msgs)
+  public NotificationChain basicSetVar2(VARI newVar2, NotificationChain msgs)
   {
-    Var oldVar2 = var2;
+    VARI oldVar2 = var2;
     var2 = newVar2;
     if (eNotificationRequired())
     {
@@ -208,7 +207,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar2(Var newVar2)
+  public void setVar2(VARI newVar2)
   {
     if (newVar2 != var2)
     {
@@ -229,7 +228,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getExpr()
+  public VARI getExpr()
   {
     return expr;
   }
@@ -239,9 +238,9 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(Expr newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
   {
-    Expr oldExpr = expr;
+    VARI oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -256,7 +255,7 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(Expr newExpr)
+  public void setExpr(VARI newExpr)
   {
     if (newExpr != expr)
     {
@@ -302,8 +301,8 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
   {
     switch (featureID)
     {
-      case MgplDSLPackage.ATOM__INT:
-        return getInt();
+      case MgplDSLPackage.ATOM__VALUE:
+        return getValue();
       case MgplDSLPackage.ATOM__VAR1:
         return getVar1();
       case MgplDSLPackage.ATOM__VAR2:
@@ -324,17 +323,17 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
   {
     switch (featureID)
     {
-      case MgplDSLPackage.ATOM__INT:
-        setInt((Integer)newValue);
+      case MgplDSLPackage.ATOM__VALUE:
+        setValue((Integer)newValue);
         return;
       case MgplDSLPackage.ATOM__VAR1:
-        setVar1((Var)newValue);
+        setVar1((VARI)newValue);
         return;
       case MgplDSLPackage.ATOM__VAR2:
-        setVar2((Var)newValue);
+        setVar2((VARI)newValue);
         return;
       case MgplDSLPackage.ATOM__EXPR:
-        setExpr((Expr)newValue);
+        setExpr((VARI)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -350,17 +349,17 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
   {
     switch (featureID)
     {
-      case MgplDSLPackage.ATOM__INT:
-        setInt(INT_EDEFAULT);
+      case MgplDSLPackage.ATOM__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
       case MgplDSLPackage.ATOM__VAR1:
-        setVar1((Var)null);
+        setVar1((VARI)null);
         return;
       case MgplDSLPackage.ATOM__VAR2:
-        setVar2((Var)null);
+        setVar2((VARI)null);
         return;
       case MgplDSLPackage.ATOM__EXPR:
-        setExpr((Expr)null);
+        setExpr((VARI)null);
         return;
     }
     super.eUnset(featureID);
@@ -376,8 +375,8 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
   {
     switch (featureID)
     {
-      case MgplDSLPackage.ATOM__INT:
-        return int_ != INT_EDEFAULT;
+      case MgplDSLPackage.ATOM__VALUE:
+        return value != VALUE_EDEFAULT;
       case MgplDSLPackage.ATOM__VAR1:
         return var1 != null;
       case MgplDSLPackage.ATOM__VAR2:
@@ -399,8 +398,8 @@ public class AtomImpl extends MinimalEObjectImpl.Container implements Atom
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (int: ");
-    result.append(int_);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

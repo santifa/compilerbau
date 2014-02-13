@@ -13,31 +13,22 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.mgpl.mgplDSL.Add;
 import org.xtext.mgpl.mgplDSL.AnimBlock;
 import org.xtext.mgpl.mgplDSL.AssStmt;
 import org.xtext.mgpl.mgplDSL.AssStmt2;
 import org.xtext.mgpl.mgplDSL.Atom;
 import org.xtext.mgpl.mgplDSL.AttrAss;
 import org.xtext.mgpl.mgplDSL.AttrList;
-import org.xtext.mgpl.mgplDSL.Conj;
 import org.xtext.mgpl.mgplDSL.Declaration;
-import org.xtext.mgpl.mgplDSL.Disj;
 import org.xtext.mgpl.mgplDSL.ElseStmt;
 import org.xtext.mgpl.mgplDSL.EventBlock;
 import org.xtext.mgpl.mgplDSL.ForStmt;
-import org.xtext.mgpl.mgplDSL.Game;
 import org.xtext.mgpl.mgplDSL.IfStmt;
-import org.xtext.mgpl.mgplDSL.Init;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
 import org.xtext.mgpl.mgplDSL.Model;
-import org.xtext.mgpl.mgplDSL.Mult;
-import org.xtext.mgpl.mgplDSL.ObjDecl;
-import org.xtext.mgpl.mgplDSL.Relat;
 import org.xtext.mgpl.mgplDSL.StatementBlock;
-import org.xtext.mgpl.mgplDSL.Unary;
-import org.xtext.mgpl.mgplDSL.Var;
-import org.xtext.mgpl.mgplDSL.VarDecl;
+import org.xtext.mgpl.mgplDSL.VARE;
+import org.xtext.mgpl.mgplDSL.VARI;
 import org.xtext.mgpl.services.MgplDSLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -48,12 +39,6 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == MgplDSLPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case MgplDSLPackage.ADD:
-				if(context == grammarAccess.getAddRule()) {
-					sequence_Add(context, (Add) semanticObject); 
-					return; 
-				}
-				else break;
 			case MgplDSLPackage.ANIM_BLOCK:
 				if(context == grammarAccess.getAnimBlockRule() ||
 				   context == grammarAccess.getBlockRule()) {
@@ -92,22 +77,9 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case MgplDSLPackage.CONJ:
-				if(context == grammarAccess.getConjRule()) {
-					sequence_Conj(context, (Conj) semanticObject); 
-					return; 
-				}
-				else break;
 			case MgplDSLPackage.DECLARATION:
 				if(context == grammarAccess.getDeclarationRule()) {
 					sequence_Declaration(context, (Declaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case MgplDSLPackage.DISJ:
-				if(context == grammarAccess.getDisjRule() ||
-				   context == grammarAccess.getExprRule()) {
-					sequence_Disj(context, (Disj) semanticObject); 
 					return; 
 				}
 				else break;
@@ -131,22 +103,10 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case MgplDSLPackage.GAME:
-				if(context == grammarAccess.getGameRule()) {
-					sequence_Game(context, (Game) semanticObject); 
-					return; 
-				}
-				else break;
 			case MgplDSLPackage.IF_STMT:
 				if(context == grammarAccess.getIfStmtRule() ||
 				   context == grammarAccess.getStmtRule()) {
 					sequence_IfStmt(context, (IfStmt) semanticObject); 
-					return; 
-				}
-				else break;
-			case MgplDSLPackage.INIT:
-				if(context == grammarAccess.getInitRule()) {
-					sequence_Init(context, (Init) semanticObject); 
 					return; 
 				}
 				else break;
@@ -156,45 +116,49 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case MgplDSLPackage.MULT:
-				if(context == grammarAccess.getMultRule()) {
-					sequence_Mult(context, (Mult) semanticObject); 
-					return; 
-				}
-				else break;
-			case MgplDSLPackage.OBJ_DECL:
-				if(context == grammarAccess.getObjDeclRule()) {
-					sequence_ObjDecl(context, (ObjDecl) semanticObject); 
-					return; 
-				}
-				else break;
-			case MgplDSLPackage.RELAT:
-				if(context == grammarAccess.getRelatRule()) {
-					sequence_Relat(context, (Relat) semanticObject); 
-					return; 
-				}
-				else break;
 			case MgplDSLPackage.STATEMENT_BLOCK:
 				if(context == grammarAccess.getStatementBlockRule()) {
 					sequence_StatementBlock(context, (StatementBlock) semanticObject); 
 					return; 
 				}
 				else break;
-			case MgplDSLPackage.UNARY:
-				if(context == grammarAccess.getUnaryRule()) {
-					sequence_Unary(context, (Unary) semanticObject); 
+			case MgplDSLPackage.VARE:
+				if(context == grammarAccess.getObjDeclRule()) {
+					sequence_ObjDecl(context, (VARE) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getVarDeclRule()) {
+					sequence_VarDecl(context, (VARE) semanticObject); 
 					return; 
 				}
 				else break;
-			case MgplDSLPackage.VAR:
-				if(context == grammarAccess.getVarRule()) {
-					sequence_Var(context, (Var) semanticObject); 
+			case MgplDSLPackage.VARI:
+				if(context == grammarAccess.getAddRule()) {
+					sequence_Add(context, (VARI) semanticObject); 
 					return; 
 				}
-				else break;
-			case MgplDSLPackage.VAR_DECL:
-				if(context == grammarAccess.getVarDeclRule()) {
-					sequence_VarDecl(context, (VarDecl) semanticObject); 
+				else if(context == grammarAccess.getConjRule()) {
+					sequence_Conj(context, (VARI) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getExprRule()) {
+					sequence_Expr(context, (VARI) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getMultRule()) {
+					sequence_Mult(context, (VARI) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getRelatRule()) {
+					sequence_Relat(context, (VARI) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getUnaryRule()) {
+					sequence_Unary(context, (VARI) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getVarRule()) {
+					sequence_Var(context, (VARI) semanticObject); 
 					return; 
 				}
 				else break;
@@ -206,7 +170,7 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (mult+=Mult mult+=Mult*)
 	 */
-	protected void sequence_Add(EObject context, Add semanticObject) {
+	protected void sequence_Add(EObject context, VARI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -276,7 +240,7 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (int=INT | (var1=Var var2=Var?) | expr=Expr)
+	 *     (value=INT | (var1=Var var2=Var?) | expr=Expr)
 	 */
 	protected void sequence_Atom(EObject context, Atom semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -315,25 +279,16 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (relat+=Relat relat+=Relat*)
 	 */
-	protected void sequence_Conj(EObject context, Conj semanticObject) {
+	protected void sequence_Conj(EObject context, VARI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (var=VarDecl | obj=ObjDecl)
+	 *     (vari=VarDecl | obj=ObjDecl)
 	 */
 	protected void sequence_Declaration(EObject context, Declaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (conj+=Conj conj+=Conj*)
-	 */
-	protected void sequence_Disj(EObject context, Disj semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -375,6 +330,15 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
+	 *     (conj+=Conj conj+=Conj*)
+	 */
+	protected void sequence_Expr(EObject context, VARI semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (ass1=AssStmt expr=Expr ass2=AssStmt2 stmt=StatementBlock)
 	 */
 	protected void sequence_ForStmt(EObject context, ForStmt semanticObject) {
@@ -400,25 +364,6 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID attr=AttrList)
-	 */
-	protected void sequence_Game(EObject context, Game semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MgplDSLPackage.Literals.GAME__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MgplDSLPackage.Literals.GAME__NAME));
-			if(transientValues.isValueTransient(semanticObject, MgplDSLPackage.Literals.GAME__ATTR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MgplDSLPackage.Literals.GAME__ATTR));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getGameAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGameAccess().getAttrAttrListParserRuleCall_3_0(), semanticObject.getAttr());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (expr=Expr stmt=StatementBlock else=ElseStmt?)
 	 */
 	protected void sequence_IfStmt(EObject context, IfStmt semanticObject) {
@@ -428,23 +373,7 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     expr=Expr
-	 */
-	protected void sequence_Init(EObject context, Init semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MgplDSLPackage.Literals.INIT__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MgplDSLPackage.Literals.INIT__EXPR));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInitAccess().getExprExprParserRuleCall_1_0(), semanticObject.getExpr());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (game=Game decl+=Declaration* stmt=StatementBlock blocks+=Block*)
+	 *     (name=ID attr=AttrList decl+=Declaration* stmt=StatementBlock blocks+=Block*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -455,16 +384,16 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (unary+=Unary unary+=Unary*)
 	 */
-	protected void sequence_Mult(EObject context, Mult semanticObject) {
+	protected void sequence_Mult(EObject context, VARI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (type=ObjType name=ID (attr=AttrList | int=INT))
+	 *     (type=ObjType name=ID (attr=AttrList | value=INT))
 	 */
-	protected void sequence_ObjDecl(EObject context, ObjDecl semanticObject) {
+	protected void sequence_ObjDecl(EObject context, VARE semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -473,7 +402,7 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (add+=Add add+=Add*)
 	 */
-	protected void sequence_Relat(EObject context, Relat semanticObject) {
+	protected void sequence_Relat(EObject context, VARI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -491,23 +420,16 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     atom=Atom
 	 */
-	protected void sequence_Unary(EObject context, Unary semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MgplDSLPackage.Literals.UNARY__ATOM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MgplDSLPackage.Literals.UNARY__ATOM));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUnaryAccess().getAtomAtomParserRuleCall_1_0(), semanticObject.getAtom());
-		feeder.finish();
+	protected void sequence_Unary(EObject context, VARI semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (expr=Init? | int=INT))
+	 *     (name=ID (expr=Expr? | value=INT))
 	 */
-	protected void sequence_VarDecl(EObject context, VarDecl semanticObject) {
+	protected void sequence_VarDecl(EObject context, VARE semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -516,7 +438,7 @@ public class MgplDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (name=ID ((expr=Expr subname=ID?) | subname=ID)?)
 	 */
-	protected void sequence_Var(EObject context, Var semanticObject) {
+	protected void sequence_Var(EObject context, VARI semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

@@ -12,9 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.mgpl.mgplDSL.AssStmt2;
-import org.xtext.mgpl.mgplDSL.Expr;
 import org.xtext.mgpl.mgplDSL.MgplDSLPackage;
-import org.xtext.mgpl.mgplDSL.Var;
+import org.xtext.mgpl.mgplDSL.VARI;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +39,7 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * @generated
    * @ordered
    */
-  protected Var var;
+  protected VARI var;
 
   /**
    * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
@@ -50,7 +49,7 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * @generated
    * @ordered
    */
-  protected Expr expr;
+  protected VARI expr;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,7 +77,7 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * <!-- end-user-doc -->
    * @generated
    */
-  public Var getVar()
+  public VARI getVar()
   {
     return var;
   }
@@ -88,9 +87,9 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar(Var newVar, NotificationChain msgs)
+  public NotificationChain basicSetVar(VARI newVar, NotificationChain msgs)
   {
-    Var oldVar = var;
+    VARI oldVar = var;
     var = newVar;
     if (eNotificationRequired())
     {
@@ -105,7 +104,7 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVar(Var newVar)
+  public void setVar(VARI newVar)
   {
     if (newVar != var)
     {
@@ -126,7 +125,7 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getExpr()
+  public VARI getExpr()
   {
     return expr;
   }
@@ -136,9 +135,9 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(Expr newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(VARI newExpr, NotificationChain msgs)
   {
-    Expr oldExpr = expr;
+    VARI oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -153,7 +152,7 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpr(Expr newExpr)
+  public void setExpr(VARI newExpr)
   {
     if (newExpr != expr)
     {
@@ -216,10 +215,10 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
     switch (featureID)
     {
       case MgplDSLPackage.ASS_STMT2__VAR:
-        setVar((Var)newValue);
+        setVar((VARI)newValue);
         return;
       case MgplDSLPackage.ASS_STMT2__EXPR:
-        setExpr((Expr)newValue);
+        setExpr((VARI)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,10 +235,10 @@ public class AssStmt2Impl extends MinimalEObjectImpl.Container implements AssStm
     switch (featureID)
     {
       case MgplDSLPackage.ASS_STMT2__VAR:
-        setVar((Var)null);
+        setVar((VARI)null);
         return;
       case MgplDSLPackage.ASS_STMT2__EXPR:
-        setExpr((Expr)null);
+        setExpr((VARI)null);
         return;
     }
     super.eUnset(featureID);

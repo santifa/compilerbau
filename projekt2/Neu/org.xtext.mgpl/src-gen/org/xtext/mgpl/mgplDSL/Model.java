@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.mgpl.mgplDSL.Model#getGame <em>Game</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.Model#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.mgpl.mgplDSL.Model#getAttr <em>Attr</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Model#getDecl <em>Decl</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Model#getStmt <em>Stmt</em>}</li>
  *   <li>{@link org.xtext.mgpl.mgplDSL.Model#getBlocks <em>Blocks</em>}</li>
@@ -28,30 +29,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Game</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Game</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Game</em>' containment reference.
-   * @see #setGame(Game)
-   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getModel_Game()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getModel_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Model#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Attr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Attr</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Attr</em>' containment reference.
+   * @see #setAttr(AttrList)
+   * @see org.xtext.mgpl.mgplDSL.MgplDSLPackage#getModel_Attr()
    * @model containment="true"
    * @generated
    */
-  Game getGame();
+  AttrList getAttr();
 
   /**
-   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Model#getGame <em>Game</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.mgpl.mgplDSL.Model#getAttr <em>Attr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Game</em>' containment reference.
-   * @see #getGame()
+   * @param value the new value of the '<em>Attr</em>' containment reference.
+   * @see #getAttr()
    * @generated
    */
-  void setGame(Game value);
+  void setAttr(AttrList value);
 
   /**
    * Returns the value of the '<em><b>Decl</b></em>' containment reference list.
