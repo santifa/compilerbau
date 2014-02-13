@@ -1,0 +1,127 @@
+grammar org.xtext.mgpl.MgplDSL with org.eclipse.xtext.common.Terminals
+
+generate mgplDSL "http://www.xtext.org/mgpl/MgplDSL"
+
+Model:
+	game=Game
+	decl+=Declaration*
+	stmt=StatementBlock
+	blocks+=Block*
+;
+	
+Game:
+	'game' name=ID	'('	attr=AttrList ')'
+;
+
+Declaration:
+	(var=VarDecl | obj=ObjDecl) ';'
+;
+
+VarDecl:
+	'int' name=ID ( expr=Init? | '[' int=INT ']') 
+;
+
+Init:
+	'=' expr=Expr
+;
+
+ObjDecl:
+	type=ObjType name=ID ('(' attr=AttrList ')' | '[' int=INT ']') 
+;
+
+Block:
+	AnimBlock | EventBlock
+;
+
+AnimBlock:
+	'animation' name=ID '(' type=ObjType objName=ID  ')' stmt=StatementBlock	
+;
+
+EventBlock:
+	'on' key=Keystroke stmt=StatementBlock
+;
+
+ObjType:
+	'rectangle' | 'triangle' | 'circle'
+;
+
+Keystroke:
+	'space' | 'leftarrow' | 'rightarrow' | 'uparrow' | 'downarrow'
+;
+
+StatementBlock:
+	{StatementBlock} ('{' stmt+=Stmt* '}')
+;
+
+Stmt:
+	IfStmt | ForStmt | AssStmt
+;
+
+ForStmt:
+	'for' '(' ass1=AssStmt expr=Expr ';' ass2=AssStmt2 ')' stmt=StatementBlock
+;
+
+IfStmt:
+	'if' '(' expr=Expr ')' stmt=StatementBlock else=ElseStmt?
+;
+
+ElseStmt:
+	'else' stmt=StatementBlock	
+;
+
+AssStmt:
+	var=Var '=' expr=Expr ';'
+;
+
+// special for assignment
+AssStmt2:
+	var=Var '=' expr=Expr
+;
+
+// attribution list
+AttrList:
+	{AttrList} (attr+=AttrAss? (',' attr+=  AttrAss)*)
+;
+
+AttrAss:
+	name=ID	'=' expr=Expr
+;
+
+// define expressions
+Expr:
+	Disj
+;
+
+Disj:
+	conj+= Conj ('||' conj+=Conj)*
+;
+
+Conj:
+	relat+=Relat ('&&' relat+=Relat)*
+;
+
+Relat:
+	add+=Add (('==' | '<' | '<=') add+=Add)*
+;
+
+Add:
+	mult+=Mult (('+' | '-') mult+=Mult)*
+;
+
+Mult:
+	unary+=Unary (('*' | '/') unary+=Unary)*
+;
+
+Unary:
+	('!' | '-')* atom=Atom
+;
+
+Atom:
+	{Atom} (int=INT | var1=Var ( 'touches' var2=Var)? | '(' expr=Expr ')') 
+;
+
+// define variables
+Var:
+	name=ID
+	( '[' expr=Expr ']' ('.' subname=ID)? | '.' subname=ID )?
+;
