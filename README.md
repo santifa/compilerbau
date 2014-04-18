@@ -1,9 +1,7 @@
 compilerbau
 ===========
 
-Projekte aus dem Fach "Virtualisierung und Compilerbau" der Uni-Potsdam.
+Project from the seminar virtualisation and compilation at the up.
 
-Projekte werden geschrieben in ANTLR3.
-
-Erstes Projekt soll eine Beschreibung in MGPL (Mini Games Programming Language)
-annehmen und korrekt lexen als auch parsen.
+The frist project is written with antlr3. It aims to parse the mgpl 
+(mini games programming language)
